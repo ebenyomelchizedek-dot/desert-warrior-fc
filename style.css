@@ -2194,3 +2194,133 @@ nav a:active {
     }
 
 }
+/* ================================
+   GALLERY PAGE
+================================ */
+
+.gallery-page {
+    background: #f5f7fa;
+    min-height: 70vh;
+}
+
+.gallery-hero {
+    background: linear-gradient(135deg, #071b33, #102f52);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    border-bottom: 4px solid #e5a72f;
+}
+
+.gallery-hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #e5a72f;
+}
+
+.gallery-hero p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 25px;
+}
+
+.gallery-section > h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #102a43;
+    margin-bottom: 35px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.gallery-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-6px);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    padding: 18px;
+}
+
+.gallery-caption h3 {
+    margin: 0 0 8px;
+    color: #102a43;
+}
+
+.gallery-caption p {
+    margin: 0;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-hero h2 {
+        font-size: 30px;
+    }
+}
+.news-detail {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 50px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.news-detail h2 {
+    font-size: 40px;
+    color: #102a43;
+    margin-bottom: 20px;
+}
+
+.news-detail p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.news-category {
+    color: #d99a24 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    background: #102a43;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.back-button:hover {
+    background: #d99a24;
+}
