@@ -99,22 +99,19 @@ body {
 ===================================== */
 
 .hero {
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.88),
-            rgba(20, 15, 5, 0.92)
-        );
+    background-image: linear-gradient(
+        rgba(5, 15, 30, 0.65),
+        rgba(5, 15, 30, 0.65)
+    ), url("players_photo.jpg");
 
-    min-height: 430px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
+    min-height: 600px;
     display: flex;
     align-items: center;
-
-    justify-content: center;
-
-    gap: 70px;
-
-    padding: 60px 8%;
+    padding: 60px;
 }
 
 
@@ -2323,4 +2320,79 @@ nav a:active {
 
 .back-button:hover {
     background: #d99a24;
+}
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.gallery-item {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.gallery-item h3 {
+    margin-top: 12px;
+    color: #222;
+}
+
+.gallery-item p {
+    color: #666;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-card,
+.gallery-item {
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.gallery-card img,
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+}
+
+.gallery-caption {
+    padding: 20px;
+}
+
+.gallery-caption h3 {
+    margin: 0 0 10px;
+}
+
+.gallery-caption p {
+    margin: 0;
+}
+
+.hero-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.45;
+    mix-blend-mode: screen;
+    background: transparent;
+}
+
+.hero-logo img {
+    opacity: 0.35;
+    background: transparent;
+    mix-blend-mode: screen;
 }
