@@ -2450,3 +2450,7 @@ nav a:active {
     background: #25d366;
     color: white;
 }
+.hero-logo img {
+    opacity: 1;
+    filter: none;
+}
