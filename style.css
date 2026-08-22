@@ -2396,3 +2396,57 @@ nav a:active {
     background: transparent;
     mix-blend-mode: screen;
 }
+/* ================================
+   SOCIAL MEDIA BUTTONS
+================================ */
+
+.social-media {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.social-media h2 {
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+/* Facebook */
+.facebook {
+    background: #1877f2;
+    color: white;
+}
+
+/* X / Twitter */
+.twitter {
+    background: #000;
+    color: white;
+}
+
+/* WhatsApp */
+.whatsapp {
+    background: #25d366;
+    color: white;
+}
