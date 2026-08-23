@@ -2538,3 +2538,70 @@ nav a:active {
     transform: translateY(-3px);
     opacity: 0.85;
 }
+/* DONATION SECTION */
+
+.support-section {
+    padding: 60px 20px;
+    background: #f4f4f4;
+}
+
+.support-box {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.support-box h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.support-box > p {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    line-height: 1.7;
+}
+
+.donation-option {
+    background: white;
+    margin: 25px auto;
+    padding: 30px;
+    max-width: 650px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.donation-option h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.donation-option p {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.donate-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    transition: 0.3s ease;
+}
+
+.donate-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+.kenya-button {
+    background: #198754;
+}
+
+.paypal-button {
+    background: #0070ba;
+}
