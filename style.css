@@ -2634,3 +2634,966 @@ nav a:active {
     margin-top: 25px;
     font-weight: bold;
 }
+.gallery-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: #f5f5f5;
+    display: block;
+    border-radius: 12px 12px 0 0;
+}
+.gallery-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px 12px 0 0;
+}
+.gallery-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px 12px 0 0;
+}
+/* Move homepage words to the left */
+.hero-content {
+    position: absolute;
+    left: 5%;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 55%;
+    text-align: left;
+}
+.video-card {
+    overflow: hidden;
+}
+
+.video-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px 12px 0 0;
+}
+
+.video-card .gallery-caption {
+    padding: 20px;
+}
+
+.video-card h3 {
+    margin-bottom: 10px;
+}
+
+.video-card p {
+    margin: 0;
+    line-height: 1.6;
+}
+```css
+/* MAKE ALL PLAYER CARDS LOOK THE SAME */
+
+.player-card {
+    width: 280px;
+    background: white;
+    border: 2px solid #d4a72c;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Make every player photo the same size */
+.player-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Player information */
+.player-info {
+    padding: 20px;
+    background: white;
+    text-align: center;
+}
+
+/* Registered Player */
+.player-info .registered {
+    display: inline-block;
+    background: #173b2a;
+    color: white;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Player name */
+.player-info h3 {
+    font-size: 22px;
+    margin: 12px 0;
+    color: #172033;
+}
+
+/* Player details */
+.player-info p {
+    margin: 7px 0;
+    font-size: 15px;
+    color: #555;
+}
+```
+```css
+/* ===== FOUR PLAYERS PER ROW ===== */
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Player cards */
+.player-card {
+    width: 100%;
+    background: white;
+    border: 2px solid #d4a72c;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* All player photos same size */
+.player-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Information underneath photo */
+.player-info {
+    padding: 18px 10px 22px;
+    background: white;
+    text-align: center;
+}
+
+.player-info .registered {
+    display: inline-block;
+    background: #173b2a;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.player-info h3 {
+    font-size: 20px;
+    margin: 12px 0 8px;
+    color: #172033;
+}
+
+.player-info p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* On smaller screens */
+@media (max-width: 1000px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+}
+```
+```css id="4m8x2p"
+/* =========================================
+   DESERT WARRIORS REGISTERED PLAYER CARDS
+   ========================================= */
+
+/* Four players on one row */
+.registered-players {
+    width: 100%;
+}
+
+.registered-players > div {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 25px !important;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Player cards */
+.registered-players .player-card {
+    width: 100% !important;
+    background: #ffffff !important;
+    border: 2px solid #d4a72c !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    text-align: center !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15) !important;
+}
+
+/* Player photos */
+.registered-players .player-card img {
+    width: 100% !important;
+    height: 280px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Player information */
+.registered-players .player-card .player-info {
+    padding: 18px 12px 22px !important;
+    background: #ffffff !important;
+    text-align: center !important;
+}
+
+/* Registered Player label */
+.registered-players .registered {
+    display: inline-block !important;
+    background: #172033 !important;
+    color: #ffffff !important;
+    padding: 7px 15px !important;
+    border-radius: 20px !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+/* Player name */
+.registered-players .player-card h3 {
+    font-size: 20px !important;
+    margin: 12px 0 8px !important;
+    color: #172033 !important;
+}
+
+/* Player details */
+.registered-players .player-card p {
+    margin: 6px 0 !important;
+    font-size: 14px !important;
+    color: #555555 !important;
+}
+
+/* FKF number */
+.registered-players .fkf-number {
+    color: #d4a72c !important;
+    font-weight: bold !important;
+}
+
+/* Smaller screens */
+@media (max-width: 1000px) {
+    .registered-players > div {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .registered-players > div {
+        grid-template-columns: 1fr !important;
+    }
+}
+```
+```css id="7qk4mz"
+/* =========================================
+   REGISTERED PLAYERS - HORIZONTAL CARDS
+   ========================================= */
+
+.registered-players {
+    width: 100%;
+    padding: 30px 20px;
+}
+
+/* Put player cards side-by-side */
+.registered-players .players-grid,
+.registered-players .player-grid,
+.registered-players .registered-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 25px !important;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* If the cards are directly inside registered-players */
+.registered-players {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 25px !important;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Individual player card */
+.registered-players .player-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: block !important;
+    background: #ffffff !important;
+    border: 2px solid #d4a72c !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
+
+/* Photo goes above information */
+.registered-players .player-card img {
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Information below photo */
+.registered-players .player-card .player-info {
+    width: 100% !important;
+    padding: 18px 10px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
+
+/* Player name */
+.registered-players .player-card h3 {
+    margin: 10px 0 !important;
+    font-size: 20px !important;
+}
+
+/* Player details */
+.registered-players .player-card p {
+    margin: 6px 0 !important;
+    font-size: 14px !important;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .registered-players {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    .registered-players {
+        grid-template-columns: 1fr !important;
+    }
+}
+```
+/* REGISTERED PLAYERS - 4 CARDS ACROSS */
+.registered-players-grid,
+.players-grid,
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    align-items: stretch;
+}
+
+/* PLAYER CARD */
+.player-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* PLAYER PHOTO */
+.player-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .registered-players-grid,
+    .players-grid,
+    .player-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .registered-players-grid,
+    .players-grid,
+    .player-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================================
+   REGISTERED PLAYERS - 4 CARDS ACROSS
+   ================================ */
+
+.registered-players {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+/* Section heading */
+.registered-players h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0;
+}
+
+/* Introduction text */
+.registered-players .section-intro {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0 0 25px;
+}
+
+/* Player cards */
+.registered-players .player-card {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background: white;
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Player photo */
+.registered-players .player-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Player information */
+.registered-players .player-details {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Player name */
+.registered-players .player-details h2 {
+    grid-column: auto;
+    margin: 10px 0;
+}
+
+/* Registered badge */
+.registered-players .registered-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: #16803c;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* ================================
+   TABLET
+   ================================ */
+
+@media (max-width: 1000px) {
+    .registered-players {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================================
+   PHONE
+   ================================ */
+
+@media (max-width: 600px) {
+    .registered-players {
+        grid-template-columns: 1fr;
+        padding: 30px 15px;
+    }
+
+    .registered-players .player-card img {
+        height: 300px;
+    }
+}
+/* =====================================
+   REGISTERED PLAYERS - 4 CARDS ACROSS
+   ===================================== */
+
+.registered-players {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 25px;
+    box-sizing: border-box;
+}
+
+/* Keep the section heading at the top */
+.registered-players > h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.registered-players > .section-intro {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 35px;
+}
+
+/* PLAYER CARDS */
+.registered-players .player-card {
+    display: inline-flex;
+    vertical-align: top;
+
+    width: calc(25% - 24px);
+    margin: 0 10px 25px 10px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 2px solid #d4af37;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    flex-direction: column;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Player photo */
+.registered-players .player-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Player information */
+.registered-players .player-details {
+    text-align: center;
+    padding: 18px;
+}
+
+/* Registered badge */
+.registered-players .registered-badge {
+    display: inline-block;
+    background: #16803c;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Player name */
+.registered-players .player-details h2 {
+    margin: 12px 0;
+}
+
+/* =====================================
+   TABLET
+   ===================================== */
+
+@media (max-width: 1000px) {
+
+    .registered-players .player-card {
+        width: calc(50% - 24px);
+    }
+
+}
+
+/* =====================================
+   PHONE
+   ===================================== */
+
+@media (max-width: 600px) {
+
+    .registered-players .player-card {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+}
+```css
+/* ===== REGISTERED PLAYERS - 4 CARDS ACROSS ===== */
+
+.registered-players {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+/* Heading and introduction should occupy the full row */
+.registered-players h2,
+.registered-players .section-intro {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+/* Every player card has the SAME size */
+.registered-players .player-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 2px solid #d8b45a;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+/* All player pictures have the SAME height */
+.registered-players .player-card img {
+    width: 100% !important;
+    height: 260px !important;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Player information */
+.registered-players .player-details {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Player name */
+.registered-players .player-details h2,
+.registered-players .player-details h3 {
+    margin: 10px 0;
+    font-size: 22px;
+    color: #17233c;
+}
+
+/* Player information */
+.registered-players .player-details p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+/* Registered badge */
+.registered-players .registered-badge {
+    display: inline-block;
+    margin: 0 auto 10px;
+    padding: 8px 16px;
+
+    background: #168447;
+    color: white;
+
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1000px) {
+    .registered-players {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== PHONE ===== */
+@media (max-width: 600px) {
+    .registered-players {
+        grid-template-columns: 1fr;
+        padding: 30px 15px;
+    }
+
+    .registered-players .player-card img {
+        height: 280px !important;
+    }
+}
+/* ===== REGISTERED PLAYERS - 4 CARDS ACROSS ===== */
+
+.registered-players {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+/* Heading */
+.registered-players h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0;
+}
+
+/* Introduction text */
+.registered-players .section-intro {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+/* Every player card */
+.registered-players .player-card {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    display: block;
+}
+
+/* Player image */
+.registered-players .player-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card details */
+.registered-players .player-details {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Keep the cards the same size */
+.registered-players .player-card h2,
+.registered-players .player-card h3 {
+    margin: 10px 0;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .registered-players {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    .registered-players {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================================
+   REGISTERED PLAYERS - 4 ACROSS
+   ================================ */
+
+.registered-players {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.registered-players h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.registered-players .section-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* THE 4-CARD GRID */
+.players-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 25px !important;
+    width: 100% !important;
+    align-items: start;
+}
+
+/* EACH PLAYER CARD */
+.players-grid .player-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: white;
+    border-radius: 15px;
+}
+
+/* PLAYER PHOTO */
+.players-grid .player-card img {
+    display: block;
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover;
+}
+
+/* PLAYER INFORMATION */
+.players-grid .player-details {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+/* PLAYER NAME */
+.players-grid .player-details h2 {
+    margin: 12px 0 8px;
+    font-size: 22px;
+}
+
+/* BADGE */
+.players-grid .registered-badge {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .players-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+    .players-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+ /* ===== REGISTERED PLAYERS: 4 CARDS ACROSS ===== */
+
+.registered-players {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 25px !important;
+
+    width: 100% !important;
+    max-width: 1300px !important;
+    margin: 0 auto !important;
+    padding: 40px 25px !important;
+
+    box-sizing: border-box !important;
+    align-items: start !important;
+}
+
+/* Heading and introduction should occupy the full width */
+.registered-players > h2 {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin: 0 0 5px 0 !important;
+    text-align: center !important;
+}
+
+.registered-players > .section-intro {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin: 0 0 25px 0 !important;
+    text-align: center !important;
+}
+
+/* EVERY PLAYER CARD GOES INTO THE NEXT AVAILABLE GRID SPACE */
+.registered-players > .player-card {
+    position: static !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    transform: none !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Keep every image the same size */
+.registered-players > .player-card img {
+    display: block !important;
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+}
+
+/* Card information */
+.registered-players > .player-card .player-details {
+    width: 100% !important;
+    min-height: 160px !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
+
+/* Badge */
+.registered-players .registered-badge {
+    display: inline-block !important;
+    margin: 0 auto 10px auto !important;
+}
+
+/* Player name */
+.registered-players .player-details h2 {
+    margin: 10px 0 !important;
+}
+
+
+/* ===== TABLET: 2 ACROSS ===== */
+@media (max-width: 900px) {
+    .registered-players {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+
+/* ===== PHONE: 1 ACROSS ===== */
+@media (max-width: 600px) {
+    .registered-players {
+        grid-template-columns: 1fr !important;
+    }
+}
