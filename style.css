@@ -3903,3 +3903,227 @@ nav a:active {
         font-size: 26px;
     }
 }
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* General page */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Header */
+    header {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    /* Navigation */
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    /* Hero section */
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding: 60px 20px;
+        width: 100%;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        line-height: 1.05;
+        word-wrap: break-word;
+    }
+
+    .hero p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    /* Explore section */
+    .explore {
+        width: 100%;
+        padding: 50px 20px;
+    }
+
+    .explore h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    /* Explore cards */
+    .cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        max-height: 350px;
+        object-fit: cover;
+    }
+
+    /* Registered players */
+    .registered-players {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .registered-players h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .section-intro {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Players grid */
+    .players-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Player card */
+    .player-card {
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .player-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .player-info {
+        padding: 20px;
+    }
+
+    .player-info h3 {
+        font-size: 22px;
+    }
+
+    .player-info p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* Buttons */
+    .hero a,
+    .card a,
+    .hero button,
+    .card button {
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    /* Footer */
+    footer {
+        width: 100%;
+        padding: 30px 20px;
+        text-align: center;
+    }
+}
+
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .explore {
+        padding: 40px 15px;
+    }
+
+    .explore h2 {
+        font-size: 26px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .registered-players {
+        padding: 35px 15px;
+    }
+
+    .registered-players h2 {
+        font-size: 25px;
+    }
+
+    .player-card {
+        max-width: 100%;
+    }
+
+    .player-card img {
+        height: 250px;
+    }
+}
