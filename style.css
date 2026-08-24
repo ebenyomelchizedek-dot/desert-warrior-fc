@@ -4127,3 +4127,150 @@ nav a:active {
         height: 250px;
     }
 }
+/* =========================================
+   FINAL MOBILE FIX
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Header */
+    .header {
+        width: 100%;
+        min-height: auto !important;
+        padding: 15px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Logo and club name */
+    .club-brand {
+        width: 100%;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+    }
+
+    .club-brand img {
+        width: 70px !important;
+        height: 70px !important;
+        object-fit: contain !important;
+    }
+
+    .club-name h1 {
+        font-size: 22px !important;
+        margin: 0 !important;
+        line-height: 1.1 !important;
+    }
+
+    .club-name p {
+        font-size: 13px !important;
+        margin: 5px 0 0 !important;
+    }
+
+    /* Navigation */
+    .header nav,
+    nav {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 10px 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Navigation links */
+    .nav-links {
+        position: static !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .nav-links a {
+        position: static !important;
+        display: inline-block !important;
+        margin: 0 !important;
+        padding: 8px 10px !important;
+        font-size: 15px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Hero */
+    .hero {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 50px 20px !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+    }
+
+    .hero h1 {
+        font-size: 42px !important;
+        line-height: 1.05 !important;
+        margin: 0 0 20px !important;
+        word-break: normal !important;
+    }
+
+    .hero p {
+        font-size: 18px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Hero buttons */
+    .hero-buttons {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-top: 25px !important;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    /* Explore cards */
+    .cards {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 20px !important;
+    }
+
+    .card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Prevent horizontal scrolling */
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+}
