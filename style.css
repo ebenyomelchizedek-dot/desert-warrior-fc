@@ -2584,3 +2584,104 @@ header {
 .message-button:active {
     transform: scale(0.98);
 }
+/* ================================
+   MESSAGE SUCCESS PAGE
+================================ */
+
+.success-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background: linear-gradient(
+        135deg,
+        #f5f5f5,
+        #ffffff
+    );
+}
+
+.success-box {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    background: white;
+    padding: 50px 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #168a3a;
+    color: white;
+
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.success-box h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.success-box p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.success-button,
+.home-button {
+    display: inline-block;
+    margin: 15px 5px 0;
+    padding: 13px 22px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.success-button {
+    background: #c87800;
+    color: white;
+}
+
+.home-button {
+    background: #222;
+    color: white;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .success-box {
+        padding: 35px 20px;
+    }
+
+    .success-box h1 {
+        font-size: 25px;
+    }
+
+    .success-box p {
+        font-size: 15px;
+    }
+
+    .success-button,
+    .home-button {
+        display: block;
+        margin: 12px 0;
+    }
+}

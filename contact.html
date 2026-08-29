@@ -85,13 +85,21 @@
             to know about.
         </p>
 
-       <form action="https://formsubmit.co/el/cagixe" method="POST">
+      <form action="https://formsubmit.co/desertwarriors023@gmail.com"
+            method="POST">
 
-    <!-- Prevent spam -->
-    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden"
+           name="_subject"
+           value="New Supporter Message - Desert Warriors FC">
 
-    <!-- Email subject -->
-    <input type="hidden" name="_subject" value="New Message from Desert Warriors FC Supporter">
+    <input type="hidden"
+           name="_captcha"
+           value="false">
+
+    <!-- After successful submission, go to our success page -->
+    <input type="hidden"
+           name="_next"
+           value="https://ebenyonmelchizedek-dot.github.io/desert-warrior-fc/success.html">
 
     <label for="name">Your Name</label>
     <input type="text"
@@ -108,7 +116,10 @@
            required>
 
     <label for="type">Message Type</label>
-    <select id="type" name="message_type" required>
+
+    <select id="type"
+            name="message_type"
+            required>
 
         <option value="">-- Select --</option>
         <option value="Feedback">Feedback</option>
