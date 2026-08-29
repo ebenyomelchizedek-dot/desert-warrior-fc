@@ -1206,6 +1206,7 @@ nav a.active {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    align-items: start;
 }
 
 .contact-card {
@@ -2422,4 +2423,164 @@ header {
     .technical-card img {
         height: 300px;
     }
+}
+/* ==========================================
+   SUPPORTER FEEDBACK / MESSAGE SECTION
+   ========================================== */
+
+.feedback-section {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    background: #f4f4f4;
+}
+
+.feedback-box {
+    max-width: 750px;
+    margin: 0 auto;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.feedback-box h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.feedback-box > p {
+    text-align: center;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.feedback-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-box label {
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #333;
+}
+
+.feedback-box input,
+.feedback-box select,
+.feedback-box textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.feedback-box textarea {
+    resize: vertical;
+}
+
+.feedback-box input:focus,
+.feedback-box select:focus,
+.feedback-box textarea:focus {
+    outline: none;
+    border-color: #d49a00;
+}
+
+/* SEND MESSAGE BUTTON */
+
+.message-button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    background: #d49a00;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.message-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   MOBILE PHONE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .feedback-section {
+        padding: 35px 12px;
+    }
+
+    .feedback-box {
+        padding: 22px 16px;
+    }
+
+    .feedback-box h2 {
+        font-size: 25px;
+    }
+
+    .feedback-box > p {
+        font-size: 14px;
+    }
+
+    .message-button {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+/* Feedback form */
+.feedback-box {
+    position: relative;
+    z-index: 10;
+}
+
+.feedback-box form {
+    position: relative;
+    z-index: 20;
+}
+
+.feedback-box input,
+.feedback-box select,
+.feedback-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 18px;
+    box-sizing: border-box;
+}
+
+.message-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #c87900;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+.message-button:hover {
+    opacity: 0.85;
+}
+
+.message-button:active {
+    transform: scale(0.98);
 }

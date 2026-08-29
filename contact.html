@@ -36,6 +36,7 @@
 
     <div class="contact-container">
 
+        <!--EMAIL-->
         <div class="contact-card">
             <div class="contact-icon">📧</div>
             <h2>Email Us</h2>
@@ -46,6 +47,7 @@
             </a>
         </div>
 
+        <!--PHONE-->
         <div class="contact-card">
             <div class="contact-icon">📞</div>
             <h2>Call Us</h2>
@@ -59,7 +61,7 @@
                 0748769548
             </a>
         </div>
-
+        <!-- LOCATION -->
         <div class="contact-card">
             <div class="contact-icon">📍</div>
             <h2>Our Location</h2>
@@ -70,6 +72,69 @@
         </div>
 
     </div>
+    <!-- SUPPORTER FEEDBACK SECTION -->
+<section class="feedback-section">
+
+    <div class="feedback-box">
+
+        <h2>Send Us a Message</h2>
+
+        <p>
+            We value your support. Send us your feedback, suggestions,
+            questions, or any concern you would like Desert Warriors FC
+            to know about.
+        </p>
+
+       <form action="https://formsubmit.co/desertwarriors023@gmail.com" method="POST">
+
+    <!-- Prevent spam -->
+    <input type="hidden" name="_captcha" value="true">
+
+    <!-- Email subject -->
+    <input type="hidden" name="_subject" value="New Message from Desert Warriors FC Supporter">
+
+    <label for="name">Your Name</label>
+    <input type="text"
+           id="name"
+           name="name"
+           placeholder="Enter your name"
+           required>
+
+    <label for="email">Your Email</label>
+    <input type="email"
+           id="email"
+           name="email"
+           placeholder="Enter your email"
+           required>
+
+    <label for="type">Message Type</label>
+    <select id="type" name="message_type" required>
+
+        <option value="">-- Select --</option>
+        <option value="Feedback">Feedback</option>
+        <option value="Suggestion">Suggestion</option>
+        <option value="Concern">Concern</option>
+        <option value="Complaint">Complaint</option>
+        <option value="Question">Question</option>
+
+    </select>
+
+    <label for="message">Your Message</label>
+
+    <textarea id="message"
+              name="message"
+              rows="6"
+              placeholder="Write your message here..."
+              required></textarea>
+
+    <button type="submit" class="message-button">
+        💬 Send Us a Message
+    </button>
+
+</form>
+    </div>
+
+</section>
     <section class="support-section">
     <div class="support-box">
 
