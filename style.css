@@ -2685,3 +2685,5773 @@ header {
         margin: 12px 0;
     }
 }
+/* =====================================================
+   DESERT WARRIORS FC - NEW PROFESSIONAL HOME PAGE
+===================================================== */
+
+/* HOME HERO */
+
+.home-hero {
+    min-height: 650px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.70)
+        ),
+        url("players_photo.jpg") center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    border-bottom: 4px solid var(--gold);
+}
+
+.home-hero-overlay {
+    width: 100%;
+    padding: 80px 20px;
+}
+
+.home-hero-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero-tag {
+    display: inline-block;
+
+    color: var(--gold);
+
+    font-size: 17px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.home-hero h1 {
+    color: white;
+
+    font-size: clamp(42px, 7vw, 78px);
+
+    line-height: 1.05;
+
+    margin-bottom: 15px;
+
+    font-weight: 900;
+}
+
+.hero-line {
+    width: 100px;
+    height: 5px;
+
+    background: var(--gold);
+
+    margin: 20px auto;
+}
+
+.home-hero h2 {
+    color: var(--gold);
+
+    font-size: 27px;
+
+    margin-bottom: 20px;
+}
+
+.home-hero p {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    color: #eeeeee;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* HERO BUTTONS */
+
+.home-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.home-btn {
+    display: inline-block;
+
+    padding: 14px 26px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: var(--gold);
+
+    color: #111;
+}
+
+.primary-btn:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    border: 2px solid white;
+
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: white;
+
+    color: #111;
+}
+
+
+/* CLUB FACTS */
+
+.club-facts {
+    max-width: 1200px;
+
+    margin: -45px auto 0;
+
+    padding: 0 20px;
+
+    position: relative;
+
+    z-index: 5;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.fact-card {
+    background: white;
+
+    padding: 28px 18px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    border-top: 4px solid var(--gold);
+
+    box-shadow: var(--shadow);
+}
+
+.fact-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.fact-card h3 {
+    color: var(--dark);
+
+    margin-bottom: 7px;
+}
+
+.fact-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* HOME ABOUT */
+
+.home-about {
+    padding: 90px 7% 70px;
+
+    background: var(--white);
+}
+
+.home-section-heading {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.home-section-heading span {
+    color: #b18c20;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.home-section-heading h2 {
+    color: var(--dark);
+
+    font-size: 38px;
+
+    margin: 8px 0;
+}
+
+.home-about-content {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 35px;
+
+    align-items: stretch;
+}
+
+.home-about-text {
+    padding: 35px;
+
+    background: #f7f7f7;
+
+    border-radius: 12px;
+
+    border-left: 5px solid var(--gold);
+}
+
+.home-about-text p {
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.read-more-btn {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 11px 20px;
+
+    background: var(--dark);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+}
+
+.read-more-btn:hover {
+    background: var(--gold);
+
+    color: #111;
+}
+
+.home-about-highlight {
+    background: #111827;
+
+    color: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    border-top: 5px solid var(--gold);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.highlight-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.home-about-highlight h3 {
+    color: var(--gold);
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+.home-about-highlight p {
+    line-height: 1.8;
+
+    color: #dddddd;
+}
+
+
+/* EXPLORE */
+
+.home-explore {
+    padding: 75px 6%;
+
+    background: #f4f5f7;
+}
+
+.home-cards {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.home-card {
+    background: white;
+
+    padding: 30px 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    border-bottom: 4px solid var(--gold);
+
+    transition: 0.3s;
+}
+
+.home-card:hover {
+    transform: translateY(-7px);
+}
+
+.home-card-icon {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.home-card h3 {
+    color: var(--dark);
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.home-card p {
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+.home-card a {
+    color: #9b7815;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.home-card a:hover {
+    color: var(--dark);
+}
+
+
+/* CALL TO ACTION */
+
+.home-cta {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.78)
+        ),
+        url("DWFC1.jpg") center / cover no-repeat;
+}
+
+.home-cta-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.home-cta span {
+    color: var(--gold);
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.home-cta h2 {
+    font-size: 40px;
+
+    margin: 12px 0 15px;
+}
+
+.home-cta p {
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+
+    background: var(--gold);
+
+    color: #111;
+
+    padding: 14px 28px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-3px);
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: #080808;
+
+    color: white;
+
+    padding-top: 50px;
+}
+
+.footer-content {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 25px 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+.footer h3 {
+    color: var(--gold);
+
+    margin-bottom: 12px;
+}
+
+.footer p {
+    color: #cccccc;
+
+    margin-bottom: 7px;
+}
+
+.footer a {
+    color: #cccccc;
+
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   MOBILE HOME PAGE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .home-hero {
+        min-height: 600px;
+    }
+
+    .home-hero h1 {
+        font-size: 42px;
+    }
+
+    .home-hero h2 {
+        font-size: 22px;
+    }
+
+    .home-hero p {
+        font-size: 15px;
+    }
+
+    .club-facts {
+        margin-top: 0;
+
+        padding: 25px 15px;
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-about {
+        padding: 55px 20px;
+    }
+
+    .home-section-heading h2 {
+        font-size: 30px;
+    }
+
+    .home-about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .home-explore {
+        padding: 55px 20px;
+    }
+
+    .home-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .home-cta h2 {
+        font-size: 30px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .club-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .home-hero {
+        min-height: 580px;
+    }
+
+    .home-hero h1 {
+        font-size: 36px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+    }
+
+    .home-btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
+/* =====================================================
+   ABOUT PAGE
+===================================================== */
+
+.about-hero {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.72)
+        ),
+        url("players_photo.jpg") center / cover no-repeat;
+
+    border-bottom: 4px solid var(--gold);
+}
+
+.about-hero-content {
+    max-width: 850px;
+    padding: 70px 20px;
+}
+
+.about-hero-content span {
+    color: var(--gold);
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.about-hero-content h1 {
+    color: white;
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    margin: 15px 0;
+}
+
+.about-hero-content p {
+    color: #eeeeee;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.about-hero-line,
+.about-line {
+    width: 80px;
+    height: 4px;
+
+    background: var(--gold);
+
+    margin: 18px auto;
+}
+
+
+/* INTRODUCTION */
+
+.about-introduction {
+    padding: 85px 7%;
+
+    background: white;
+}
+
+.about-heading {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.about-heading span {
+    color: #a98213;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.about-heading h2 {
+    color: var(--dark);
+
+    font-size: 38px;
+
+    margin: 8px 0;
+}
+
+.about-intro-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 0.9fr;
+
+    gap: 40px;
+
+    align-items: stretch;
+}
+
+.about-story {
+    background: #f6f6f6;
+
+    padding: 35px;
+
+    border-left: 5px solid var(--gold);
+
+    border-radius: 12px;
+}
+
+.about-story p {
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.about-facts-box {
+    background: #111827;
+
+    color: white;
+
+    padding: 32px;
+
+    border-radius: 12px;
+
+    border-top: 5px solid var(--gold);
+}
+
+.about-facts-box h3 {
+    color: var(--gold);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.profile-item {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #374151;
+}
+
+.profile-item strong {
+    color: white;
+
+    margin-bottom: 5px;
+}
+
+.profile-item span {
+    color: #cccccc;
+
+    font-size: 14px;
+}
+
+
+/* VISION & MISSION */
+
+.vision-mission {
+    padding: 80px 7%;
+
+    background: #101010;
+}
+
+.light-heading span {
+    color: var(--gold);
+}
+
+.light-heading h2 {
+    color: white;
+}
+
+.vision-mission-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.vision-card,
+.mission-card {
+    padding: 40px;
+
+    border-radius: 12px;
+
+    background: #1b1b1b;
+
+    border: 1px solid #333;
+
+    text-align: center;
+}
+
+.vision-card {
+    border-top: 5px solid var(--gold);
+}
+
+.mission-card {
+    border-top: 5px solid #2f7d32;
+}
+
+.big-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.vision-card h3,
+.mission-card h3 {
+    color: var(--gold);
+
+    font-size: 27px;
+
+    margin-bottom: 15px;
+}
+
+.vision-card p,
+.mission-card p {
+    color: #dddddd;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* VALUES */
+
+.values-section {
+    padding: 80px 6%;
+
+    background: #f5f5f5;
+}
+
+.values-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+.value-card {
+    background: white;
+
+    padding: 28px 20px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+}
+
+.value-number {
+    color: var(--gold);
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.value-card h3 {
+    color: var(--dark);
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    color: var(--muted);
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* OBJECTIVES */
+
+.objectives-section {
+    padding: 80px 6%;
+
+    background: #111827;
+}
+
+.objectives-section .about-heading h2 {
+    color: white;
+}
+
+.objectives-grid {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.objective-card {
+    background: #1d2735;
+
+    padding: 30px;
+
+    border-radius: 11px;
+
+    border-left: 4px solid var(--gold);
+}
+
+.objective-card > span {
+    font-size: 35px;
+}
+
+.objective-card h3 {
+    color: white;
+
+    margin: 15px 0 10px;
+}
+
+.objective-card p {
+    color: #cccccc;
+
+    line-height: 1.7;
+}
+
+
+/* ACADEMY */
+
+.academy-section {
+    padding: 80px 7%;
+
+    background: white;
+}
+
+.academy-content {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    padding: 45px;
+
+    border-radius: 15px;
+
+    background: #f5f5f5;
+
+    border-top: 5px solid var(--gold);
+}
+
+.academy-icon {
+    font-size: 75px;
+
+    text-align: center;
+}
+
+.academy-content span {
+    color: #a98213;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.academy-content h2 {
+    color: var(--dark);
+
+    font-size: 34px;
+
+    margin: 8px 0 15px;
+}
+
+.academy-content p {
+    color: #555;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+.academy-points {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.academy-points div {
+    padding: 10px 15px;
+
+    background: white;
+
+    border-radius: 6px;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* FUTURE */
+
+.future-section {
+    padding: 80px 6%;
+
+    background: #f5f5f5;
+}
+
+.future-content {
+    max-width: 1050px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.future-content > p {
+    max-width: 800px;
+
+    margin: 0 auto 40px;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+.future-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.future-grid > div {
+    background: white;
+
+    padding: 28px 20px;
+
+    border-radius: 10px;
+
+    box-shadow: var(--shadow);
+}
+
+.future-grid strong {
+    color: var(--gold);
+
+    font-size: 24px;
+}
+
+.future-grid h3 {
+    color: var(--dark);
+
+    margin: 10px 0;
+}
+
+.future-grid p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ABOUT CTA */
+
+.about-cta {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.78)
+        ),
+        url("players_photo.jpg") center / cover no-repeat;
+}
+
+.about-cta > div {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.about-cta span {
+    color: var(--gold);
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.about-cta h2 {
+    color: white;
+
+    font-size: 40px;
+
+    margin: 12px 0;
+}
+
+.about-cta p {
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.about-cta a {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    background: var(--gold);
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 7px;
+}
+
+.about-cta a:hover {
+    background: var(--gold-light);
+}
+
+
+/* =====================================================
+   ABOUT PAGE MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .about-intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .objectives-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .future-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        min-height: 400px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 40px;
+    }
+
+    .about-hero-content p {
+        font-size: 15px;
+    }
+
+    .about-introduction,
+    .vision-mission,
+    .values-section,
+    .objectives-section,
+    .academy-section,
+    .future-section {
+        padding: 60px 20px;
+    }
+
+    .about-heading h2 {
+        font-size: 30px;
+    }
+
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .objectives-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-content {
+        grid-template-columns: 1fr;
+
+        padding: 30px 20px;
+
+        text-align: center;
+    }
+
+    .academy-content h2 {
+        font-size: 29px;
+    }
+
+    .academy-points {
+        justify-content: center;
+    }
+
+    .future-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta h2 {
+        font-size: 30px;
+    }
+
+}
+/* =====================================================
+   DESERT WARRIORS FC - NEW TEAM PAGE
+   These classes are independent from the old Team CSS.
+===================================================== */
+
+
+/* =========================
+   TEAM HERO
+========================= */
+
+.team-page-hero {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.72),
+            rgba(0,0,0,0.72)
+        ),
+        url("players_photo.jpg") center / cover no-repeat;
+
+    border-bottom: 4px solid #d4af37;
+}
+
+.team-page-hero-content {
+    max-width: 850px;
+    padding: 70px 20px;
+}
+
+.team-page-hero-content span {
+    color: #d4af37;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.team-page-hero-content h1 {
+    color: white;
+
+    font-size: clamp(42px, 6vw, 65px);
+
+    margin: 15px 0;
+}
+
+.team-page-hero-content p {
+    color: #eeeeee;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.team-hero-line {
+    width: 85px;
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 20px auto;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.team-section-heading {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+}
+
+.team-section-heading span {
+    color: #a98213;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.team-section-heading h2 {
+    color: #111827;
+
+    font-size: 38px;
+
+    margin: 8px 0;
+}
+
+.team-section-heading p {
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.team-section-line {
+    width: 75px;
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 15px auto 18px;
+}
+
+.light-heading h2 {
+    color: white;
+}
+
+.light-heading p {
+    color: #cccccc;
+}
+
+.light-heading span {
+    color: #d4af37;
+}
+
+
+/* =========================
+   REGISTERED PLAYERS
+========================= */
+
+.registered-players-new {
+    padding: 80px 6%;
+
+    background: #f5f5f5;
+}
+
+.players-grid-new {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* PLAYER CARD */
+
+.player-card-new {
+    min-width: 0;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.player-card-new:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.18);
+}
+
+
+/* PLAYER PHOTO */
+
+.player-image {
+    width: 100%;
+
+    height: 280px;
+
+    background: #eeeeee;
+
+    overflow: hidden;
+}
+
+.player-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* PLAYER INFORMATION */
+
+.player-details {
+    padding: 20px;
+
+    text-align: center;
+}
+
+.player-label {
+    color: #a98213;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.player-details h3 {
+    color: #111827;
+
+    font-size: 20px;
+
+    margin: 8px 0;
+}
+
+.player-details p {
+    color: #666;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =========================
+   TECHNICAL DEPARTMENT
+========================= */
+
+.technical-section-new {
+    padding: 80px 6%;
+
+    background: #101010;
+}
+
+.technical-grid-new {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =========================
+   STAFF CARDS
+========================= */
+
+.staff-card-new {
+    min-width: 0;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.15);
+
+    transition: transform 0.3s ease;
+}
+
+.staff-card-new:hover {
+    transform: translateY(-7px);
+}
+
+.staff-image {
+    width: 100%;
+
+    height: 280px;
+
+    background: #eeeeee;
+
+    overflow: hidden;
+}
+
+.staff-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.staff-details {
+    padding: 20px;
+
+    text-align: center;
+}
+
+.staff-details span {
+    color: #a98213;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.staff-details h3 {
+    color: #111827;
+
+    font-size: 21px;
+
+    margin: 8px 0;
+}
+
+.staff-details p {
+    color: #666;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   MANAGEMENT
+========================= */
+
+.management-section-new {
+    padding: 80px 6%;
+
+    background: white;
+}
+
+.management-grid-new {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =========================
+   GOVERNING BODY
+========================= */
+
+.governing-section-new {
+    padding: 80px 6%;
+
+    background: #111827;
+}
+
+.governing-grid-new {
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.governing-card-new {
+    grid-column: span 1;
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.25);
+}
+
+.governing-image {
+    width: 100%;
+
+    height: 280px;
+
+    background: #eeeeee;
+}
+
+.governing-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.governing-details {
+    padding: 22px;
+
+    text-align: center;
+}
+
+.governing-details span {
+    color: #a98213;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.governing-details h3 {
+    color: #111827;
+
+    font-size: 21px;
+
+    margin: 8px 0;
+}
+
+.governing-details p {
+    color: #666;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   YOUTH DEVELOPMENT
+========================= */
+
+.team-youth-section {
+    padding: 80px 7%;
+
+    background: white;
+}
+
+.team-youth-content {
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    display: grid;
+
+    grid-template-columns: 130px 1fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    background: #f5f5f5;
+
+    border-top: 5px solid #d4af37;
+
+    border-radius: 12px;
+}
+
+.youth-icon-new {
+    font-size: 70px;
+
+    text-align: center;
+}
+
+.team-youth-content span {
+    color: #a98213;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.team-youth-content h2 {
+    color: #111827;
+
+    font-size: 32px;
+
+    margin: 8px 0 15px;
+}
+
+.team-youth-content p {
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   TEAM PAGE RESPONSIVE DESIGN
+===================================================== */
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .players-grid-new {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .technical-grid-new {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .management-grid-new {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .governing-grid-new {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* SMALL TABLET / LARGE PHONE */
+
+@media (max-width: 700px) {
+
+    .registered-players-new,
+    .technical-section-new,
+    .management-section-new,
+    .governing-section-new,
+    .team-youth-section {
+        padding: 60px 20px;
+    }
+
+    .team-page-hero {
+        min-height: 380px;
+    }
+
+    .team-page-hero-content h1 {
+        font-size: 42px;
+    }
+
+    .team-section-heading h2 {
+        font-size: 30px;
+    }
+
+    .players-grid-new {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .technical-grid-new,
+    .management-grid-new,
+    .governing-grid-new {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .player-image,
+    .staff-image,
+    .governing-image {
+        height: 240px;
+    }
+
+    .team-youth-content {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 30px 20px;
+    }
+
+}
+
+
+/* SMALL PHONE */
+
+@media (max-width: 480px) {
+
+    .team-page-hero {
+        min-height: 350px;
+    }
+
+    .team-page-hero-content {
+        padding: 50px 18px;
+    }
+
+    .team-page-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .team-page-hero-content p {
+        font-size: 15px;
+    }
+
+    /*
+       ONE PLAYER PER ROW ON VERY SMALL PHONES
+    */
+
+    .players-grid-new {
+        grid-template-columns: 1fr;
+    }
+
+    .technical-grid-new,
+    .management-grid-new,
+    .governing-grid-new {
+        grid-template-columns: 1fr;
+    }
+
+    .player-image,
+    .staff-image,
+    .governing-image {
+        height: 300px;
+    }
+
+    .team-youth-content h2 {
+        font-size: 27px;
+    }
+
+}
+/* =====================================================
+   MATCHES & FIXTURES PAGE
+===================================================== */
+
+
+/* =========================
+   MATCHES HERO
+========================= */
+
+.matches-hero {
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("players_photo.jpg") center / cover no-repeat;
+
+    border-bottom: 4px solid #d4af37;
+}
+
+
+.matches-hero-content {
+    max-width: 850px;
+
+    padding: 70px 20px;
+}
+
+
+.matches-hero-content span {
+    color: #d4af37;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+
+.matches-hero-content h1 {
+    color: white;
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    margin: 15px 0;
+}
+
+
+.matches-hero-content p {
+    color: #eeeeee;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+.matches-hero-line {
+    width: 85px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 20px auto;
+}
+
+
+/* =========================
+   SEASON STATUS
+========================= */
+
+.season-status {
+    padding: 55px 6%;
+
+    background: white;
+}
+
+
+.season-status-box {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 30px;
+
+    align-items: center;
+
+    padding: 35px;
+
+    background: #f5f5f5;
+
+    border-left: 5px solid #d4af37;
+
+    border-radius: 12px;
+}
+
+
+.season-icon {
+    font-size: 60px;
+
+    text-align: center;
+}
+
+
+.season-status-box span {
+    color: #a98213;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.season-status-box h2 {
+    color: #111827;
+
+    margin: 7px 0 10px;
+
+    font-size: 30px;
+}
+
+
+.season-status-box p {
+    color: #555;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.matches-heading {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+}
+
+
+.matches-heading span {
+    color: #a98213;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.matches-heading h2 {
+    color: #111827;
+
+    font-size: 38px;
+
+    margin: 8px 0;
+}
+
+
+.matches-heading p {
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+.matches-line {
+    width: 75px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 15px auto 18px;
+}
+
+
+/* =========================
+   UPCOMING FIXTURES
+========================= */
+
+.fixtures-section {
+    padding: 80px 6%;
+
+    background: #f5f5f5;
+}
+
+
+.fixtures-container {
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   NO FIXTURES
+========================= */
+
+.no-fixtures {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.10);
+
+    border-top: 4px solid #d4af37;
+}
+
+
+.no-fixtures-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+.no-fixtures h3 {
+    color: #111827;
+
+    font-size: 25px;
+
+    margin: 10px 0;
+}
+
+
+.no-fixtures p {
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FIXTURE CARD
+========================= */
+
+.fixture-card {
+    display: grid;
+
+    grid-template-columns: 110px 1fr 220px;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.10);
+
+    border-left: 5px solid #d4af37;
+}
+
+
+.fixture-date {
+    text-align: center;
+
+    border-right: 1px solid #ddd;
+
+    padding-right: 20px;
+}
+
+
+.fixture-date strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 40px;
+}
+
+
+.fixture-date span {
+    color: #a98213;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.fixture-info {
+    text-align: center;
+}
+
+
+.fixture-info > span {
+    color: #a98213;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.fixture-info h3 {
+    color: #111827;
+
+    margin: 8px 0;
+
+    font-size: 20px;
+}
+
+
+.fixture-info p {
+    color: #d4af37;
+
+    font-weight: bold;
+
+    margin: 4px 0;
+}
+
+
+.fixture-time {
+    text-align: center;
+}
+
+
+.fixture-time strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+.fixture-time span {
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results-section {
+    padding: 80px 6%;
+
+    background: #101010;
+}
+
+
+.results-section .matches-heading h2 {
+    color: white;
+}
+
+
+.results-section .matches-heading p {
+    color: #cccccc;
+}
+
+
+.results-section .matches-heading span {
+    color: #d4af37;
+}
+
+
+.results-container {
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+
+.no-results {
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background: #1b1b1b;
+
+    border-radius: 12px;
+
+    border: 1px solid #333;
+}
+
+
+.no-results-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+.no-results h3 {
+    color: white;
+
+    font-size: 25px;
+
+    margin: 10px 0;
+}
+
+
+.no-results p {
+    color: #bbbbbb;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HOME GROUND
+========================= */
+
+.home-ground-section {
+    padding: 80px 7%;
+
+    background: white;
+}
+
+
+.ground-content {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 130px 1fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    padding: 45px;
+
+    background: #f5f5f5;
+
+    border-radius: 12px;
+
+    border-top: 5px solid #d4af37;
+}
+
+
+.ground-icon {
+    font-size: 65px;
+
+    text-align: center;
+}
+
+
+.ground-content span {
+    color: #a98213;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.ground-content h2 {
+    color: #111827;
+
+    font-size: 30px;
+
+    margin: 8px 0 15px;
+}
+
+
+.ground-content p {
+    color: #555;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   MATCHES CTA
+========================= */
+
+.matches-cta {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.80),
+            rgba(0,0,0,0.80)
+        ),
+        url("players_photo.jpg") center / cover no-repeat;
+}
+
+
+.matches-cta > div {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+
+.matches-cta span {
+    color: #d4af37;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.matches-cta h2 {
+    color: white;
+
+    font-size: 40px;
+
+    margin: 12px 0;
+}
+
+
+.matches-cta p {
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+.matches-cta a {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 7px;
+}
+
+
+.matches-cta a:hover {
+    background: #f0d36a;
+}
+
+
+/* =====================================================
+   MATCHES MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .season-status-box {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .fixture-card {
+        grid-template-columns: 80px 1fr;
+
+        gap: 15px;
+    }
+
+
+    .fixture-time {
+        grid-column: 1 / -1;
+
+        padding-top: 15px;
+
+        border-top: 1px solid #ddd;
+    }
+
+
+    .ground-content {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .matches-hero {
+        min-height: 350px;
+    }
+
+
+    .matches-hero-content {
+        padding: 50px 18px;
+    }
+
+
+    .matches-hero-content h1 {
+        font-size: 35px;
+    }
+
+
+    .matches-hero-content p {
+        font-size: 15px;
+    }
+
+
+    .season-status,
+    .fixtures-section,
+    .results-section,
+    .home-ground-section {
+        padding: 60px 20px;
+    }
+
+
+    .matches-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .season-status-box {
+        padding: 28px 20px;
+    }
+
+
+    .season-status-box h2 {
+        font-size: 25px;
+    }
+
+
+    .fixture-card {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 22px;
+    }
+
+
+    .fixture-date {
+        border-right: none;
+
+        border-bottom: 1px solid #ddd;
+
+        padding-right: 0;
+
+        padding-bottom: 15px;
+    }
+
+
+    .fixture-time {
+        grid-column: auto;
+
+        border-top: none;
+    }
+
+
+    .ground-content {
+        padding: 30px 20px;
+    }
+
+
+    .ground-content h2 {
+        font-size: 26px;
+    }
+
+
+    .matches-cta h2 {
+        font-size: 30px;
+    }
+
+}
+/* =====================================================
+   BEAUTIFUL NEWS PAGE
+   DESERT WARRIORS FC
+===================================================== */
+
+
+/* =====================================================
+   NEWS HERO
+===================================================== */
+
+.beautiful-news-hero {
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,0.72),
+            rgba(0,0,0,0.72)
+        ),
+
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+    border-bottom: 4px solid #d4af37;
+
+}
+
+
+.beautiful-news-overlay {
+
+    max-width: 850px;
+
+    padding: 40px 20px;
+
+}
+
+
+.beautiful-news-overlay span {
+
+    color: #d4af37;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+}
+
+
+.beautiful-news-overlay h1 {
+
+    color: white;
+
+    font-size: clamp(
+        45px,
+        7vw,
+        75px
+    );
+
+    margin: 15px 0;
+
+    letter-spacing: 2px;
+
+}
+
+
+.beautiful-news-overlay p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #eeeeee;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+
+.gold-divider {
+
+    width: 90px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 20px auto;
+
+}
+
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.news-introduction {
+
+    padding: 75px 20px;
+
+    background: white;
+
+    text-align: center;
+
+}
+
+
+.news-intro-text {
+
+    max-width: 850px;
+
+    margin: auto;
+
+}
+
+
+.news-intro-text > span {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.news-intro-text h2 {
+
+    color: #111827;
+
+    font-size: 38px;
+
+    margin: 10px 0;
+
+}
+
+
+.news-intro-text p {
+
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+.small-gold-line {
+
+    width: 65px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 17px auto;
+
+}
+
+
+/* =====================================================
+   SECTION TITLES
+===================================================== */
+
+.section-title {
+
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+
+}
+
+
+.section-title > span {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.section-title h2 {
+
+    color: #111827;
+
+    font-size: 40px;
+
+    margin: 10px 0;
+
+}
+
+
+.section-title p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   FEATURED NEWS
+===================================================== */
+
+.featured-news-section {
+
+    padding: 85px 6%;
+
+    background: #f5f5f5;
+
+}
+
+
+.featured-news-card {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr;
+
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.12);
+
+}
+
+
+.featured-news-image {
+
+    min-height: 400px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+}
+
+
+.featured-news-image > span {
+
+    color: white;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+}
+
+
+.featured-label {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    padding: 8px 14px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+}
+
+
+.featured-news-content {
+
+    padding: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.featured-category {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.featured-news-content h2 {
+
+    color: #111827;
+
+    font-size: 32px;
+
+    margin: 12px 0 18px;
+
+}
+
+
+.featured-news-content p {
+
+    color: #666;
+
+    line-height: 1.8;
+
+}
+
+
+.featured-read-more {
+
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: 15px;
+
+    padding: 13px 22px;
+
+    background: #111827;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+
+}
+
+
+.featured-read-more:hover {
+
+    background: #d4af37;
+
+    color: #111;
+
+}
+
+
+/* =====================================================
+   LATEST NEWS
+===================================================== */
+
+.beautiful-news-section {
+
+    padding: 90px 6%;
+
+    background: white;
+
+}
+
+
+.beautiful-news-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+    gap: 30px;
+
+}
+
+
+/* =====================================================
+   NEWS CARD
+===================================================== */
+
+.beautiful-news-card {
+
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0,0,0,0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.beautiful-news-card:hover {
+
+    transform: translateY(-9px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,0.16);
+
+}
+
+
+/* =====================================================
+   NEWS CARD IMAGE
+===================================================== */
+
+.beautiful-news-image {
+
+    height: 230px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.55)
+        ),
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+}
+
+
+.beautiful-news-image > span {
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.news-bg-1 {
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.58),
+            rgba(0,0,0,0.58)
+        ),
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+}
+
+
+.news-bg-2 {
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.58),
+            rgba(0,0,0,0.58)
+        ),
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+}
+
+
+.news-bg-3 {
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.58),
+            rgba(0,0,0,0.58)
+        ),
+        url("clubs_photo.jpg")
+        center / cover no-repeat;
+
+}
+
+
+.news-bg-4,
+.news-bg-5,
+.news-bg-6 {
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.58),
+            rgba(0,0,0,0.58)
+        ),
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+}
+
+
+/* =====================================================
+   NEWS NUMBER
+===================================================== */
+
+.news-number {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #d4af37;
+
+    color: #111;
+
+    font-weight: bold;
+
+    border-radius: 50%;
+
+}
+
+
+/* =====================================================
+   NEWS CONTENT
+===================================================== */
+
+.beautiful-news-content {
+
+    padding: 27px;
+
+}
+
+
+.beautiful-news-content .news-category {
+
+    color: #a98213;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.beautiful-news-content h3 {
+
+    color: #111827;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    margin: 9px 0 12px;
+
+}
+
+
+.beautiful-news-content p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   READ MORE
+===================================================== */
+
+.beautiful-read-more {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eeeeee;
+
+    color: #111827;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+}
+
+
+.beautiful-read-more span {
+
+    font-size: 20px;
+
+    color: #a98213;
+
+    transition: 0.3s;
+
+}
+
+
+.beautiful-read-more:hover span {
+
+    transform: translateX(7px);
+
+}
+
+
+/* =====================================================
+   CLUB UPDATE
+===================================================== */
+
+.club-update-section {
+
+    padding: 70px 6%;
+
+    background: #f5f5f5;
+
+}
+
+
+.club-update-box {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    gap: 25px;
+
+    align-items: center;
+
+    background: white;
+
+    border-left: 5px solid #d4af37;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.08);
+
+}
+
+
+.update-icon {
+
+    font-size: 55px;
+
+    text-align: center;
+
+}
+
+
+.update-content span {
+
+    color: #a98213;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.update-content h2 {
+
+    color: #111827;
+
+    margin: 8px 0;
+
+}
+
+
+.update-content p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   SUPPORTERS
+===================================================== */
+
+.supporters-news-section {
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,0.82),
+            rgba(0,0,0,0.82)
+        ),
+
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+}
+
+
+.supporters-news-content {
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+
+.supporters-news-content > span {
+
+    color: #d4af37;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.supporters-news-content h2 {
+
+    color: white;
+
+    font-size: 42px;
+
+    margin: 10px 0;
+
+}
+
+
+.supporters-news-content p {
+
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+}
+
+
+.supporters-news-content a {
+
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+
+}
+
+
+.supporters-news-content a:hover {
+
+    background: white;
+
+}
+
+
+/* =====================================================
+   NEWS FOOTER
+===================================================== */
+
+.footer-news-content {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 50px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 40px;
+
+}
+
+
+.footer-news-content h3 {
+
+    color: #d4af37;
+
+}
+
+
+.footer-news-content p {
+
+    color: #cccccc;
+
+    line-height: 1.7;
+
+}
+
+
+.footer-news-content a {
+
+    color: #cccccc;
+
+    text-decoration: none;
+
+}
+
+
+.footer-news-content a:hover {
+
+    color: #d4af37;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .featured-news-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .featured-news-image {
+
+        min-height: 300px;
+
+    }
+
+
+    .beautiful-news-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+
+    }
+
+
+    .footer-news-content {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .beautiful-news-hero {
+
+        min-height: 400px;
+
+    }
+
+
+    .beautiful-news-overlay h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .beautiful-news-overlay p {
+
+        font-size: 15px;
+
+    }
+
+
+    .news-introduction,
+    .featured-news-section,
+    .beautiful-news-section {
+
+        padding: 60px 20px;
+
+    }
+
+
+    .news-intro-text h2,
+    .section-title h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .featured-news-image {
+
+        min-height: 250px;
+
+    }
+
+
+    .featured-news-image > span {
+
+        font-size: 25px;
+
+    }
+
+
+    .featured-news-content {
+
+        padding: 30px 22px;
+
+    }
+
+
+    .featured-news-content h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    .beautiful-news-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .club-update-box {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 30px 20px;
+
+    }
+
+
+    .supporters-news-section {
+
+        padding: 75px 20px;
+
+    }
+
+
+    .supporters-news-content h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .supporters-news-content p {
+
+        font-size: 15px;
+
+    }
+
+
+    .footer-news-content {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+}
+/* =====================================================
+   NEW DESERT WARRIORS GALLERY
+===================================================== */
+
+
+/* =====================================================
+   GALLERY HERO
+===================================================== */
+
+.new-gallery-hero {
+
+    min-height: 470px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,0.72),
+            rgba(0,0,0,0.72)
+        ),
+
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+    border-bottom: 4px solid #d4af37;
+
+}
+
+
+.gallery-hero-content {
+
+    max-width: 850px;
+
+    padding: 40px 20px;
+
+}
+
+
+.gallery-hero-content > span {
+
+    color: #d4af37;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+}
+
+
+.gallery-hero-content h1 {
+
+    color: white;
+
+    font-size: clamp(
+        45px,
+        7vw,
+        75px
+    );
+
+    margin: 15px 0;
+
+    letter-spacing: 2px;
+
+}
+
+
+.gallery-hero-content p {
+
+    color: #eeeeee;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+
+.gallery-gold-line {
+
+    width: 90px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 20px auto;
+
+}
+
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.gallery-introduction {
+
+    padding: 75px 20px;
+
+    text-align: center;
+
+    background: white;
+
+}
+
+
+.gallery-introduction > span {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.gallery-introduction h2 {
+
+    color: #111827;
+
+    font-size: 38px;
+
+    margin: 12px 0;
+
+}
+
+
+.gallery-small-line {
+
+    width: 65px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 18px auto;
+
+}
+
+
+.gallery-introduction p {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    color: #666;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   PHOTO GALLERY
+===================================================== */
+
+.new-gallery-section {
+
+    padding: 85px 6%;
+
+    background: #f5f5f5;
+
+}
+
+
+.gallery-section-title {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: 0 auto 45px;
+
+}
+
+
+.gallery-section-title > span {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.gallery-section-title h2 {
+
+    color: #111827;
+
+    font-size: 40px;
+
+    margin: 10px 0;
+
+}
+
+
+.gallery-section-title p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   GALLERY GRID
+===================================================== */
+
+.new-gallery-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+
+}
+
+
+/* =====================================================
+   GALLERY CARD
+===================================================== */
+
+.new-gallery-card {
+
+    background: white;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 22px
+        rgba(0,0,0,0.09);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.new-gallery-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.17);
+
+}
+
+
+/* =====================================================
+   GALLERY IMAGE
+===================================================== */
+
+.gallery-image {
+
+    height: 270px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111;
+
+}
+
+
+.gallery-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+
+.new-gallery-card:hover
+.gallery-image img {
+
+    transform: scale(1.08);
+
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.gallery-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.7)
+        );
+
+}
+
+
+.gallery-overlay span {
+
+    padding: 7px 13px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    border-radius: 4px;
+
+}
+
+
+/* =====================================================
+   GALLERY CAPTION
+===================================================== */
+
+.new-gallery-caption {
+
+    padding: 25px;
+
+}
+
+
+.new-gallery-caption h3 {
+
+    color: #111827;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.new-gallery-caption p {
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.new-gallery-caption small {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #a98213;
+
+    font-weight: bold;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   VIDEO SECTION
+===================================================== */
+
+.gallery-video-section {
+
+    padding: 90px 6%;
+
+    background: white;
+
+}
+
+
+.featured-video-card {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1fr;
+
+    background: #111827;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.18);
+
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-wrapper {
+
+    min-height: 400px;
+
+    background: #000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.video-wrapper video {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 400px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   VIDEO INFORMATION
+===================================================== */
+
+.video-information {
+
+    padding: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.video-information > span {
+
+    color: #d4af37;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.video-information h2 {
+
+    color: white;
+
+    font-size: 32px;
+
+    margin: 12px 0;
+
+}
+
+
+.video-gold-line {
+
+    width: 60px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 10px 0 20px;
+
+}
+
+
+.video-information p {
+
+    color: #cccccc;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   SUPPORTERS
+===================================================== */
+
+.gallery-supporters {
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,0.82),
+            rgba(0,0,0,0.82)
+        ),
+
+        url("DWFC3.jpg")
+        center / cover no-repeat;
+
+}
+
+
+.gallery-supporters-content {
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+
+.gallery-supporters-content > span {
+
+    color: #d4af37;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.gallery-supporters-content h2 {
+
+    color: white;
+
+    font-size: 42px;
+
+    margin: 12px 0;
+
+}
+
+
+.gallery-supporters-content p {
+
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 28px;
+
+}
+
+
+.gallery-supporters-content a {
+
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+
+}
+
+
+.gallery-supporters-content a:hover {
+
+    background: white;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.gallery-footer-content {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 50px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 40px;
+
+}
+
+
+.gallery-footer-content h3 {
+
+    color: #d4af37;
+
+}
+
+
+.gallery-footer-content p {
+
+    color: #cccccc;
+
+    line-height: 1.7;
+
+}
+
+
+.gallery-footer-content a {
+
+    color: #cccccc;
+
+    text-decoration: none;
+
+}
+
+
+.gallery-footer-content a:hover {
+
+    color: #d4af37;
+
+}
+
+
+.gallery-footer-bottom {
+
+    border-top: 1px solid
+                rgba(255,255,255,0.1);
+
+    text-align: center;
+
+    padding: 20px;
+
+}
+
+
+.gallery-footer-bottom p {
+
+    color: #aaaaaa;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .new-gallery-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .featured-video-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .video-wrapper,
+    .video-wrapper video {
+
+        min-height: 350px;
+
+    }
+
+
+    .gallery-footer-content {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE PHONE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .new-gallery-hero {
+
+        min-height: 400px;
+
+    }
+
+
+    .gallery-hero-content h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .gallery-hero-content p {
+
+        font-size: 15px;
+
+    }
+
+
+    .gallery-introduction {
+
+        padding: 60px 20px;
+
+    }
+
+
+    .gallery-introduction h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .new-gallery-section,
+    .gallery-video-section {
+
+        padding: 65px 20px;
+
+    }
+
+
+    .gallery-section-title h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .new-gallery-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .gallery-image {
+
+        height: 250px;
+
+    }
+
+
+    .featured-video-card {
+
+        border-radius: 10px;
+
+    }
+
+
+    .video-wrapper,
+    .video-wrapper video {
+
+        min-height: 230px;
+
+    }
+
+
+    .video-information {
+
+        padding: 30px 22px;
+
+    }
+
+
+    .video-information h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .gallery-supporters {
+
+        padding: 75px 20px;
+
+    }
+
+
+    .gallery-supporters-content h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .gallery-supporters-content p {
+
+        font-size: 15px;
+
+    }
+
+
+    .gallery-footer-content {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+}
+/* =====================================================
+   BEAUTIFUL CONTACT PAGE
+   DESERT WARRIORS FC
+===================================================== */
+
+
+/* =====================================================
+   CONTACT HERO
+===================================================== */
+
+.contact-hero-new {
+
+    min-height: 440px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.75)
+        ),
+
+        url("players_photo.jpg")
+        center / cover no-repeat;
+
+    border-bottom: 4px solid #d4af37;
+
+}
+
+
+.contact-hero-content {
+
+    max-width: 850px;
+
+    padding: 40px 20px;
+
+}
+
+
+.contact-hero-content > span {
+
+    color: #d4af37;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+}
+
+
+.contact-hero-content h1 {
+
+    color: white;
+
+    font-size: clamp(
+        40px,
+        7vw,
+        70px
+    );
+
+    margin: 15px 0;
+
+}
+
+
+.contact-hero-content p {
+
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+.contact-gold-line {
+
+    width: 85px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 20px auto;
+
+}
+
+
+/* =====================================================
+   CONTACT INFORMATION
+===================================================== */
+
+.contact-information {
+
+    padding: 80px 6%;
+
+    background: white;
+
+}
+
+
+.contact-section-title {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: auto auto 45px;
+
+}
+
+
+.contact-section-title > span {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.contact-section-title h2 {
+
+    color: #111827;
+
+    font-size: 38px;
+
+    margin: 10px 0;
+
+}
+
+
+.contact-section-title p {
+
+    color: #666;
+
+    line-height: 1.8;
+
+}
+
+
+.contact-small-line {
+
+    width: 65px;
+
+    height: 4px;
+
+    background: #d4af37;
+
+    margin: 17px auto;
+
+}
+
+
+/* =====================================================
+   CONTACT CARDS
+===================================================== */
+
+.new-contact-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.new-contact-card {
+
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border-radius: 14px;
+
+    background: #f7f7f7;
+
+    border: 1px solid #eeeeee;
+
+    transition: 0.3s;
+
+}
+
+
+.new-contact-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,0.12);
+
+}
+
+
+.new-contact-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: auto auto 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #111827;
+
+    font-size: 30px;
+
+}
+
+
+.new-contact-card h3 {
+
+    color: #111827;
+
+    font-size: 22px;
+
+}
+
+
+.new-contact-card p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+.new-contact-card a {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #a98213;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.new-contact-card a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedback-new-section {
+
+    padding: 90px 6%;
+
+    background: #f4f4f4;
+
+}
+
+
+.feedback-new-container {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.85fr 1.15fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.feedback-information > span {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.feedback-information h2 {
+
+    color: #111827;
+
+    font-size: 40px;
+
+    margin: 12px 0;
+
+}
+
+
+.feedback-information p {
+
+    color: #666;
+
+    line-height: 1.8;
+
+}
+
+
+.feedback-points {
+
+    margin-top: 25px;
+
+}
+
+
+.feedback-points p {
+
+    color: #111827;
+
+    font-weight: bold;
+
+    margin: 10px 0;
+
+}
+
+
+.feedback-form-container {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.10);
+
+}
+
+
+.feedback-form-container form {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.feedback-form-container label {
+
+    color: #111827;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.feedback-form-container input,
+.feedback-form-container select,
+.feedback-form-container textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    background: white;
+
+}
+
+
+.feedback-form-container input:focus,
+.feedback-form-container select:focus,
+.feedback-form-container textarea:focus {
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(212,175,55,0.12);
+
+}
+
+
+.feedback-form-container textarea {
+
+    resize: vertical;
+
+}
+
+
+.new-message-button {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #111827;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.new-message-button:hover {
+
+    background: #d4af37;
+
+    color: #111;
+
+}
+
+
+/* =====================================================
+   SUPPORT
+===================================================== */
+
+.support-new-section {
+
+    padding: 90px 6%;
+
+    background: white;
+
+}
+
+
+.support-new-title {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: auto auto 45px;
+
+}
+
+
+.support-new-title > span {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.support-new-title h2 {
+
+    color: #111827;
+
+    font-size: 38px;
+
+}
+
+
+.support-new-title p {
+
+    color: #666;
+
+    line-height: 1.8;
+
+}
+
+
+.support-options {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 30px;
+
+}
+
+
+.support-option {
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    background: #f6f6f6;
+
+    border-top: 5px solid #d4af37;
+
+}
+
+
+.support-icon {
+
+    font-size: 40px;
+
+}
+
+
+.support-option h3 {
+
+    color: #111827;
+
+    font-size: 25px;
+
+}
+
+
+.support-option p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+.payment-details {
+
+    padding: 15px;
+
+    margin: 20px 0;
+
+    background: white;
+
+    border-radius: 8px;
+
+    border-left: 4px solid #d4af37;
+
+}
+
+
+.payment-details p {
+
+    margin: 7px 0;
+
+    color: #333;
+
+}
+
+
+.support-option ol {
+
+    color: #555;
+
+    line-height: 1.9;
+
+    padding-left: 25px;
+
+}
+
+
+.paypal-button-new {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 14px 25px;
+
+    background: #111827;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.paypal-button-new:hover {
+
+    background: #d4af37;
+
+    color: #111;
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp-new-section {
+
+    padding: 60px 6%;
+
+    background: #f4f4f4;
+
+}
+
+
+.whatsapp-new-box {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr auto;
+
+    align-items: center;
+
+    gap: 25px;
+
+    background: #111827;
+
+    border-radius: 14px;
+
+}
+
+
+.whatsapp-big-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d4af37;
+
+    font-size: 30px;
+
+}
+
+
+.whatsapp-new-box > div:nth-child(2) > span {
+
+    color: #d4af37;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.whatsapp-new-box h2 {
+
+    color: white;
+
+    margin: 7px 0;
+
+}
+
+
+.whatsapp-new-box p {
+
+    color: #cccccc;
+
+    margin: 0;
+
+    line-height: 1.6;
+
+}
+
+
+.whatsapp-new-button {
+
+    padding: 14px 22px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+}
+
+
+.whatsapp-new-button:hover {
+
+    background: white;
+
+}
+
+
+/* =====================================================
+   SOCIAL MEDIA
+===================================================== */
+
+.new-social-section {
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background: white;
+
+}
+
+
+.new-social-section > span {
+
+    color: #a98213;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.new-social-section h2 {
+
+    color: #111827;
+
+    font-size: 35px;
+
+}
+
+
+.new-social-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+}
+
+
+.new-social {
+
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.new-social:hover {
+
+    transform: translateY(-4px);
+
+    opacity: 0.85;
+
+}
+
+
+.new-social.facebook {
+
+    background: #1877f2;
+
+}
+
+
+.new-social.twitter {
+
+    background: #111;
+
+}
+
+
+.new-social.whatsapp {
+
+    background: #25d366;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.contact-footer {
+
+    background: #111827;
+
+    color: white;
+
+}
+
+
+.contact-footer-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 50px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 40px;
+
+}
+
+
+.contact-footer h3 {
+
+    color: #d4af37;
+
+}
+
+
+.contact-footer p {
+
+    color: #cccccc;
+
+    line-height: 1.7;
+
+}
+
+
+.contact-footer-bottom {
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid
+                rgba(255,255,255,0.1);
+
+}
+
+
+.contact-footer-bottom p {
+
+    margin: 0;
+
+    color: #aaaaaa;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .new-contact-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .feedback-new-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .whatsapp-new-box {
+
+        grid-template-columns:
+            70px 1fr;
+
+    }
+
+
+    .whatsapp-new-button {
+
+        grid-column: 2;
+
+        width: fit-content;
+
+    }
+
+
+    .contact-footer-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .contact-hero-new {
+
+        min-height: 370px;
+
+    }
+
+
+    .contact-hero-content h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .contact-hero-content p {
+
+        font-size: 15px;
+
+    }
+
+
+    .contact-information,
+    .feedback-new-section,
+    .support-new-section {
+
+        padding: 60px 20px;
+
+    }
+
+
+    .contact-section-title h2,
+    .support-new-title h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .new-contact-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .feedback-information h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .feedback-form-container {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .support-options {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .support-option {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .whatsapp-new-section {
+
+        padding: 50px 20px;
+
+    }
+
+
+    .whatsapp-new-box {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 30px 20px;
+
+    }
+
+
+    .whatsapp-big-icon {
+
+        margin: auto;
+
+    }
+
+
+    .whatsapp-new-button {
+
+        grid-column: auto;
+
+        margin: auto;
+
+    }
+
+
+    .new-social-section {
+
+        padding: 60px 20px;
+
+    }
+
+
+    .new-social-section h2 {
+
+        font-size: 29px;
+
+    }
+
+
+    .new-social-links {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .new-social {
+
+        text-align: center;
+
+    }
+
+
+    .contact-footer-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+}
