@@ -8455,3 +8455,1355 @@ header {
     }
 
 }
+/* ===== PLAYING UNIT CARDS ===== */
+
+.playing.unit.leadership-grid-new {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 40px auto !important;
+}
+
+/* Individual player cards */
+.playing.unit.leadership-grid-new .staff-card-new {
+    width: 100% !important;
+    background: #fff !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+}
+
+/* Player image container */
+.playing.unit.leadership-grid-new .staff-image {
+    width: 100% !important;
+    height: 220px !important;
+    overflow: hidden !important;
+}
+
+/* Player image */
+.playing.unit.leadership-grid-new .staff-image img {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Player information */
+.playing.unit.leadership-grid-new .staff-details {
+    width: 100% !important;
+    padding: 15px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .playing.unit.leadership-grid-new {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    .playing.unit.leadership-grid-new {
+        grid-template-columns: 1fr !important;
+    }
+}
+```css
+/* =========================================
+   DESERT WARRIORS FC
+   FIXTURES + RESULTS + LEAGUE TABLE
+========================================= */
+
+.dw-fixtures-section {
+    width: 100%;
+    padding: 70px 20px;
+    background: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dw-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* HEADER */
+
+.dw-section-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.dw-season {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.dw-section-header h2 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.dw-section-header p {
+    margin-top: 10px;
+    color: #666;
+}
+
+
+/* CARD */
+
+.dw-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.dw-card-title {
+    padding: 22px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.dw-card-title h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.dw-card-title span {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* MATCHES */
+
+.dw-match {
+    display: grid;
+    grid-template-columns: 100px 1fr 45px;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.dw-match:last-child {
+    border-bottom: none;
+}
+
+
+/* DATE */
+
+.dw-date {
+    text-align: center;
+}
+
+.dw-date strong {
+    display: block;
+    font-size: 25px;
+}
+
+.dw-date span {
+    font-size: 11px;
+    color: #777;
+    font-weight: bold;
+}
+
+
+/* TEAMS */
+
+.dw-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 600;
+    position: relative;
+}
+
+.dw-teams .home {
+    font-weight: 800;
+}
+
+.dw-teams small {
+    position: absolute;
+    bottom: -17px;
+    font-size: 10px;
+    color: #777;
+}
+
+
+/* SCORE */
+
+.score {
+    min-width: 65px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.score.win {
+    color: #16803c;
+}
+
+.score.loss {
+    color: #c62828;
+}
+
+.score.draw {
+    color: #d28b00;
+}
+
+
+/* RESULT BADGE */
+
+.dw-result {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+}
+
+.dw-result.win {
+    background: #16803c;
+}
+
+.dw-result.loss {
+    background: #c62828;
+}
+
+.dw-result.draw {
+    background: #d28b00;
+}
+
+
+/* SUSPENDED */
+
+.dw-match.suspended {
+    background: #fafafa;
+}
+
+.dw-match.suspended .dw-teams {
+    color: #777;
+}
+
+.status {
+    color: #b26a00;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.suspended-badge {
+    background: #777;
+}
+
+
+/* TABLE */
+
+.dw-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.dw-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.dw-table th {
+    background: #111;
+    color: white;
+    padding: 15px 12px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.dw-table th:nth-child(2) {
+    text-align: left;
+}
+
+.dw-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 14px;
+}
+
+.dw-table td:nth-child(2) {
+    text-align: left;
+    font-weight: 600;
+}
+
+
+/* DESERT WARRIORS ROW */
+
+.dw-team-row {
+    background: #f0f0f0;
+}
+
+.dw-team-row td {
+    font-weight: 700;
+}
+
+
+/* TABLE KEY */
+
+.dw-table-key {
+    padding: 18px 25px;
+    font-size: 12px;
+    color: #777;
+    border-top: 1px solid #eee;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .dw-fixtures-section {
+        padding: 45px 10px;
+    }
+
+    .dw-section-header h2 {
+        font-size: 28px;
+    }
+
+    .dw-match {
+        grid-template-columns: 65px 1fr 35px;
+        gap: 8px;
+        padding: 15px 10px;
+    }
+
+    .dw-date strong {
+        font-size: 20px;
+    }
+
+    .dw-date span {
+        font-size: 9px;
+    }
+
+    .dw-teams {
+        gap: 8px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .score {
+        min-width: 45px;
+        font-size: 14px;
+    }
+
+    .dw-result {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .dw-card-title {
+        padding: 18px 15px;
+    }
+
+    .dw-card-title h3 {
+        font-size: 18px;
+    }
+
+}
+/* =====================================================
+   DESERT WARRIORS FC
+   MODERN NEWS ARTICLE DESIGN
+===================================================== */
+
+.dw-news-page {
+    width: 100%;
+    padding: 70px 20px;
+    background: #f4f5f7;
+}
+
+
+/* =====================================================
+   MAIN ARTICLE
+===================================================== */
+
+.dw-news-article {
+    max-width: 1050px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.dw-news-hero {
+    height: 570px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dw-news-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.dw-news-article:hover .dw-news-hero img {
+    transform: scale(1.03);
+}
+
+
+/* =====================================================
+   DARK IMAGE OVERLAY
+===================================================== */
+
+.dw-news-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.55) 40%,
+            rgba(0, 0, 0, 0.05) 100%
+        );
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.dw-news-hero-content {
+    position: absolute;
+    left: 55px;
+    right: 55px;
+    bottom: 50px;
+    color: white;
+}
+
+
+/* NEWS LABEL */
+
+.dw-news-label {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    margin-bottom: 18px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #111;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* TITLE */
+
+.dw-news-hero h1 {
+    max-width: 850px;
+
+    margin: 0 0 22px;
+
+    font-size: 48px;
+
+    line-height: 1.1;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+
+/* =====================================================
+   META
+===================================================== */
+
+.dw-news-meta {
+    display: flex;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+.dw-news-meta span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* =====================================================
+   ARTICLE BODY
+===================================================== */
+
+.dw-news-body {
+    padding: 55px 70px 65px;
+}
+
+
+/* =====================================================
+   LEAD PARAGRAPH
+===================================================== */
+
+.dw-news-lead {
+    max-width: 850px;
+
+    margin: 0 auto 40px;
+
+    font-size: 20px;
+
+    line-height: 1.85;
+
+    font-weight: 600;
+
+    color: #292929;
+}
+
+
+/* =====================================================
+   HIGHLIGHT BOX
+===================================================== */
+
+.dw-news-highlight {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    margin: 40px 0;
+
+    background: #f4f4f4;
+
+    border-left: 5px solid #111;
+
+    border-radius: 10px;
+}
+
+
+.dw-highlight-icon {
+    min-width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+.dw-news-highlight strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 18px;
+}
+
+
+.dw-news-highlight p {
+    margin: 0;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* =====================================================
+   NEWS SECTIONS
+===================================================== */
+
+.dw-news-section {
+    display: grid;
+
+    grid-template-columns: 65px 1fr;
+
+    gap: 25px;
+
+    margin: 55px 0;
+}
+
+
+.dw-section-number {
+    font-size: 14px;
+
+    font-weight: 900;
+
+    color: #999;
+
+    padding-top: 6px;
+
+    border-top: 3px solid #111;
+
+    width: 45px;
+}
+
+
+.dw-news-section h2 {
+    margin: 0 0 15px;
+
+    font-size: 28px;
+
+    line-height: 1.3;
+
+    color: #171717;
+}
+
+
+.dw-news-section p {
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    color: #555;
+
+    margin-bottom: 17px;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.dw-news-quote {
+    position: relative;
+
+    margin: 55px 0;
+
+    padding: 45px 45px 40px;
+
+    background: #111;
+
+    color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+
+.quote-mark {
+    position: absolute;
+
+    top: -20px;
+
+    left: 25px;
+
+    font-size: 120px;
+
+    line-height: 1;
+
+    opacity: 0.12;
+
+    font-family: Georgia, serif;
+}
+
+
+.dw-news-quote p {
+    position: relative;
+
+    margin: 0;
+
+    font-size: 24px;
+
+    line-height: 1.6;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   LOOKING AHEAD
+===================================================== */
+
+.dw-looking-ahead {
+    display: flex;
+
+    gap: 25px;
+
+    margin: 55px 0;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    background: #f4f4f4;
+}
+
+
+.dw-looking-icon {
+    min-width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+.dw-looking-ahead > div:last-child > span {
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+
+.dw-looking-ahead h2 {
+    margin: 8px 0 12px;
+
+    font-size: 27px;
+}
+
+
+.dw-looking-ahead p {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+
+/* =====================================================
+   CLOSING
+===================================================== */
+
+.dw-news-closing {
+    text-align: center;
+
+    padding-top: 35px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+.dw-news-closing p {
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+.dw-news-closing strong {
+    display: block;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+.dw-news-closing span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #999;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MOBILE DESIGN
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .dw-news-page {
+        padding: 30px 10px;
+    }
+
+
+    .dw-news-article {
+        border-radius: 12px;
+    }
+
+
+    .dw-news-hero {
+        height: 500px;
+    }
+
+
+    .dw-news-hero-content {
+        left: 25px;
+        right: 25px;
+        bottom: 30px;
+    }
+
+
+    .dw-news-hero h1 {
+        font-size: 32px;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .dw-news-meta {
+        gap: 10px;
+
+        flex-direction: column;
+    }
+
+
+    .dw-news-body {
+        padding: 35px 22px 45px;
+    }
+
+
+    .dw-news-lead {
+        font-size: 17px;
+
+        line-height: 1.75;
+    }
+
+
+    .dw-news-section {
+        grid-template-columns: 45px 1fr;
+
+        gap: 15px;
+
+        margin: 40px 0;
+    }
+
+
+    .dw-news-section h2 {
+        font-size: 23px;
+    }
+
+
+    .dw-news-section p {
+        font-size: 15px;
+    }
+
+
+    .dw-news-quote {
+        padding: 35px 25px;
+    }
+
+
+    .dw-news-quote p {
+        font-size: 19px;
+    }
+
+
+    .dw-looking-ahead {
+        padding: 25px;
+
+        gap: 15px;
+    }
+
+
+    .dw-looking-ahead h2 {
+        font-size: 22px;
+    }
+
+}
+/* =====================================================
+   DESERT WARRIORS FC
+   SPONSORS & PARTNERS SECTION
+===================================================== */
+
+.dw-partners-section {
+
+    width: 100%;
+
+    padding: 90px 20px;
+
+    background: #f5f6f8;
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.dw-partners-header {
+
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.dw-partners-label {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+
+.dw-partners-header h2 {
+
+    margin: 0 0 15px;
+
+    font-size: 44px;
+
+    font-weight: 900;
+
+    color: #171717;
+}
+
+
+.dw-partners-header p {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+/* =====================================================
+   PARTNERS GRID
+===================================================== */
+
+.dw-partners-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   PARTNER CARD
+===================================================== */
+
+.dw-partner-card {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    min-height: 230px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.dw-partner-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   LOGO AREA
+===================================================== */
+
+.dw-partner-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background: #f0f1f3;
+}
+
+
+.dw-partner-logo img {
+
+    width: 100%;
+
+    max-width: 135px;
+
+    max-height: 130px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =====================================================
+   PARTNER INFORMATION
+===================================================== */
+
+.dw-partner-info {
+
+    padding: 28px;
+}
+
+
+.dw-partner-type {
+
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #888;
+}
+
+
+.dw-partner-info h3 {
+
+    margin: 0 0 10px;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    color: #171717;
+}
+
+
+.dw-partner-info p {
+
+    margin: 0 0 18px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* =====================================================
+   PARTNER LINK
+===================================================== */
+
+.dw-partner-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.dw-partner-link span {
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.dw-partner-link:hover span {
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   BECOME A PARTNER
+===================================================== */
+
+.dw-become-partner {
+
+    max-width: 1100px;
+
+    margin: 55px auto 0;
+
+    padding: 38px 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border-radius: 16px;
+}
+
+
+.dw-become-partner > div {
+
+    max-width: 700px;
+}
+
+
+.dw-become-partner > div > span {
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #aaa;
+}
+
+
+.dw-become-partner h2 {
+
+    margin: 8px 0 10px;
+
+    font-size: 27px;
+}
+
+
+.dw-become-partner p {
+
+    margin: 0;
+
+    color: #ccc;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CONTACT BUTTON
+===================================================== */
+
+.dw-partner-contact {
+
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 22px;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.dw-partner-contact span {
+
+    font-size: 18px;
+}
+
+
+.dw-partner-contact:hover {
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .dw-partners-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 700px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .dw-partners-section {
+
+        padding: 60px 15px;
+    }
+
+
+    .dw-partners-header h2 {
+
+        font-size: 32px;
+    }
+
+
+    .dw-partners-header p {
+
+        font-size: 14px;
+    }
+
+
+    .dw-partner-card {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .dw-partner-logo {
+
+        min-height: 170px;
+    }
+
+
+    .dw-partner-info {
+
+        padding: 24px;
+    }
+
+
+    .dw-become-partner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px 25px;
+    }
+
+
+    .dw-become-partner h2 {
+
+        font-size: 23px;
+    }
+
+
+    .dw-partner-contact {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
