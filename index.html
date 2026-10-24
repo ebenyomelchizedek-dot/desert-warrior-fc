@@ -525,7 +525,69 @@
     </div>
 
 </section>
+<!-- DESERT WARRIORS FC MATCH CALENDAR -->
 
+<button id="openMatchCalendar" class="dw-calendar-button"
+        aria-label="Open match calendar">
+    📅
+    <span>Match Calendar</span>
+</button>
+
+<div id="dwCalendarModal" class="dw-calendar-modal">
+
+    <div class="dw-calendar-box">
+
+        <div class="dw-calendar-header">
+            <div>
+                <h2>📅 Match Calendar</h2>
+                <p>Desert Warriors Football Club</p>
+            </div>
+
+            <button id="closeMatchCalendar"
+                    class="dw-calendar-close"
+                    aria-label="Close calendar">&times;</button>
+        </div>
+
+        <div class="dw-calendar-navigation">
+            <button id="prevMonth" aria-label="Previous month">
+                &#10094;
+            </button>
+
+            <h3 id="calendarMonthYear"></h3>
+
+            <button id="nextMonth" aria-label="Next month">
+                &#10095;
+            </button>
+        </div>
+
+        <div class="dw-calendar-weekdays">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+        </div>
+
+        <div id="calendarDays" class="dw-calendar-days"></div>
+
+        <div class="dw-calendar-details">
+            <h3>Match Details</h3>
+
+            <div id="selectedMatchDetails">
+                <p>Select a date to view scheduled matches.</p>
+            </div>
+        </div>
+
+        <div class="dw-calendar-footer">
+            <span class="dw-match-indicator"></span>
+            Match scheduled
+        </div>
+
+    </div>
+
+</div>
 
 <!-- =========================
      FOOTER

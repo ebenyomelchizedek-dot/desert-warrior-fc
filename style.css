@@ -9807,3 +9807,799 @@ header {
     }
 
 }
+/* DESERT WARRIORS FC FIXTURES & RESULTS */
+
+.fixtures-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    font-family: Arial, sans-serif;
+    color: #111;
+}
+
+.fixtures-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.season-label {
+    display: inline-block;
+    color: #d4a017;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.fixtures-heading h2 {
+    font-size: 23px;
+    margin: 0 0 6px;
+    color: #111;
+}
+
+.fixtures-heading p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.match-count {
+    color: #777;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.fixture-row {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr) 90px;
+    align-items: center;
+    gap: 12px;
+    min-height: 102px;
+    padding: 15px 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.fixture-row:hover {
+    background: #fafafa;
+}
+
+.fixture-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.fixture-date strong {
+    font-size: 25px;
+    color: #111;
+}
+
+.fixture-date span {
+    font-size: 10px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.fixture-details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 70px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+}
+
+.team {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.home-team {
+    text-align: right;
+}
+
+.away-team {
+    text-align: left;
+}
+
+.match-score {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.win-score {
+    color: #07823f;
+}
+
+.draw-score {
+    color: #777;
+}
+
+.upcoming-score {
+    color: #d4a017;
+}
+
+.fixture-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.result-badge {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.win {
+    background: #12833e;
+}
+
+.draw {
+    background: #777;
+}
+
+.ground-label {
+    font-size: 10px;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.upcoming-badge {
+    background: #fff4d6;
+    color: #8a6500;
+    padding: 7px 9px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.fixtures-footer {
+    padding: 18px 20px;
+    text-align: center;
+    background: #fafafa;
+}
+
+.fixtures-footer p {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 6px;
+}
+
+.fixtures-footer span {
+    font-size: 11px;
+    color: #777;
+}
+
+/* MOBILE PHONE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    .fixtures-section {
+        width: 100%;
+        margin: 20px auto;
+        border-radius: 8px;
+    }
+
+    .fixtures-heading {
+        padding: 18px 12px;
+        gap: 8px;
+    }
+
+    .fixtures-heading h2 {
+        font-size: 19px;
+    }
+
+    .fixtures-heading p {
+        font-size: 12px;
+    }
+
+    .match-count {
+        font-size: 11px;
+    }
+
+    .fixture-row {
+        grid-template-columns: 48px minmax(0, 1fr) 55px;
+        gap: 6px;
+        padding: 14px 8px;
+        min-height: 90px;
+    }
+
+    .fixture-date strong {
+        font-size: 21px;
+    }
+
+    .fixture-date span {
+        font-size: 8px;
+    }
+
+    .fixture-details {
+        grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr);
+        gap: 4px;
+    }
+
+    .team {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+
+    .match-score {
+        font-size: 14px;
+    }
+
+    .result-badge {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .ground-label {
+        font-size: 8px;
+    }
+
+    .upcoming-badge {
+        padding: 6px 4px;
+        font-size: 7px;
+    }
+
+    .fixtures-footer {
+        padding: 15px 8px;
+    }
+
+    .fixtures-footer p {
+        font-size: 11px;
+    }
+
+    .fixtures-footer span {
+        font-size: 10px;
+    }
+}
+/* =====================================
+   DESERT WARRIORS FC - UPCOMING MATCH
+   Desert Warriors FC vs Highlands FC
+===================================== */
+
+.upcoming-match-card {
+    max-width: 850px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+/* Match status banner */
+.match-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px;
+    background: #17251b;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #f2c94c;
+}
+
+/* Match date and preparation details */
+.upcoming-match-date {
+    padding: 25px 15px 20px;
+    text-align: center;
+}
+
+.upcoming-match-date > span {
+    color: #b68a13;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.upcoming-match-date h3 {
+    margin: 10px 0;
+    font-size: 23px;
+}
+
+.upcoming-match-date p {
+    margin: 0;
+    color: #777;
+    font-size: 13px;
+}
+
+/* Kick-off time */
+.match-kickoff-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    max-width: 250px;
+    margin: 20px auto 5px;
+    padding: 15px;
+    background: #17251b;
+    border: 2px solid #e7bd35;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.match-kickoff-time > span {
+    font-size: 23px;
+}
+
+.match-kickoff-time strong {
+    color: #e7bd35;
+    font-size: 28px;
+}
+
+.match-kickoff-time small {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Teams and VS display */
+.upcoming-teams {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 65px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 25px 20px;
+    background: #fafafa;
+}
+
+.upcoming-team {
+    min-width: 0;
+    text-align: center;
+}
+
+.team-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e7bd35;
+    border: 3px solid #17251b;
+    color: #17251b;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.highlands-icon {
+    background: #eee;
+    color: #333;
+    border-color: #888;
+}
+
+.upcoming-team h3 {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.upcoming-team > span {
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+.upcoming-vs {
+    text-align: center;
+}
+
+.upcoming-vs span {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+    background: #17251b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Match venue */
+.upcoming-match-venue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px;
+    border-top: 1px solid #eee;
+}
+
+.upcoming-match-venue > span {
+    font-size: 23px;
+}
+
+.upcoming-match-venue strong {
+    font-size: 13px;
+}
+
+.upcoming-match-venue p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 13px;
+}
+
+/* Match card footer */
+.upcoming-match-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #f4f4f4;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.upcoming-match-footer span {
+    color: #777;
+}
+
+.upcoming-match-footer strong {
+    color: #17251b;
+}
+
+/* =====================================
+   MOBILE PHONE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 600px) {
+
+    .upcoming-match-card {
+        margin: 15px 5px;
+        border-radius: 10px;
+    }
+
+    .match-status {
+        padding: 13px 5px;
+        font-size: 10px;
+    }
+
+    .upcoming-match-date {
+        padding: 22px 10px 18px;
+    }
+
+    .upcoming-match-date h3 {
+        font-size: 19px;
+    }
+
+    .upcoming-match-date p {
+        font-size: 11px;
+    }
+
+    .match-kickoff-time {
+        max-width: 200px;
+        padding: 12px;
+    }
+
+    .match-kickoff-time strong {
+        font-size: 24px;
+    }
+
+    .match-kickoff-time small {
+        font-size: 9px;
+    }
+
+    .upcoming-teams {
+        grid-template-columns: minmax(0, 1fr) 38px minmax(0, 1fr);
+        gap: 5px;
+        padding: 22px 8px;
+    }
+
+    .team-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 18px;
+    }
+
+    .upcoming-team h3 {
+        font-size: 12px;
+        line-height: 1.4;
+        overflow-wrap: break-word;
+    }
+
+    .upcoming-team > span {
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+
+    .upcoming-vs span {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+
+    .upcoming-match-venue {
+        padding: 15px 8px;
+    }
+
+    .upcoming-match-venue p {
+        font-size: 11px;
+    }
+
+    .upcoming-match-footer {
+        padding: 13px 8px;
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+}
+/* ==================================
+   DESERT WARRIORS FC MATCH CALENDAR
+================================== */
+
+.dw-calendar-button {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 18px;
+    background: #17251b;
+    color: #fff;
+    border: 2px solid #e7bd35;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.dw-calendar-button:hover {
+    background: #e7bd35;
+    color: #17251b;
+}
+
+.dw-calendar-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.dw-calendar-modal.dw-calendar-open {
+    display: flex;
+}
+
+.dw-calendar-box {
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fff;
+    color: #222;
+    border-radius: 14px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.dw-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+    background: #17251b;
+    color: #fff;
+}
+
+.dw-calendar-header h2 {
+    margin: 0 0 6px;
+    font-size: 21px;
+}
+
+.dw-calendar-header p {
+    margin: 0;
+    color: #e7bd35;
+    font-size: 12px;
+}
+
+.dw-calendar-close {
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.dw-calendar-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.dw-calendar-navigation h3 {
+    margin: 0;
+    font-size: 17px;
+    text-align: center;
+}
+
+.dw-calendar-navigation button {
+    width: 38px;
+    height: 38px;
+    background: #17251b;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.dw-calendar-weekdays,
+.dw-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 5px;
+    padding: 0 12px;
+}
+
+.dw-calendar-weekdays span {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+}
+
+.dw-calendar-days {
+    padding-bottom: 18px;
+}
+
+.dw-calendar-day {
+    position: relative;
+    min-width: 0;
+    min-height: 43px;
+    background: #f5f5f5;
+    color: #222;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dw-calendar-day:hover {
+    border-color: #17251b;
+}
+
+.dw-calendar-day.dw-has-match {
+    background: #e7bd35;
+    font-weight: bold;
+}
+
+.dw-calendar-day.dw-selected-day {
+    border: 2px solid #17251b;
+}
+
+.dw-calendar-day.dw-today {
+    box-shadow: inset 0 0 0 1px #888;
+}
+
+.dw-calendar-day:disabled {
+    cursor: default;
+    opacity: 0.45;
+}
+
+.dw-calendar-details {
+    margin: 0 15px 15px;
+    padding: 17px;
+    background: #f7f7f7;
+    border-left: 4px solid #e7bd35;
+    border-radius: 8px;
+}
+
+.dw-calendar-details h3 {
+    margin: 0 0 12px;
+    color: #17251b;
+    font-size: 17px;
+}
+
+.dw-calendar-details p {
+    margin: 7px 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.dw-calendar-details strong {
+    color: #17251b;
+}
+
+.dw-calendar-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px 18px;
+    color: #555;
+    font-size: 12px;
+}
+
+.dw-match-indicator {
+    width: 11px;
+    height: 11px;
+    background: #e7bd35;
+    border-radius: 50%;
+}
+
+body.dw-calendar-lock {
+    overflow: hidden;
+}
+
+/* MOBILE CALENDAR */
+
+@media (max-width: 480px) {
+    .dw-calendar-button {
+        right: 12px;
+        bottom: 15px;
+        padding: 11px 14px;
+        font-size: 13px;
+    }
+
+    .dw-calendar-modal {
+        padding: 8px;
+    }
+
+    .dw-calendar-box {
+        max-height: 94vh;
+        border-radius: 10px;
+    }
+
+    .dw-calendar-header {
+        padding: 15px;
+    }
+
+    .dw-calendar-header h2 {
+        font-size: 18px;
+    }
+
+    .dw-calendar-navigation h3 {
+        font-size: 15px;
+    }
+
+    .dw-calendar-weekdays,
+    .dw-calendar-days {
+        gap: 3px;
+        padding-right: 7px;
+        padding-left: 7px;
+    }
+
+    .dw-calendar-day {
+        min-height: 37px;
+        font-size: 12px;
+    }
+
+    .dw-calendar-details {
+        margin: 0 8px 12px;
+        padding: 12px;
+    }
+}
