@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supporter Membership | Desert Warriors FC</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f2f4f7;
+            color: #172033;
+        }
+
+        .topbar {
+            background: #101b2d;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .brand h2 {
+            color: #e8b84a;
+            font-size: 20px;
+        }
+
+        .brand p {
+            color: #c4ccda;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid #536177;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        .back-link:hover {
+            background: #263750;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-heading {
+            margin-bottom: 28px;
+        }
+
+        .page-heading small {
+            color: #a47718;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .page-heading h1 {
+            font-size: 29px;
+            margin: 10px 0;
+        }
+
+        .page-heading p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        .membership-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        /* DIGITAL MEMBERSHIP CARD */
+        .membership-card {
+            background: linear-gradient(130deg, #101b2d, #263e5b);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(16, 27, 45, 0.2);
+        }
+
+        .membership-card::after {
+            content: "DWFC";
+            position: absolute;
+            right: -10px;
+            bottom: 5px;
+            font-size: 105px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.045);
+            pointer-events: none;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .club-name {
+            color: #e8b84a;
+            font-size: 17px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        .club-subtitle {
+            color: #c5cfdd;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .member-label {
+            border: 1px solid #e8b84a;
+            color: #e8b84a;
+            padding: 7px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .card-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+            margin: 25px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-caption {
+            color: #e8b84a;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .member-name {
+            font-size: 24px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+            position: relative;
+            z-index: 1;
+        }
+
+        .member-id {
+            margin-top: 8px;
+            color: #d0d8e4;
+            font-size: 12px;
+            overflow-wrap: anywhere;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 15px;
+            margin-top: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-bottom small {
+            color: #aebbd0;
+            display: block;
+            font-size: 10px;
+            margin-bottom: 6px;
+        }
+
+        .card-bottom strong {
+            font-size: 12px;
+        }
+
+        .card-status {
+            color: #e8b84a;
+            font-weight: bold;
+            font-size: 11px;
+            text-align: right;
+        }
+
+        /* DETAILS PANEL */
+        .details-panel {
+            background: white;
+            padding: 25px;
+            border-radius: 13px;
+            border: 1px solid #e7ebf0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.035);
+        }
+
+        .details-panel h2 {
+            font-size: 18px;
+            margin-bottom: 22px;
+        }
+
+        .detail-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #edf0f4;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .detail-item small {
+            display: block;
+            color: #8994a5;
+            font-size: 11px;
+            margin-bottom: 7px;
+        }
+
+        .detail-item strong {
+            display: block;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .status {
+            display: inline-block;
+            background: #e6f5eb;
+            color: #237344;
+            padding: 6px 11px;
+            border-radius: 20px;
+            font-size: 11px;
+        }
+
+        /* BUTTONS */
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 13px 20px;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .primary-btn {
+            background: #c9972d;
+            color: #101b2d;
+        }
+
+        .primary-btn:hover {
+            background: #e8b84a;
+        }
+
+        .secondary-btn {
+            background: #e7ebf0;
+            color: #263750;
+        }
+
+        .secondary-btn:hover {
+            background: #d8dfe8;
+        }
+
+        .notice {
+            margin-top: 25px;
+            background: #fff8e8;
+            border-left: 4px solid #c9972d;
+            padding: 15px;
+            border-radius: 5px;
+            color: #70551c;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .footer {
+            text-align: center;
+            color: #8994a5;
+            font-size: 12px;
+            padding: 35px 15px;
+        }
+
+        #loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: #718096;
+        }
+
+        @media(max-width: 750px) {
+            .membership-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin-top: 25px;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .topbar {
+                padding: 16px;
+            }
+
+            .brand h2 {
+                font-size: 15px;
+            }
+
+            .back-link {
+                font-size: 11px;
+                padding: 9px;
+            }
+
+            .container {
+                padding: 0 13px;
+            }
+
+            .page-heading h1 {
+                font-size: 24px;
+            }
+
+            .membership-card {
+                padding: 22px 17px;
+                min-height: 280px;
+            }
+
+            .club-name {
+                font-size: 14px;
+            }
+
+            .member-name {
+                font-size: 20px;
+            }
+        }
+
+        /* PRINT ONLY THE MEMBERSHIP CARD */
+        @media print {
+            @page {
+                size: auto;
+                margin: 12mm;
+            }
+
+            body {
+                background: white;
+            }
+
+            .topbar,
+            .page-heading,
+            .details-panel,
+            .actions,
+            .notice,
+            .footer {
+                display: none !important;
+            }
+
+            .container {
+                margin: 0;
+                padding: 0;
+            }
+
+            .membership-layout {
+                display: block;
+            }
+
+            .membership-card {
+                width: 100%;
+                max-width: 650px;
+                min-height: 300px;
+                margin: 30px auto;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <h2>DESERT WARRIORS FC</h2>
+            <p>OFFICIAL SUPPORTER PORTAL</p>
+        </div>
+
+        <a href="dashboard.html" class="back-link">
+            ← Back to Dashboard
+        </a>
+    </header>
+
+    <div id="loading">
+        Loading your membership information...
+    </div>
+
+    <main class="container" id="membership-content" hidden>
+
+        <section class="page-heading">
+            <small>WARRIORS FAMILY</small>
+            <h1>My Membership</h1>
+            <p>
+                Your supporter identity and membership information
+                with Turkana Desert Warriors FC.
+            </p>
+        </section>
+
+        <section class="membership-layout">
+
+            <!-- DIGITAL CARD -->
+            <div>
+
+                <div class="membership-card" id="print-card">
+
+                <div class="card-top">
+
+    <div class="club-identity">
+
+        <img
+            src="logo.jfif"
+            alt="Desert Warriors FC Logo"
+            style="width:25px !important;
+                   height:25px !important;
+                   max-width:25px !important;
+                   object-fit:contain;
+                   flex-shrink:0;"
+        >
+
+        <div>
+            <div class="club-name">
+                TURKANA DESERT WARRIORS FC
+            </div>
+
+            <div class="club-subtitle">
+                NAPETET • LODWAR • KENYA
+            </div>
+        </div>
+
+    </div>
+
+    <span class="member-label">
+        SUPPORTER CARD
+    </span>
+
+</div>
+
+                    <div class="card-divider"></div>
+
+                    <div class="card-caption">
+                        OFFICIAL CLUB SUPPORTER
+                    </div>
+
+                    <div class="member-name" id="card-name">
+                        Supporter Name
+                    </div>
+
+                    <div class="member-id">
+                        MEMBER REF: <span id="card-id">Loading...</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <div>
+                            <small>MEMBER SINCE</small>
+                            <strong id="card-date">Loading...</strong>
+                        </div>
+
+                        <div>
+                            <small>MEMBERSHIP STATUS</small>
+                            <div class="card-status">
+                                REGISTERED
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="actions">
+                    <button class="btn primary-btn" id="print-btn">
+                        Print Membership Card
+                    </button>
+
+                    <a href="dashboard.html"
+                       class="btn secondary-btn">
+                        Return to Dashboard
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- MEMBER DETAILS -->
+            <section class="details-panel">
+
+                <h2>Membership Details</h2>
+
+                <div class="detail-item">
+                    <small>FULL NAME</small>
+                    <strong id="detail-name">Loading...</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>EMAIL ADDRESS</small>
+                    <strong id="detail-email">Loading...</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>PHONE NUMBER</small>
+                    <strong id="detail-phone">Loading...</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>MEMBER REFERENCE</small>
+                    <strong id="detail-id">Loading...</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>REGISTRATION DATE</small>
+                    <strong id="detail-date">Loading...</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>ACCOUNT STATUS</small>
+                    <span class="status">Registered Supporter</span>
+                </div>
+
+            </section>
+
+        </section>
+
+        <div class="notice">
+            <strong>Membership information:</strong>
+            This digital card confirms your registered supporter
+            account on the Desert Warriors FC website. It is not
+            a paid membership or match ticket.
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        © 2026 Turkana Desert Warriors FC. All Rights Reserved.
+    </footer>
+
+    <script type="module">
+        import { supabase } from "./supabaseClient.js";
+
+        async function loadMembership() {
+
+            const { data: userData, error: userError } =
+                await supabase.auth.getUser();
+
+            if (userError || !userData.user) {
+                window.location.replace("login.html");
+                return;
+            }
+
+            const user = userData.user;
+
+            const { data: profile, error: profileError } =
+                await supabase
+                    .from("profiles")
+                    .select("full_name, phone")
+                    .eq("id", user.id)
+                    .maybeSingle();
+
+            if (profileError) {
+                console.error(
+                    "Could not load profile:",
+                    profileError.message
+                );
+            }
+
+            const fullName =
+                profile?.full_name ||
+                user.user_metadata?.full_name ||
+                "Supporter";
+
+            const phone =
+                profile?.phone ||
+                user.user_metadata?.phone ||
+                "Not provided";
+
+            const email = user.email || "Not available";
+
+            // Stable reference generated from the account ID.
+            const memberReference =
+                "DW-" +
+                user.id.replace(/-/g, "")
+                    .slice(0, 12)
+                    .toUpperCase();
+
+            const registrationDate = user.created_at
+                ? new Date(user.created_at).toLocaleDateString(
+                    "en-KE",
+                    {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric"
+                    }
+                )
+                : "Not available";
+
+            // Put supporter information on the digital card.
+            document.getElementById("card-name").textContent =
+                fullName;
+
+            document.getElementById("card-id").textContent =
+                memberReference;
+
+            document.getElementById("card-date").textContent =
+                registrationDate;
+
+            // Put information in the membership details panel.
+            document.getElementById("detail-name").textContent =
+                fullName;
+
+            document.getElementById("detail-email").textContent =
+                email;
+
+            document.getElementById("detail-phone").textContent =
+                phone;
+
+            document.getElementById("detail-id").textContent =
+                memberReference;
+
+            document.getElementById("detail-date").textContent =
+                registrationDate;
+
+            document.getElementById("loading").hidden = true;
+
+            document.getElementById(
+                "membership-content"
+            ).hidden = false;
+        }
+
+        document.getElementById("print-btn").addEventListener(
+            "click",
+            function() {
+                window.print();
+            }
+        );
+
+        loadMembership().catch(error => {
+            console.error(error);
+
+            document.getElementById("loading").textContent =
+                "Unable to load membership information. Please refresh the page.";
+        });
+    </script>
+
+</body>
+</html>

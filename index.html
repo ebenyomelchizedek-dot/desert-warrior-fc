@@ -38,6 +38,34 @@
         <a href="contact.html">Contact</a>
 
     </nav>
+    <div class="header-actions">
+
+  <form class="search-bar" id="site-search">
+    <input
+      type="search"
+      id="search-input"
+      placeholder="Search the website..."
+      aria-label="Search the website"
+    >
+
+    <button type="submit">Search</button>
+  </form>
+
+ <span id="supporter-greeting" hidden></span>
+
+<a href="login.html" class="login-btn" id="login-link">
+    Login
+</a>
+
+<a href="register.html" class="register-btn" id="register-link">
+    Join Us
+</a>
+
+<a href="#" class="login-btn" id="logout-btn" hidden>
+    Logout
+</a>
+
+</div>
 
 </header>
 
@@ -767,6 +795,22 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
 </footer>
+<script>
+  document.getElementById("site-search")
+    .addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      const query = document
+        .getElementById("search-input")
+        .value.trim();
+
+      if (query) {
+        window.location.href =
+          "search.html?q=" + encodeURIComponent(query);
+      }
+    });
+</script>
 
 </body>
 <!-- Cookie Consent Pop-up -->
