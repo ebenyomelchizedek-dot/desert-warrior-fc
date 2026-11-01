@@ -10855,3 +10855,40 @@ body.dw-calendar-lock {
     }
 
 }
+
+/* FOOTER INFORMATION LINKS */
+
+.dw-footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 25px 10px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.dw-footer-links a {
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.dw-footer-links a:hover {
+    color: #e4bd39;
+    text-decoration: underline;
+}
+
+/* MOBILE FOOTER */
+
+@media (max-width: 600px) {
+    .dw-footer-links {
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .dw-footer-links a {
+        font-size: 13px;
+    }
+}
