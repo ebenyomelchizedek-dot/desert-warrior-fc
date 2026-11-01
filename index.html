@@ -769,4 +769,56 @@ document.addEventListener("DOMContentLoaded", function () {
 </footer>
 
 </body>
+<!-- Cookie Consent Pop-up -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <h3>We value your privacy</h3>
+
+    <p>
+      Desert Warriors FC uses cookies to improve your
+      browsing experience and understand how visitors
+      use our website.
+    </p>
+
+    <p>
+      You can accept all cookies or reject optional
+      cookies. Read our
+      <a href="privacy.html">Privacy Policy</a>.
+    </p>
+
+    <div class="cookie-buttons">
+      <button id="accept-cookies">
+        Accept All
+      </button>
+
+      <button id="reject-cookies">
+        Reject Optional
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+  const banner = document.getElementById("cookie-banner");
+
+  const savedChoice = localStorage.getItem("cookieChoice");
+
+  // Show the banner if no choice has been made
+  if (!savedChoice) {
+    banner.style.display = "block";
+  }
+
+  // Accept all cookies
+  document.getElementById("accept-cookies")
+    .addEventListener("click", function () {
+      localStorage.setItem("cookieChoice", "accepted");
+      banner.style.display = "none";
+    });
+
+  // Reject optional cookies
+  document.getElementById("reject-cookies")
+    .addEventListener("click", function () {
+      localStorage.setItem("cookieChoice", "rejected");
+      banner.style.display = "none";
+    });
+</script>
 </html>

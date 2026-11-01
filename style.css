@@ -10892,3 +10892,67 @@ body.dw-calendar-lock {
         font-size: 13px;
     }
 }
+/* Cookie Consent Pop-up */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 550px;
+  background: #ffffff;
+  color: #222;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+}
+
+.cookie-content h3 {
+  margin-top: 0;
+  color: #006633;
+  font-size: 22px;
+}
+
+.cookie-content p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cookie-content a {
+  color: #006633;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cookie-buttons button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#accept-cookies {
+  background: #006633;
+  color: white;
+}
+
+#reject-cookies {
+  background: #eeeeee;
+  color: #222;
+}
+
+@media (max-width: 480px) {
+  .cookie-buttons {
+    flex-direction: column;
+  }
+}
