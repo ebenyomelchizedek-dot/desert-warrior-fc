@@ -11044,3 +11044,27 @@ body.dw-calendar-lock {
     border-radius: 50%;
     background: white;
 }
+.supporter-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    background: #d6ad52;
+    color: #101d32;
+    padding: 11px 15px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.download-btn:hover {
+    background: #f3d68e;
+}
+
+.download-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}

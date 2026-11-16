@@ -4,216 +4,850 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desert Warriors FC | Admin Centre</title>
+<title>Desert Warriors FC | Admin Dashboard</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --navy: #101d32;
-  --gold: #d6ad52;
-  --bg: #f3f5f8;
-  --white: #fff;
+    --navy: #101d32;
+    --navy-light: #192b46;
+    --gold: #d6ad52;
+    --gold-light: #f3d68e;
+    --white: #fff;
+    --bg: #f3f5f9;
+    --text: #263449;
+    --muted: #8993a4;
+    --border: #e8ebf1;
 }
 
-* { box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: #192337;
-}
-
-header {
-  background: var(--navy);
-  color: white;
-  padding: 22px;
-  border-bottom: 4px solid var(--gold);
-}
-
-header h2 { margin: 0; }
-header p { color: #d5dbea; margin-bottom: 0; }
-
-.container {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 18px;
-}
-
-.panel, .stat {
-  background: white;
-  padding: 22px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 10px #0000000b;
-}
-
-input {
-  padding: 12px;
-  width: 100%;
-  border: 1px solid #ccd2dc;
-  border-radius: 6px;
-  margin: 8px 0 15px;
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
 }
 
 button {
-  background: var(--navy);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 11px 16px;
-  cursor: pointer;
-  margin: 3px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: .2s;
 }
 
-button:hover { background: #263e60; }
+input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #dce1e9;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+}
 
-.gold { background: #a77d29; }
-.red { background: #a72e37; }
+input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(214,173,82,.12);
+}
+
+/* LOGIN */
+
+#login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #091629, #192b46);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    background: white;
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 70px rgba(0,0,0,.25);
+}
+
+.login-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.login-card h1 {
+    color: var(--navy);
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.login-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--navy);
+    color: white;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.login-btn:hover {
+    background: #263e60;
+}
+
+#message {
+    color: #b42332;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+/* DASHBOARD */
+
+#dashboard {
+    display: none;
+    min-height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 255px;
+    height: 100vh;
+    background: var(--navy);
+    color: white;
+    padding: 25px 17px;
+    z-index: 10;
+}
+
+.sidebar-brand {
+    text-align: center;
+    padding: 10px 5px 28px;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.sidebar-brand img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.sidebar-brand h2 {
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.sidebar-brand p {
+    color: #aab6c8;
+    font-size: 10px;
+    margin-top: 6px;
+}
+
+.nav-title {
+    color: #8998ac;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin: 28px 12px 12px;
+    font-weight: 700;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px 13px;
+    margin-bottom: 7px;
+    border-radius: 8px;
+    color: #d5dcea;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(214,173,82,.16);
+    color: var(--gold-light);
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    color: #aab6c8;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.main-content {
+    margin-left: 255px;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.topbar {
+    background: white;
+    padding: 18px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.035);
+    margin-bottom: 28px;
+}
+
+.topbar h2 {
+    color: var(--navy);
+    font-size: 19px;
+}
+
+.topbar p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.admin-tag {
+    background: #f8f1df;
+    color: #977025;
+    padding: 9px 13px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.welcome {
+    background: linear-gradient(110deg, #0c1b31, #19304c);
+    color: white;
+    padding: 30px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--gold);
+}
+
+.welcome h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #c5cfdd;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* STATISTICS */
 
 .stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+    margin-bottom: 27px;
 }
 
-.stat h3 { color: #667085; }
-.stat strong { font-size: 30px; color: var(--navy); }
+.stat-card {
+    background: white;
+    padding: 23px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 15px rgba(0,0,0,.025);
+}
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 17px;
+    background: #f7f0df;
+}
+
+.stat-card h3 {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.stat-card strong {
+    font-size: 29px;
+    color: var(--navy);
+}
+
+/* PANELS */
+
+.panel {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 15px rgba(0,0,0,.025);
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.panel-heading h2 {
+    font-size: 17px;
+    color: var(--navy);
+}
+
+.panel-heading p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.supporter-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    max-width: 300px;
+}
+
+.download-btn {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 12px 15px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.download-btn:hover {
+    background: var(--gold-light);
+}
+
+.download-btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+/* TABLES */
+
+.table-wrap {
+    overflow-x: auto;
+}
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 650px;
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+th {
+    background: #f6f7fa;
+    color: #677286;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
 }
 
 th, td {
-  padding: 13px;
-  border-bottom: 1px solid #e6e9ef;
-  text-align: left;
+    text-align: left;
+    padding: 15px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
 }
 
-th { background: #f4f6f9; }
+td {
+    color: #39465b;
+}
 
-.table-wrap { overflow-x: auto; }
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+}
 
-#dashboard { display: none; }
-#message { color: #a72e37; }
+.status.Approved {
+    background: #e5f7ed;
+    color: #16834c;
+}
 
-small { color: #667085; }
+.status.Pending {
+    background: #fff4dc;
+    color: #a36c09;
+}
+
+.status.Suspended {
+    background: #fde9eb;
+    color: #b42332;
+}
+
+.action-btn {
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    margin: 2px;
+}
+
+.approve-btn {
+    background: #e5f7ed;
+    color: #16834c;
+}
+
+.suspend-btn {
+    background: #fde9eb;
+    color: #b42332;
+}
+
+.refresh-btn {
+    background: var(--navy);
+    color: white;
+    padding: 11px 16px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.logout-btn {
+    background: #a72e37;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.empty {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+}
+
+#dashboardMessage {
+    font-size: 12px;
+    color: #667085;
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    color: #929bad;
+    font-size: 11px;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1050px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:750px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .sidebar-brand {
+        padding-bottom: 15px;
+    }
+
+    .sidebar-brand img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-title,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .sidebar nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    .nav-link {
+        padding: 10px;
+        margin: 0;
+        font-size: 11px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .topbar {
+        padding: 15px;
+    }
+
+    .welcome {
+        padding: 23px;
+    }
+
+    .welcome h1 {
+        font-size: 20px;
+    }
+
+    .panel {
+        padding: 17px;
+    }
+
+    .panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .supporter-tools,
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media(max-width:430px) {
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card strong {
+        font-size: 24px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h2>DESERT WARRIORS FC</h2>
-  <p>Supporters Database Centre | Administration</p>
-</header>
+<!-- LOGIN PAGE -->
 
-<div class="container">
+<section id="login">
+    <div class="login-card">
 
-  <!-- ADMIN LOGIN -->
-  <section id="login" class="panel">
-    <h2>Administrator Login</h2>
-    <p>Authorised club administrators only.</p>
+        <img src="logo.jfif"
+             alt="Desert Warriors FC Logo"
+             onerror="this.style.display='none'">
 
-    <form id="loginForm">
-      <label>Email address</label>
-      <input type="email" id="email" required>
+        <h1>DESERT WARRIORS FC</h1>
 
-      <label>Password</label>
-      <input type="password" id="password" required>
+        <p>
+            SUPPORTERS MANAGEMENT SYSTEM<br>
+            Secure Administrator Portal
+        </p>
 
-      <button type="submit">Secure Login</button>
-    </form>
+        <form id="loginForm">
 
-    <p id="message"></p>
-  </section>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="email"
+                       placeholder="Administrator email"
+                       autocomplete="username" required>
+            </div>
 
-  <!-- ADMIN DASHBOARD -->
-  <section id="dashboard">
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password"
+                       placeholder="Enter your password"
+                       autocomplete="current-password" required>
+            </div>
 
-    <div class="panel">
-      <h2>Welcome to the Admin Centre</h2>
-      <p>Manage Desert Warriors FC supporters and memberships.</p>
-      <button onclick="logout()">Logout</button>
-      <button class="gold" onclick="loadDashboard()">Refresh Data</button>
+            <button type="submit" class="login-btn"
+                    id="loginButton">
+                SECURE ADMIN LOGIN
+            </button>
+
+        </form>
+
+        <div id="message" role="alert"></div>
     </div>
+</section>
 
-    <div class="stats">
-      <div class="stat">
-        <h3>Total Supporters</h3>
-        <strong id="total">0</strong>
-      </div>
 
-      <div class="stat">
-        <h3>Approved Members</h3>
-        <strong id="approved">0</strong>
-      </div>
+<!-- ADMIN DASHBOARD -->
 
-      <div class="stat">
-        <h3>Pending Members</h3>
-        <strong id="pending">0</strong>
-      </div>
+<section id="dashboard">
 
-      <div class="stat">
-        <h3>Suspended Members</h3>
-        <strong id="suspended">0</strong>
-      </div>
-    </div>
+    <aside class="sidebar">
 
-    <div class="panel">
-      <h2>Supporter Management</h2>
-      <input
-        id="search"
-        placeholder="Search by name or membership number..."
-        oninput="renderSupporters()"
-      >
+        <div class="sidebar-brand">
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Membership No.</th>
-              <th>Phone</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="supporterRows"></tbody>
-        </table>
-      </div>
-    </div>
+            <img src="logo.jfif"
+                 alt="Desert Warriors FC Logo">
 
-    <div class="panel">
-      <h2>Recent Login Activity</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Supporter</th>
-              <th>Login Date</th>
-            </tr>
-          </thead>
-          <tbody id="activityRows"></tbody>
-        </table>
-      </div>
-    </div>
+            <h2>DESERT WARRIORS FC</h2>
+            <p>SUPPORTERS ADMINISTRATION</p>
 
-    <p id="dashboardMessage"></p>
+        </div>
 
-  </section>
-</div>
+        <nav>
+
+            <div class="nav-title">MAIN MENU</div>
+
+            <a href="#overview" class="nav-link active"
+               data-section="overview">
+                ▦ Dashboard
+            </a>
+
+            <a href="#supporters" class="nav-link"
+               data-section="supporters">
+                ♙ Supporters
+            </a>
+
+            <a href="#activity" class="nav-link"
+               data-section="activity">
+                ◷ Login Activity
+            </a>
+
+            <div class="nav-title">ACCOUNT</div>
+
+            <a href="#" class="nav-link" id="logoutLink">
+                ⇥ Logout
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            DESERT WARRIORS FC<br>
+            Official Club Administration Centre<br>
+            © 2026 All Rights Reserved
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <div class="topbar">
+            <div>
+                <h2>Administration Dashboard</h2>
+                <p>Manage your club supporters and memberships.</p>
+            </div>
+
+            <span class="admin-tag">● ADMINISTRATOR</span>
+        </div>
+
+
+        <!-- OVERVIEW -->
+
+        <div id="overview">
+
+            <div class="welcome">
+                <h1>Welcome to Desert Warriors FC</h1>
+
+                <p>
+                    Your central management platform for supporters,
+                    memberships and club administration.
+                    Keep track of your supporters and maintain
+                    an organised membership database.
+                </p>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon">♙</div>
+                    <h3>Total Supporters</h3>
+                    <strong id="total">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✓</div>
+                    <h3>Approved Members</h3>
+                    <strong id="approved">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">◷</div>
+                    <h3>Pending Members</h3>
+                    <strong id="pending">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">!</div>
+                    <h3>Suspended Members</h3>
+                    <strong id="suspended">0</strong>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- SUPPORTERS -->
+
+        <div class="panel" id="supporters">
+
+            <div class="panel-heading">
+
+                <div>
+                    <h2>Supporter Management</h2>
+                    <p>View, search and manage club memberships.</p>
+                </div>
+
+                <div class="supporter-tools">
+
+                    <input type="search"
+                           id="search"
+                           class="search-box"
+                           placeholder="Search supporters...">
+
+                    <button type="button"
+                            class="download-btn"
+                            id="downloadButton">
+                        ⬇ Download Excel List
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Membership No.</th>
+                            <th>Email Address</th>
+                            <th>Phone Number</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="supporterRows">
+                        <tr>
+                            <td colspan="6" class="empty">
+                                Loading supporters...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN ACTIVITY -->
+
+        <div class="panel" id="activity">
+
+            <div class="panel-heading">
+
+                <div>
+                    <h2>Recent Login Activity</h2>
+                    <p>Monitor recent supporter login records.</p>
+                </div>
+
+                <button class="refresh-btn"
+                        id="refreshButton">
+                    ↻ Refresh Data
+                </button>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Supporter</th>
+                            <th>Login Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="activityRows">
+                        <tr>
+                            <td colspan="2" class="empty">
+                                Loading activity...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <p id="dashboardMessage" role="status"></p>
+
+        <footer>
+            DESERT WARRIORS FC | SUPPORTERS ADMINISTRATION SYSTEM
+        </footer>
+
+    </main>
+
+</section>
+
 
 <script>
-const SUPABASE_URL = "https://pvbqkskkpfpnswkhxnuq.supabase.co";
-const SUPABASE_KEY = "sb_publishable_gqD-q3ZcjzZNTcySGZKdlA_h98YCa_j";
+
+// SUPABASE CONFIGURATION
+
+const SUPABASE_URL =
+"https://pvbqkskkpfpnswkhxnuq.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_gqD-q3ZcjzZNTcySGZKdlA_h98YCa_j";
 
 const db = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
+    SUPABASE_URL,
+    SUPABASE_KEY
 );
 
 let supporters = [];
@@ -221,195 +855,709 @@ let supporters = [];
 const login = document.getElementById("login");
 const dashboard = document.getElementById("dashboard");
 
-async function checkAdmin() {
-  const { data: { session } } =
-    await db.auth.getSession();
 
-  if (!session) {
-    login.style.display = "block";
-    dashboard.style.display = "none";
-    return;
-  }
-
-  const { data, error } =
-    await db.rpc("is_supporter_admin");
-
-  if (error || data !== true) {
-    await db.auth.signOut();
-    document.getElementById("message").textContent =
-      "Access denied. Administrator privileges required.";
-    return;
-  }
-
-  login.style.display = "none";
-  dashboard.style.display = "block";
-
-  await loadDashboard();
-}
-
-document.getElementById("loginForm")
-.addEventListener("submit", async (event) => {
-  event.preventDefault();
-
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  document.getElementById("message").textContent =
-    "Checking administrator account...";
-
-  const { error } = await db.auth.signInWithPassword({
-    email,
-    password
-  });
-
-  if (error) {
-    document.getElementById("message").textContent =
-      "Login failed. Check your credentials.";
-    return;
-  }
-
-  await checkAdmin();
-});
-
-async function loadDashboard() {
-  const msg = document.getElementById("dashboardMessage");
-  msg.textContent = "Loading database records...";
-
-  const { data, error } = await db
-    .from("supporter_profiles")
-    .select("id,full_name,phone_number,membership_number,membership_status,created_at")
-    .order("created_at", { ascending: false })
-    .limit(500);
-
-  if (error) {
-    msg.textContent = "Could not load supporters: " + error.message;
-    return;
-  }
-
-  supporters = data || [];
-
-  document.getElementById("total").textContent =
-    supporters.length;
-
-  document.getElementById("approved").textContent =
-    supporters.filter(s => s.membership_status === "Approved").length;
-
-  document.getElementById("pending").textContent =
-    supporters.filter(s => s.membership_status === "Pending").length;
-
-  document.getElementById("suspended").textContent =
-    supporters.filter(s => s.membership_status === "Suspended").length;
-
-  renderSupporters();
-  await loadActivity();
-
-  msg.textContent = "Database information loaded.";
-}
-
-function renderSupporters() {
-  const query =
-    document.getElementById("search").value.toLowerCase();
-
-  const filtered = supporters.filter(s =>
-    (s.full_name || "").toLowerCase().includes(query) ||
-    (s.membership_number || "").toLowerCase().includes(query)
-  );
-
-  document.getElementById("supporterRows").innerHTML =
-    filtered.map(s => `
-      <tr>
-        <td>${escapeHTML(s.full_name || "Not provided")}</td>
-        <td>${escapeHTML(s.membership_number || "Not assigned")}</td>
-        <td>${escapeHTML(s.phone_number || "Not provided")}</td>
-        <td>${escapeHTML(s.membership_status)}</td>
-        <td>
-          <button class="gold"
-            onclick="changeStatus('${s.id}','Approved')">
-            Approve
-          </button>
-          <button class="red"
-            onclick="changeStatus('${s.id}','Suspended')">
-            Suspend
-          </button>
-        </td>
-      </tr>
-    `).join("");
-}
-
-async function changeStatus(id, status) {
-  if (!confirm("Change this membership to " + status + "?")) {
-    return;
-  }
-
-  const { error } = await db
-    .from("supporter_profiles")
-    .update({
-      membership_status: status,
-      updated_at: new Date().toISOString()
-    })
-    .eq("id", id);
-
-  if (error) {
-    alert("Update failed: " + error.message);
-    return;
-  }
-
-  await loadDashboard();
-}
-
-async function loadActivity() {
-  const { data, error } = await db
-    .from("supporter_login_activity")
-    .select("supporter_id,login_time")
-    .order("login_time", { ascending: false })
-    .limit(50);
-
-  if (error) {
-    document.getElementById("activityRows").innerHTML =
-      "<tr><td colspan='2'>Could not load login history.</td></tr>";
-    return;
-  }
-
-  const rows = data || [];
-
-  const names = new Map(
-    supporters.map(s => [s.id, s.full_name || "Supporter"])
-  );
-
-  document.getElementById("activityRows").innerHTML =
-    rows.map(item => `
-      <tr>
-        <td>${escapeHTML(names.get(item.supporter_id) || "Supporter")}</td>
-        <td>${escapeHTML(new Date(item.login_time).toLocaleString())}</td>
-      </tr>
-    `).join("");
-}
+// HTML SECURITY
 
 function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[char]);
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[char]);
 }
 
-async function logout() {
-  await db.auth.signOut();
-  supporters = [];
-  dashboard.style.display = "none";
-  login.style.display = "block";
+
+// LOGIN AND ADMIN VERIFICATION
+
+async function checkAdmin() {
+
+    const { data: { session } } =
+        await db.auth.getSession();
+
+    if (!session) {
+        login.style.display = "flex";
+        dashboard.style.display = "none";
+        return;
+    }
+
+    const { data, error } =
+        await db.rpc("is_supporter_admin");
+
+    if (error || data !== true) {
+
+        await db.auth.signOut();
+
+        document.getElementById("message").textContent =
+            "Access denied. Administrator privileges required.";
+
+        login.style.display = "flex";
+        dashboard.style.display = "none";
+
+        return;
+    }
+
+    document.getElementById("message").textContent = "";
+
+    login.style.display = "none";
+    dashboard.style.display = "block";
+
+    await loadDashboard();
 }
 
-db.auth.onAuthStateChange((event) => {
-  if (event === "SIGNED_OUT") {
-    dashboard.style.display = "none";
-    login.style.display = "block";
-  }
+
+// LOGIN FORM
+
+document.getElementById("loginForm")
+.addEventListener("submit", async event => {
+
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const button = document.getElementById("loginButton");
+    const message = document.getElementById("message");
+
+    button.disabled = true;
+    button.textContent = "VERIFYING ACCOUNT...";
+    message.textContent = "";
+
+    try {
+
+        const { error } = await db.auth.signInWithPassword({
+            email,
+            password
+        });
+
+        if (error) {
+            message.textContent =
+                "Login failed. Check your email and password.";
+            return;
+        }
+
+        await checkAdmin();
+
+    } catch (error) {
+
+        message.textContent =
+            "Unable to connect. Please try again.";
+
+    } finally {
+
+        button.disabled = false;
+        button.textContent = "SECURE ADMIN LOGIN";
+
+    }
+
 });
 
+
+// LOAD DASHBOARD
+
+async function loadDashboard() {
+
+    const msg = document.getElementById("dashboardMessage");
+
+    msg.textContent = "Loading database records...";
+
+    const { data, error } = await db
+        .from("supporter_profiles")
+        .select(`
+            id,
+            full_name,
+            phone_number,
+            membership_number,
+            membership_status,
+            created_at
+        `)
+        .order("created_at", { ascending: false })
+        .limit(500);
+
+    if (error) {
+        msg.textContent =
+            "Could not load supporters: " + error.message;
+        return;
+    }
+
+    // LOAD EMAIL ADDRESSES FROM SUPABASE AUTH
+
+    const { data: emailRows, error: emailError } =
+        await db.rpc("get_supporter_emails");
+
+    if (emailError) {
+        console.error("Email retrieval error:", emailError.message);
+    }
+
+    const emailByUserId = new Map(
+        (emailRows || []).map(row => [
+            row.user_id,
+            row.email || ""
+        ])
+    );
+
+    supporters = (data || []).map(s => ({
+        ...s,
+        email: emailByUserId.get(s.id) || ""
+    }));
+
+    document.getElementById("total").textContent =
+        supporters.length;
+
+    document.getElementById("approved").textContent =
+        supporters.filter(s =>
+            s.membership_status === "Approved"
+        ).length;
+
+    document.getElementById("pending").textContent =
+        supporters.filter(s =>
+            s.membership_status === "Pending"
+        ).length;
+
+    document.getElementById("suspended").textContent =
+        supporters.filter(s =>
+            s.membership_status === "Suspended"
+        ).length;
+
+    renderSupporters();
+
+    await loadActivity();
+
+    msg.textContent =
+        "Database information successfully loaded.";
+
+}
+
+
+// DISPLAY SUPPORTERS
+
+function renderSupporters() {
+
+    const query = document.getElementById("search")
+        .value.toLowerCase().trim();
+
+    const filtered = supporters.filter(s =>
+
+        (s.full_name || "").toLowerCase().includes(query) ||
+
+        (s.membership_number || "").toLowerCase().includes(query) ||
+
+        (s.email || "").toLowerCase().includes(query) ||
+
+        (s.phone_number || "").toLowerCase().includes(query)
+
+    );
+
+    const tbody = document.getElementById("supporterRows");
+
+    if (!filtered.length) {
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="6" class="empty">
+                    No supporters found.
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+    tbody.innerHTML = filtered.map(s => {
+
+        const status = s.membership_status || "Pending";
+
+        const validStatus =
+            ["Approved", "Pending", "Suspended"].includes(status);
+
+        return `
+            <tr>
+
+                <td>${escapeHTML(s.full_name || "Not provided")}</td>
+
+                <td>${escapeHTML(s.membership_number || "Not assigned")}</td>
+
+                <td>${escapeHTML(s.email || "Not available")}</td>
+
+                <td>${escapeHTML(s.phone_number || "Not provided")}</td>
+
+                <td>
+                    <span class="status ${
+                        validStatus ? status : "Pending"
+                    }">
+                        ${escapeHTML(status)}
+                    </span>
+                </td>
+
+                <td>
+
+                    <button class="action-btn approve-btn"
+                            data-id="${escapeHTML(s.id)}"
+                            data-status="Approved">
+                        Approve
+                    </button>
+
+                    <button class="action-btn suspend-btn"
+                            data-id="${escapeHTML(s.id)}"
+                            data-status="Suspended">
+                        Suspend
+                    </button>
+
+                </td>
+
+            </tr>
+        `;
+
+    }).join("");
+
+}
+
+
+// SUPPORTER SEARCH
+
+document.getElementById("search")
+.addEventListener("input", renderSupporters);
+
+
+// CHANGE MEMBERSHIP STATUS
+
+document.getElementById("supporterRows")
+.addEventListener("click", async event => {
+
+    const button = event.target.closest("button[data-id]");
+
+    if (!button) return;
+
+    await changeStatus(
+        button.dataset.id,
+        button.dataset.status
+    );
+
+});
+
+
+async function changeStatus(id, status) {
+
+    const supporter = supporters.find(s => s.id === id);
+
+    if (!supporter) return;
+
+    if (!confirm(
+        "Change " +
+        (supporter.full_name || "this supporter") +
+        "'s membership status to " + status + "?"
+    )) return;
+
+    const { error } = await db
+        .from("supporter_profiles")
+        .update({
+            membership_status: status,
+            updated_at: new Date().toISOString()
+        })
+        .eq("id", id);
+
+    if (error) {
+        alert("Update failed: " + error.message);
+        return;
+    }
+
+    alert("Membership successfully updated.");
+
+    await loadDashboard();
+
+}
+
+
+// RECENT LOGIN ACTIVITY
+
+async function loadActivity() {
+
+    const { data, error } = await db
+        .from("supporter_login_activity")
+        .select("supporter_id,login_time")
+        .order("login_time", { ascending: false })
+        .limit(50);
+
+    const tbody = document.getElementById("activityRows");
+
+    if (error) {
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="2" class="empty">
+                    Could not load login history.
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+    const rows = data || [];
+
+    const names = new Map(
+        supporters.map(s => [
+            s.id,
+            s.full_name || "Supporter"
+        ])
+    );
+
+    if (!rows.length) {
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="2" class="empty">
+                    No login activity recorded yet.
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+    tbody.innerHTML = rows.map(item => `
+
+        <tr>
+
+            <td>
+                ${escapeHTML(
+                    names.get(item.supporter_id) || "Supporter"
+                )}
+            </td>
+
+            <td>
+                ${escapeHTML(
+                    item.login_time
+                    ? new Date(item.login_time).toLocaleString()
+                    : "Unknown"
+                )}
+            </td>
+
+        </tr>
+
+    `).join("");
+
+}
+
+
+// EXCEL DOWNLOAD WITH CLUB LOGO
+
+document.getElementById("downloadButton")
+.addEventListener("click", exportSupporters);
+
+async function exportSupporters() {
+
+    const button = document.getElementById("downloadButton");
+
+    if (!supporters.length) {
+        alert("There are no supporter records to download.");
+        return;
+    }
+
+    if (typeof ExcelJS === "undefined") {
+        alert("Excel library could not load. Check your internet connection.");
+        return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Preparing Excel file...";
+
+    try {
+
+        const workbook = new ExcelJS.Workbook();
+
+        workbook.creator = "Desert Warriors FC";
+        workbook.title = "Official Supporter Register";
+
+        const sheet = workbook.addWorksheet("Supporter Register");
+
+        sheet.columns = [
+            { width: 22 },
+            { width: 28 },
+            { width: 32 },
+            { width: 20 },
+            { width: 20 },
+            { width: 25 }
+        ];
+
+        // REPORT HEADING
+
+        sheet.mergeCells("B1:F2");
+
+        sheet.getCell("B1").value = "DESERT WARRIORS FC";
+
+        sheet.getCell("B1").font = {
+            size: 19,
+            bold: true,
+            color: { argb: "FFD6AD52" }
+        };
+
+        sheet.getCell("B1").alignment = {
+            vertical: "middle"
+        };
+
+        sheet.mergeCells("B3:F3");
+
+        sheet.getCell("B3").value =
+            "OFFICIAL SUPPORTER REGISTER";
+
+        sheet.getCell("B3").font = {
+            size: 13,
+            bold: true,
+            color: { argb: "FF101D32" }
+        };
+
+        sheet.mergeCells("B4:F4");
+
+        sheet.getCell("B4").value =
+            "Generated: " + new Date().toLocaleString();
+
+        sheet.getCell("B4").font = {
+            size: 10,
+            italic: true
+        };
+
+        sheet.getRow(1).height = 30;
+        sheet.getRow(2).height = 25;
+        sheet.getRow(3).height = 22;
+        sheet.getRow(4).height = 20;
+
+        // INSERT CLUB LOGO
+
+// INSERT CLUB LOGO
+
+ // INSERT CLUB LOGO
+
+ // Load the actual logo file from the same folder as admin.html
+ const response = await fetch("./logo.jfif");
+
+ if (!response.ok) {
+     throw new Error(
+         "Could not find logo.jfif. Make sure it is in the same folder as admin.html."
+     );
+ }
+
+ const logoBlob = await response.blob();
+
+ // Convert the image file into data that Excel can use
+ const logoBase64 = await new Promise((resolve, reject) => {
+     const reader = new FileReader();
+
+     reader.onload = () => resolve(reader.result);
+     reader.onerror = () => reject(
+         new Error("Could not read the club logo.")
+     );
+
+     reader.readAsDataURL(logoBlob);
+ });
+
+ // Add the logo to the Excel workbook
+ const logoId = workbook.addImage({
+     base64: logoBase64,
+     extension: "jpeg"
+ });
+
+ // Position the logo at the top-left
+ sheet.addImage(logoId, {
+     tl: { col: 0, row: 0 },
+     ext: { width: 90, height: 90 }
+ });
+
+        // TABLE HEADINGS
+
+        const header = sheet.getRow(7);
+
+        header.values = [
+            "Membership Number",
+            "Full Name",
+            "Email Address",
+            "Phone Number",
+            "Membership Status",
+            "Registration Date"
+        ];
+
+        header.height = 28;
+
+        header.eachCell(cell => {
+
+            cell.font = {
+                bold: true,
+                color: { argb: "FFFFFFFF" }
+            };
+
+            cell.fill = {
+                type: "pattern",
+                pattern: "solid",
+                fgColor: { argb: "FF101D32" }
+            };
+
+            cell.alignment = {
+                vertical: "middle"
+            };
+
+            cell.border = {
+                bottom: {
+                    style: "medium",
+                    color: { argb: "FFD6AD52" }
+                }
+            };
+
+        });
+
+        // SUPPORTER RECORDS
+
+        supporters.forEach(s => {
+
+            const row = sheet.addRow([
+                s.membership_number || "Not assigned",
+                s.full_name || "Not provided",
+                s.email || "Not available",
+                s.phone_number || "Not provided",
+                s.membership_status || "Pending",
+                s.created_at
+                    ? new Date(s.created_at).toLocaleString()
+                    : "Unknown"
+            ]);
+
+            row.height = 22;
+
+            row.eachCell(cell => {
+
+                cell.font = {
+                    size: 10,
+                    color: { argb: "FF263449" }
+                };
+
+                cell.alignment = {
+                    vertical: "middle"
+                };
+
+                cell.border = {
+                    bottom: {
+                        style: "hair",
+                        color: { argb: "FFE8EBF1" }
+                    }
+                };
+
+            });
+
+        });
+
+        // CREATE EXCEL FILE
+
+        const buffer = await workbook.xlsx.writeBuffer();
+
+        const blob = new Blob([buffer], {
+            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        });
+
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+
+        link.href = url;
+
+        link.download =
+            "Desert_Warriors_FC_Supporter_Register.xlsx";
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        link.remove();
+
+        URL.revokeObjectURL(url);
+
+    } catch (error) {
+
+        console.error("Excel export failed:", error);
+
+        alert("Download failed: " + error.message);
+
+    } finally {
+
+        button.disabled = false;
+        button.textContent = "⬇ Download Excel List";
+
+    }
+
+}
+
+
+// REFRESH BUTTON
+
+document.getElementById("refreshButton")
+.addEventListener("click", loadDashboard);
+
+
+// SIDEBAR NAVIGATION
+
+document.querySelectorAll(".nav-link[data-section]")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document.querySelectorAll(".nav-link")
+        .forEach(item => item.classList.remove("active"));
+
+        link.classList.add("active");
+
+    });
+
+});
+
+
+// LOGOUT
+
+async function logout() {
+
+    const { error } = await db.auth.signOut();
+
+    if (error) {
+        alert("Logout failed. Please try again.");
+        return;
+    }
+
+    supporters = [];
+
+    dashboard.style.display = "none";
+    login.style.display = "flex";
+
+    document.getElementById("loginForm").reset();
+
+    document.getElementById("message").textContent =
+        "You have successfully logged out.";
+
+}
+
+document.getElementById("logoutLink")
+.addEventListener("click", event => {
+
+    event.preventDefault();
+
+    logout();
+
+});
+
+
+// AUTHENTICATION STATE
+
+db.auth.onAuthStateChange((event) => {
+
+    if (event === "SIGNED_OUT") {
+
+        dashboard.style.display = "none";
+        login.style.display = "flex";
+
+    }
+
+});
+
+
+// INITIAL CHECK
+
 checkAdmin();
+
 </script>
 
 </body>
