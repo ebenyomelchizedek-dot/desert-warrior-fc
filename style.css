@@ -9948,11 +9948,18 @@ header {
 }
 
 .win {
-    background: #12833e;
+    background: transparent;
+    color: #12833e;
 }
 
 .draw {
-    background: #777;
+    background: transparent;
+    color: #777;
+}
+
+.loss {
+    background: transparent;
+    color: #dc2626;
 }
 
 .ground-label {

@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desert Warriors FC | Admin Centre</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+:root {
+  --navy: #101d32;
+  --gold: #d6ad52;
+  --bg: #f3f5f8;
+  --white: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: #192337;
+}
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 22px;
+  border-bottom: 4px solid var(--gold);
+}
+
+header h2 { margin: 0; }
+header p { color: #d5dbea; margin-bottom: 0; }
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+
+.panel, .stat {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px #0000000b;
+}
+
+input {
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #ccd2dc;
+  border-radius: 6px;
+  margin: 8px 0 15px;
+}
+
+button {
+  background: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 16px;
+  cursor: pointer;
+  margin: 3px;
+}
+
+button:hover { background: #263e60; }
+
+.gold { background: #a77d29; }
+.red { background: #a72e37; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 15px;
+}
+
+.stat h3 { color: #667085; }
+.stat strong { font-size: 30px; color: var(--navy); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+th, td {
+  padding: 13px;
+  border-bottom: 1px solid #e6e9ef;
+  text-align: left;
+}
+
+th { background: #f4f6f9; }
+
+.table-wrap { overflow-x: auto; }
+
+#dashboard { display: none; }
+#message { color: #a72e37; }
+
+small { color: #667085; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>DESERT WARRIORS FC</h2>
+  <p>Supporters Database Centre | Administration</p>
+</header>
+
+<div class="container">
+
+  <!-- ADMIN LOGIN -->
+  <section id="login" class="panel">
+    <h2>Administrator Login</h2>
+    <p>Authorised club administrators only.</p>
+
+    <form id="loginForm">
+      <label>Email address</label>
+      <input type="email" id="email" required>
+
+      <label>Password</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">Secure Login</button>
+    </form>
+
+    <p id="message"></p>
+  </section>
+
+  <!-- ADMIN DASHBOARD -->
+  <section id="dashboard">
+
+    <div class="panel">
+      <h2>Welcome to the Admin Centre</h2>
+      <p>Manage Desert Warriors FC supporters and memberships.</p>
+      <button onclick="logout()">Logout</button>
+      <button class="gold" onclick="loadDashboard()">Refresh Data</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <h3>Total Supporters</h3>
+        <strong id="total">0</strong>
+      </div>
+
+      <div class="stat">
+        <h3>Approved Members</h3>
+        <strong id="approved">0</strong>
+      </div>
+
+      <div class="stat">
+        <h3>Pending Members</h3>
+        <strong id="pending">0</strong>
+      </div>
+
+      <div class="stat">
+        <h3>Suspended Members</h3>
+        <strong id="suspended">0</strong>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Supporter Management</h2>
+      <input
+        id="search"
+        placeholder="Search by name or membership number..."
+        oninput="renderSupporters()"
+      >
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Membership No.</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="supporterRows"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Recent Login Activity</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Supporter</th>
+              <th>Login Date</th>
+            </tr>
+          </thead>
+          <tbody id="activityRows"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <p id="dashboardMessage"></p>
+
+  </section>
+</div>
+
+<script>
+const SUPABASE_URL = "https://pvbqkskkpfpnswkhxnuq.supabase.co";
+const SUPABASE_KEY = "sb_publishable_gqD-q3ZcjzZNTcySGZKdlA_h98YCa_j";
+
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+let supporters = [];
+
+const login = document.getElementById("login");
+const dashboard = document.getElementById("dashboard");
+
+async function checkAdmin() {
+  const { data: { session } } =
+    await db.auth.getSession();
+
+  if (!session) {
+    login.style.display = "block";
+    dashboard.style.display = "none";
+    return;
+  }
+
+  const { data, error } =
+    await db.rpc("is_supporter_admin");
+
+  if (error || data !== true) {
+    await db.auth.signOut();
+    document.getElementById("message").textContent =
+      "Access denied. Administrator privileges required.";
+    return;
+  }
+
+  login.style.display = "none";
+  dashboard.style.display = "block";
+
+  await loadDashboard();
+}
+
+document.getElementById("loginForm")
+.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  document.getElementById("message").textContent =
+    "Checking administrator account...";
+
+  const { error } = await db.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    document.getElementById("message").textContent =
+      "Login failed. Check your credentials.";
+    return;
+  }
+
+  await checkAdmin();
+});
+
+async function loadDashboard() {
+  const msg = document.getElementById("dashboardMessage");
+  msg.textContent = "Loading database records...";
+
+  const { data, error } = await db
+    .from("supporter_profiles")
+    .select("id,full_name,phone_number,membership_number,membership_status,created_at")
+    .order("created_at", { ascending: false })
+    .limit(500);
+
+  if (error) {
+    msg.textContent = "Could not load supporters: " + error.message;
+    return;
+  }
+
+  supporters = data || [];
+
+  document.getElementById("total").textContent =
+    supporters.length;
+
+  document.getElementById("approved").textContent =
+    supporters.filter(s => s.membership_status === "Approved").length;
+
+  document.getElementById("pending").textContent =
+    supporters.filter(s => s.membership_status === "Pending").length;
+
+  document.getElementById("suspended").textContent =
+    supporters.filter(s => s.membership_status === "Suspended").length;
+
+  renderSupporters();
+  await loadActivity();
+
+  msg.textContent = "Database information loaded.";
+}
+
+function renderSupporters() {
+  const query =
+    document.getElementById("search").value.toLowerCase();
+
+  const filtered = supporters.filter(s =>
+    (s.full_name || "").toLowerCase().includes(query) ||
+    (s.membership_number || "").toLowerCase().includes(query)
+  );
+
+  document.getElementById("supporterRows").innerHTML =
+    filtered.map(s => `
+      <tr>
+        <td>${escapeHTML(s.full_name || "Not provided")}</td>
+        <td>${escapeHTML(s.membership_number || "Not assigned")}</td>
+        <td>${escapeHTML(s.phone_number || "Not provided")}</td>
+        <td>${escapeHTML(s.membership_status)}</td>
+        <td>
+          <button class="gold"
+            onclick="changeStatus('${s.id}','Approved')">
+            Approve
+          </button>
+          <button class="red"
+            onclick="changeStatus('${s.id}','Suspended')">
+            Suspend
+          </button>
+        </td>
+      </tr>
+    `).join("");
+}
+
+async function changeStatus(id, status) {
+  if (!confirm("Change this membership to " + status + "?")) {
+    return;
+  }
+
+  const { error } = await db
+    .from("supporter_profiles")
+    .update({
+      membership_status: status,
+      updated_at: new Date().toISOString()
+    })
+    .eq("id", id);
+
+  if (error) {
+    alert("Update failed: " + error.message);
+    return;
+  }
+
+  await loadDashboard();
+}
+
+async function loadActivity() {
+  const { data, error } = await db
+    .from("supporter_login_activity")
+    .select("supporter_id,login_time")
+    .order("login_time", { ascending: false })
+    .limit(50);
+
+  if (error) {
+    document.getElementById("activityRows").innerHTML =
+      "<tr><td colspan='2'>Could not load login history.</td></tr>";
+    return;
+  }
+
+  const rows = data || [];
+
+  const names = new Map(
+    supporters.map(s => [s.id, s.full_name || "Supporter"])
+  );
+
+  document.getElementById("activityRows").innerHTML =
+    rows.map(item => `
+      <tr>
+        <td>${escapeHTML(names.get(item.supporter_id) || "Supporter")}</td>
+        <td>${escapeHTML(new Date(item.login_time).toLocaleString())}</td>
+      </tr>
+    `).join("");
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+async function logout() {
+  await db.auth.signOut();
+  supporters = [];
+  dashboard.style.display = "none";
+  login.style.display = "block";
+}
+
+db.auth.onAuthStateChange((event) => {
+  if (event === "SIGNED_OUT") {
+    dashboard.style.display = "none";
+    login.style.display = "block";
+  }
+});
+
+checkAdmin();
+</script>
+
+</body>
+</html>
