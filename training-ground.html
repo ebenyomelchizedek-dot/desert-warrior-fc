@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Ground | Desert Warriors FC</title>
+    <meta name="description" content="Discover the history, home ground and development of Desert Warriors FC at Lodwar Mixed Primary Ground.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* TRAINING GROUND PAGE */
+
+        .ground-page {
+            background: #080d20;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .ground-hero {
+            min-height: 570px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(
+                rgba(3, 8, 24, .72),
+                rgba(3, 8, 24, .85)
+            ), url("images/training-ground/ground-main.jpg")
+            center/cover no-repeat;
+        }
+
+        .ground-hero-content {
+            max-width: 900px;
+        }
+
+        .ground-hero h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            font-weight: 900;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        .ground-hero p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .ground-tag {
+            color: #e8bd31;
+            letter-spacing: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .ground-button {
+            display: inline-block;
+            background: #e8bd31;
+            color: #10152b;
+            text-decoration: none;
+            padding: 14px 28px;
+            margin-top: 20px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .ground-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .ground-section {
+            padding: 75px 0;
+        }
+
+        .ground-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .ground-heading span {
+            color: #e8bd31;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .ground-heading h2 {
+            font-size: clamp(27px, 4vw, 40px);
+            margin: 12px 0;
+            text-transform: uppercase;
+        }
+
+        .ground-heading p {
+            color: #b9bdca;
+            line-height: 1.8;
+        }
+
+        /* HISTORY */
+
+        .ground-history {
+            background: #10172d;
+        }
+
+        .history-content {
+            max-width: 900px;
+            margin: auto;
+            border-left: 3px solid #e8bd31;
+            padding-left: 30px;
+        }
+
+        .history-item {
+            position: relative;
+            padding: 0 0 35px;
+        }
+
+        .history-item::before {
+            content: "";
+            position: absolute;
+            left: -39px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            background: #e8bd31;
+            border-radius: 50%;
+        }
+
+        .history-item h3 {
+            color: #e8bd31;
+            font-size: 22px;
+            margin: 0 0 12px;
+        }
+
+        .history-item p {
+            color: #d0d4df;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        /* FACTS */
+
+        .ground-facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .ground-fact {
+            border-top: 2px solid #e8bd31;
+            padding: 22px 10px;
+            background: #111a32;
+            text-align: center;
+        }
+
+        .ground-fact h3 {
+            color: #e8bd31;
+            font-size: 25px;
+            margin: 0 0 10px;
+        }
+
+        .ground-fact p {
+            color: #d0d4df;
+            margin: 0;
+        }
+
+        /* PHOTOGRAPHY */
+
+        .ground-gallery {
+            background: #0c1226;
+        }
+
+        .ground-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .ground-photo {
+            margin: 0;
+            background: #151e36;
+            overflow: hidden;
+        }
+
+        .ground-photo img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s ease;
+        }
+
+        .ground-photo:hover img {
+            transform: scale(1.04);
+        }
+
+        .photo-placeholder {
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: #c2c8d5;
+            background: #19233d;
+            border: 1px dashed #67718a;
+        }
+
+        .ground-photo figcaption {
+            padding: 15px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* DEVELOPMENT */
+
+        .ground-development {
+            background: #10172d;
+        }
+
+        .development-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .development-content p {
+            color: #d0d4df;
+            font-size: 17px;
+            line-height: 2;
+        }
+
+        .ground-footer {
+            background: #050918;
+            border-top: 1px solid #394056;
+            padding: 35px 15px;
+            text-align: center;
+            color: #b9bdca;
+        }
+
+        .ground-footer a {
+            color: #e8bd31;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media(max-width: 768px) {
+            .ground-hero {
+                min-height: 430px;
+            }
+
+            .ground-facts {
+                grid-template-columns: 1fr;
+            }
+
+            .ground-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ground-photo img,
+            .photo-placeholder {
+                height: 190px;
+            }
+
+            .ground-container {
+                width: 92%;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .ground-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ground-photo img,
+            .photo-placeholder {
+                height: 230px;
+            }
+
+            .ground-hero p {
+                font-size: 15px;
+            }
+
+            .ground-section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="ground-page">
+
+    <!-- HERO SECTION -->
+    <section class="ground-hero">
+        <div class="ground-hero-content">
+
+            <span class="ground-tag">Our Home Since September 2020</span>
+
+            <h1>Lodwar Mixed Primary Ground</h1>
+
+            <p>
+                The home of Desert Warriors Football Club.
+                A place of preparation, commitment, teamwork
+                and the pursuit of football excellence.
+            </p>
+
+            <a href="#ground-history" class="ground-button">
+                DISCOVER OUR HISTORY
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="ground-section">
+        <div class="ground-container">
+
+            <div class="ground-heading">
+                <span>OUR HOME</span>
+                <h2>Where Our Journey Continues</h2>
+                <p>Lodwar, Turkana County, Kenya</p>
+            </div>
+
+            <p style="text-align:center; color:#d0d4df;
+                      line-height:2; max-width:900px; margin:auto;">
+                Since September 2020, Lodwar Mixed Primary Ground
+                has served as the home training and match venue
+                of Desert Warriors FC. It is an important part
+                of the club's journey, providing a place where
+                players prepare, compete and continue developing
+                their football abilities.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- HISTORY -->
+    <section class="ground-section ground-history"
+             id="ground-history">
+
+        <div class="ground-container">
+
+            <div class="ground-heading">
+                <span>OUR STORY</span>
+                <h2>History of Our Home Ground</h2>
+                <p>
+                    The journey of Desert Warriors FC at
+                    Lodwar Mixed Primary Ground.
+                </p>
+            </div>
+
+            <div class="history-content">
+
+                <div class="history-item">
+                    <h3>September 2020 — A New Home</h3>
+                    <p>
+                        Desert Warriors FC began using Lodwar Mixed
+                        Primary Ground in September 2020. The club
+                        management held discussions with the school
+                        management to secure the playing field for
+                        the team's training sessions and football
+                        matches. This arrangement established the
+                        ground as an important home for the club.
+                    </p>
+                </div>
+
+                <div class="history-item">
+                    <h3>Ground Preparation and Maintenance</h3>
+                    <p>
+                        The club has continued taking responsibility
+                        for preparing and maintaining the playing
+                        surface. Activities include levelling the
+                        ground and marking the pitch lines to make
+                        it ready for training and matches.
+                    </p>
+                </div>
+
+                <div class="history-item">
+                    <h3>A Home for Training and Competition</h3>
+                    <p>
+                        Over the years, the ground has continued
+                        serving the club for its training sessions
+                        and football matches. The club reports no
+                        significant challenges in using the venue
+                        for these activities.
+                    </p>
+                </div>
+
+                <div class="history-item">
+                    <h3>Today — Building for the Future</h3>
+                    <p>
+                        Lodwar Mixed Primary Ground remains an
+                        important part of Desert Warriors FC.
+                        Although dedicated club facilities have
+                        not yet been established, the club continues
+                        to use and maintain the ground while
+                        pursuing its long-term development ambitions.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- GROUND FACTS -->
+    <section class="ground-section">
+
+        <div class="ground-container">
+
+            <div class="ground-heading">
+                <span>OUR HOME AT A GLANCE</span>
+                <h2>Ground Information</h2>
+            </div>
+
+            <div class="ground-facts">
+
+                <div class="ground-fact">
+                    <h3>2020</h3>
+                    <p>Year the club started using the ground</p>
+                </div>
+
+                <div class="ground-fact">
+                    <h3>Lodwar</h3>
+                    <p>Turkana County, Kenya</p>
+                </div>
+
+                <div class="ground-fact">
+                    <h3>Training & Matches</h3>
+                    <p>Primary purpose of the ground</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+    <section class="ground-section ground-gallery">
+
+        <div class="ground-container">
+
+            <div class="ground-heading">
+                <span>PICTURES OF OUR HOME</span>
+                <h2>The Ground in Pictures</h2>
+                <p>
+                    A visual record of our playing field,
+                    training activities and development.
+                </p>
+            </div>
+
+            <div class="ground-gallery-grid">
+
+                <!-- PHOTO 1 -->
+                <figure class="ground-photo">
+                    <img src="Ourhomeground.jpg"
+                         alt="Lodwar Mixed Primary Ground"
+                         onerror="this.style.display='none';
+                         this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display:none;">
+                        Upload main ground photograph
+                    </div>
+                    <figcaption>Our Home Ground</figcaption>
+                </figure>
+
+                <!-- PHOTO 2 -->
+                <figure class="ground-photo">
+                    <img src="playingfield.jpg"
+                         alt="Football playing pitch"
+                         onerror="this.style.display='none';
+                         this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display:none;">
+                        Upload playing pitch photograph
+                    </div>
+                    <figcaption>The Playing Field</figcaption>
+                </figure>
+
+                <!-- PHOTO 3 -->
+                <figure class="ground-photo">
+                    <img src="Trainingsessions.jpeg"
+                         alt="Desert Warriors FC training"
+                         onerror="this.style.display='none';
+                         this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display:none;">
+                        Upload training photograph
+                    </div>
+                    <figcaption>Training Sessions</figcaption>
+                </figure>
+
+                <!-- PHOTO 4 -->
+                <figure class="ground-photo">
+                    <img src="matchday.jpg"
+                         alt="Football match at the ground"
+                         onerror="this.style.display='none';
+                         this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display:none;">
+                        Upload match photograph
+                    </div>
+                    <figcaption>Match Days</figcaption>
+                </figure>
+
+                <!-- PHOTO 5 -->
+                <figure class="ground-photo">
+                    <img src="Groundpreparation.jpg"
+                         alt="Ground preparation and maintenance"
+                         onerror="this.style.display='none';
+                         this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display:none;">
+                        Upload ground maintenance photograph
+                    </div>
+                    <figcaption>Ground Preparation</figcaption>
+                </figure>
+
+                <!-- PHOTO 6 -->
+                <figure class="ground-photo">
+                    <img src="Clubs_photo.jpg"
+                         alt="Desert Warriors FC team at the ground"
+                         onerror="this.style.display='none';
+                         this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display:none;">
+                        Upload team photograph
+                    </div>
+                    <figcaption>Our Football Family</figcaption>
+                </figure>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FUTURE DEVELOPMENT -->
+    <section class="ground-section ground-development">
+
+        <div class="ground-container">
+
+            <div class="ground-heading">
+                <span>OUR AMBITION</span>
+                <h2>Building Towards the Future</h2>
+            </div>
+
+            <div class="development-content">
+
+                <p>
+                    Desert Warriors FC recognises the importance
+                    of having developed and dedicated football
+                    facilities to support the club's long-term
+                    ambitions.
+                </p>
+
+                <p>
+                    While dedicated club facilities have not yet
+                    been established at Lodwar Mixed Primary Ground,
+                    the club remains committed to maintaining its
+                    playing environment and pursuing opportunities
+                    for future improvement and development.
+                </p>
+
+                <p>
+                    Our home is more than a playing field.
+                    It is part of our history, our identity
+                    and our continued football journey.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="ground-footer">
+
+        <h3>DESERT WARRIORS FC</h3>
+
+        <p>United by Passion. Driven by Purpose.</p>
+
+        <p>
+            <a href="index.html">RETURN TO HOMEPAGE</a>
+        </p>
+
+        <p>&copy; 2026 Desert Warriors FC. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>

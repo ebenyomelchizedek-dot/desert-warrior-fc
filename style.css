@@ -11068,3 +11068,172 @@ body.dw-calendar-lock {
     opacity: 0.6;
     cursor: wait;
 }
+
+/* =====================================
+   DESERT WARRIORS FC SPONSORS SECTION
+===================================== */
+
+/* DESERT WARRIORS FC - SPONSORS SECTION */
+
+
+/* =====================================
+   DESERT WARRIORS FC
+   OFFICIAL PARTNERS & SPONSORS
+===================================== */
+
+/* DESERT WARRIORS FC SPONSORS */
+
+.dw-sponsors {
+    background: #0b1028;
+    color: #fff;
+    padding: 35px 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* HEADING */
+
+.dw-sponsors-heading {
+    margin-bottom: 30px;
+}
+
+.dw-sponsors-heading h2 {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0 0 12px;
+}
+
+.dw-sponsors-heading p {
+    color: #d9ad45;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* MAIN SPONSORS */
+
+.dw-main-sponsors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1050px;
+    margin: 25px auto;
+}
+
+.dw-main-logo,
+.dw-partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    min-width: 0;
+    padding: 12px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+/* LOGO */
+
+.dw-main-logo img,
+.dw-partner-logo img {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+}
+
+/* VERTICAL SEPARATOR AND NAME */
+
+.dw-main-logo span,
+.dw-partner-logo span {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    border-left: 1px solid #d9ad45;
+    padding-left: 12px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+}
+
+/* HOVER EFFECT */
+
+.dw-main-logo:hover,
+.dw-partner-logo:hover {
+    transform: translateY(-3px);
+}
+
+.dw-main-logo:hover span,
+.dw-partner-logo:hover span {
+    color: #d9ad45;
+}
+
+/* DIVIDER */
+
+.dw-sponsor-divider {
+    height: 1px;
+    width: 100%;
+    background: rgba(217, 173, 69, 0.4);
+    margin: 30px auto;
+}
+
+/* OTHER PARTNERS */
+
+.dw-partner-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    .dw-sponsors-heading h2 {
+        font-size: 23px;
+    }
+
+    .dw-main-sponsors {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .dw-partner-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .dw-main-logo,
+    .dw-partner-logo {
+        gap: 8px;
+        padding: 8px 3px;
+    }
+
+    .dw-main-logo img,
+    .dw-partner-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .dw-main-logo span,
+    .dw-partner-logo span {
+        font-size: 10px;
+        padding-left: 8px;
+    }
+}
