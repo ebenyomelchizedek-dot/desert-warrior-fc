@@ -4,21 +4,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Supporter Portal | Desert Warriors FC</title>
+<title>Supporter Dashboard | Desert Warriors FC</title>
+
+<!-- Download and QR libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 :root {
-    --yellow: #f5c400;
-    --yellow-light: #fff5cf;
-    --red: #d62828;
-    --dark: #111315;
-    --dark2: #1b1e21;
-    --dark3: #262a2e;
+    --yellow: #ffcc00;
+    --yellow-dark: #e0b400;
+    --red: #e63932;
+    --black: #101010;
+    --dark: #171717;
+    --dark-soft: #222222;
     --white: #ffffff;
+    --muted: #888888;
     --bg: #f4f5f7;
-    --muted: #747b84;
-    --border: #e6e8eb;
-    --green: #16844a;
+    --border: #e8e8e8;
+    --radius: 18px;
 }
 
 * {
@@ -28,9 +34,9 @@
 }
 
 body {
-    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg);
-    color: #202327;
+    color: #222;
 }
 
 button, a {
@@ -42,111 +48,100 @@ a {
     color: inherit;
 }
 
-button {
-    cursor: pointer;
-}
-
 /* LOADING */
-#loading-message {
+.loading-screen {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 15px;
-    color: #6b7280;
-    background: #111315;
+    background: var(--black);
+    color: white;
+    gap: 18px;
 }
 
-.loading-logo {
-    width: 65px;
-    height: 65px;
-    border-radius: 18px;
-    background: var(--yellow);
-    color: #111;
-    display: grid;
-    place-items: center;
-    font-weight: 900;
-    font-size: 20px;
-}
-
-.loading-spinner {
-    width: 27px;
-    height: 27px;
-    border: 3px solid #333;
+.loader {
+    width: 46px;
+    height: 46px;
+    border: 4px solid #383838;
     border-top-color: var(--yellow);
     border-radius: 50%;
-    animation: spin .8s linear infinite;
+    animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
 
-/* DASHBOARD LAYOUT */
+.loading-screen p {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* HIDE DASHBOARD UNTIL AUTHENTICATED */
+.dashboard[hidden] {
+    display: none !important;
+}
+
 .dashboard {
-    display: flex;
     min-height: 100vh;
+    display: flex;
 }
 
 /* SIDEBAR */
 .sidebar {
-    width: 265px;
-    flex-shrink: 0;
+    width: 255px;
     background: var(--dark);
     color: white;
     min-height: 100vh;
-    padding: 25px 17px;
+    padding: 26px 17px;
     display: flex;
     flex-direction: column;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 20;
+    flex-shrink: 0;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 5px 9px 25px;
-    border-bottom: 1px solid #303438;
+    padding: 4px 9px 30px;
 }
 
 .brand-logo {
-    width: 49px;
-    height: 49px;
-    border-radius: 13px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     background: var(--yellow);
-    display: grid;
-    place-items: center;
     color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 900;
-    font-size: 16px;
-    flex-shrink: 0;
+    font-size: 13px;
+    border: 2px solid white;
 }
 
-.brand-name {
+.brand-text {
     font-size: 13px;
     font-weight: 900;
-    line-height: 1.5;
-    letter-spacing: .5px;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
 }
 
-.brand-tagline {
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    color: #a4a8ac;
+.brand-text span {
+    display: block;
+    color: var(--yellow);
+    font-size: 10px;
+    letter-spacing: 2px;
     margin-top: 3px;
 }
 
-.nav-caption {
+.nav-label {
     font-size: 10px;
-    font-weight: 800;
-    color: #777e84;
     letter-spacing: 2px;
-    margin: 28px 11px 11px;
+    color: #777;
+    padding: 12px 11px;
+    font-weight: 700;
 }
 
 .sidebar-nav {
@@ -155,64 +150,33 @@ button {
     gap: 5px;
 }
 
-.nav-link {
+.sidebar-nav a {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 13px;
-    color: #c3c6ca;
+    padding: 13px 14px;
+    color: #aaa;
     font-size: 13px;
     font-weight: 600;
-    border-radius: 8px;
-    transition: .25s;
+    border-radius: 10px;
+    transition: 0.2s;
 }
 
-.nav-icon {
-    width: 22px;
-    text-align: center;
-    font-size: 16px;
-}
-
-.nav-link:hover {
-    background: #24282c;
+.sidebar-nav a:hover {
+    background: #2b2b2b;
     color: white;
 }
 
-.nav-link.active {
+.sidebar-nav a.active {
     background: var(--yellow);
     color: #111;
     font-weight: 800;
 }
 
-.nav-link.active .nav-icon {
-    color: #111;
-}
-
-.sidebar-community {
-    margin-top: 30px;
-    padding: 18px 15px;
-    background: #202326;
-    border: 1px solid #303438;
-    border-radius: 11px;
-}
-
-.sidebar-community h4 {
-    font-size: 12px;
-    margin-bottom: 8px;
-}
-
-.sidebar-community p {
-    font-size: 11px;
-    color: #9fa4a8;
-    line-height: 1.6;
-    margin-bottom: 13px;
-}
-
-.community-link {
-    display: inline-block;
-    color: var(--yellow);
-    font-size: 11px;
-    font-weight: 800;
+.nav-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
 }
 
 .sidebar-bottom {
@@ -220,75 +184,53 @@ button {
     padding-top: 25px;
 }
 
-.sidebar-member {
-    border-top: 1px solid #303438;
-    padding: 18px 8px 15px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
+.sidebar-support {
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 14px;
+    padding: 16px;
+    margin: 10px 3px 20px;
 }
 
-.sidebar-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: var(--yellow);
-    color: #111;
-    display: grid;
-    place-items: center;
-    font-weight: 900;
-    flex-shrink: 0;
-}
-
-.sidebar-member-info {
-    min-width: 0;
-}
-
-.sidebar-member-info strong {
+.sidebar-support strong {
     display: block;
     font-size: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    margin-bottom: 7px;
 }
 
-.sidebar-member-info small {
-    font-size: 10px;
-    color: #92989d;
+.sidebar-support p {
+    color: #999;
+    font-size: 11px;
+    line-height: 1.7;
 }
 
 .logout-btn {
     width: 100%;
+    padding: 12px 14px;
     background: transparent;
-    border: 1px solid #4b3436;
-    border-radius: 8px;
-    color: #e9aaaa;
-    padding: 12px;
-    font-size: 12px;
+    color: #bbb;
+    border: 1px solid #393939;
+    border-radius: 10px;
+    cursor: pointer;
     font-weight: 700;
-    transition: .25s;
+    font-size: 12px;
+    transition: 0.2s;
 }
 
 .logout-btn:hover {
-    background: #7d252b;
     color: white;
-}
-
-.logout-btn:disabled {
-    opacity: .65;
-    cursor: wait;
+    border-color: var(--red);
+    background: rgba(230, 55, 45, 0.1);
 }
 
 /* MAIN */
 .main-content {
     flex: 1;
     min-width: 0;
-    padding: 30px 38px 25px;
-    max-width: 1700px;
-    margin: 0 auto;
+    padding: 32px 38px;
 }
 
-.main-topbar {
+.topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -296,17 +238,16 @@ button {
     margin-bottom: 28px;
 }
 
-.topbar-heading small {
-    color: #858b91;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2px;
+.topbar-left h1 {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: -0.7px;
 }
 
-.topbar-heading h1 {
-    font-size: 23px;
-    margin-top: 5px;
-    letter-spacing: -.5px;
+.topbar-left p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 6px;
 }
 
 .topbar-right {
@@ -315,142 +256,124 @@ button {
     gap: 12px;
 }
 
-.club-pill {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    padding: 9px 13px;
-    font-size: 11px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    background: #19a463;
-    border-radius: 50%;
-}
-
-/* WELCOME HERO */
-.hero {
-    background: linear-gradient(115deg, #151719 0%, #222629 55%, #353638 100%);
-    border-radius: 17px;
-    color: white;
-    padding: 38px;
-    min-height: 245px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 27px;
-    border-bottom: 4px solid var(--yellow);
-}
-
-.hero::before {
-    content: "DWFC";
-    position: absolute;
-    right: 15px;
-    bottom: -36px;
-    font-size: clamp(100px, 15vw, 210px);
-    line-height: 1;
-    font-weight: 900;
-    letter-spacing: -10px;
-    color: rgba(255,255,255,.035);
-    pointer-events: none;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 270px;
-    height: 270px;
-    border: 1px solid rgba(245,196,0,.12);
-    border-radius: 50%;
-    right: 70px;
-    top: -80px;
-    box-shadow: 0 0 0 35px rgba(245,196,0,.025),
-                0 0 0 70px rgba(245,196,0,.025);
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
-}
-
-.hero-eyebrow {
+.topbar-user {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.topbar-user-name {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.topbar-user-label {
+    color: #999;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+/* HERO */
+.welcome-banner {
+    background: linear-gradient(115deg, #171717 0%, #292929 70%, #171717 100%);
+    border-radius: 22px;
+    padding: 34px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 28px;
+}
+
+.welcome-banner::after {
+    content: "DW";
+    position: absolute;
+    font-weight: 900;
+    font-size: 180px;
+    color: rgba(255, 204, 0, 0.045);
+    right: -12px;
+    bottom: -65px;
+    pointer-events: none;
+}
+
+.welcome-tag {
     color: var(--yellow);
     font-size: 10px;
-    letter-spacing: 2.5px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.welcome-banner h2 {
+    font-size: clamp(23px, 3vw, 34px);
     font-weight: 900;
+    line-height: 1.3;
+    max-width: 600px;
 }
 
-.hero-eyebrow span {
-    width: 25px;
-    height: 2px;
-    background: var(--yellow);
-}
-
-.hero h2 {
-    font-size: clamp(26px, 3.5vw, 43px);
-    line-height: 1.15;
-    margin: 17px 0 12px;
-    letter-spacing: -1px;
-}
-
-.hero h2 em {
-    font-style: normal;
+.welcome-banner h2 span {
     color: var(--yellow);
 }
 
-.hero p {
+.welcome-banner p {
+    color: #bbb;
     font-size: 13px;
     line-height: 1.8;
-    color: #c0c4c7;
+    margin-top: 13px;
     max-width: 520px;
 }
 
 .hero-actions {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
-    margin-top: 23px;
+    gap: 10px;
+    margin-top: 22px;
 }
 
 .btn-yellow {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 8px;
     background: var(--yellow);
     color: #111;
+    border: 0;
+    border-radius: 9px;
     padding: 12px 17px;
-    border-radius: 7px;
-    font-size: 11px;
-    font-weight: 900;
-    transition: .25s;
+    font-weight: 800;
+    font-size: 12px;
+    transition: 0.2s;
 }
 
 .btn-yellow:hover {
-    background: #ffda35;
+    background: #ffe066;
     transform: translateY(-2px);
 }
 
 .btn-outline {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
-    border: 1px solid #5b5e60;
+    align-items: center;
+    background: transparent;
     color: white;
+    border: 1px solid #505050;
+    border-radius: 9px;
     padding: 12px 17px;
-    border-radius: 7px;
-    font-size: 11px;
-    font-weight: 800;
-    transition: .25s;
+    font-weight: 700;
+    font-size: 12px;
+    transition: 0.2s;
 }
 
 .btn-outline:hover {
@@ -458,625 +381,141 @@ button {
     color: var(--yellow);
 }
 
-/* SECTION TITLE */
-.section-header {
+/* SECTION HEADINGS */
+.section-heading {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     gap: 15px;
-    margin: 32px 0 17px;
+    margin-bottom: 17px;
 }
 
-.section-header h2 {
-    font-size: 17px;
-    letter-spacing: -.3px;
+.section-heading h2 {
+    font-size: 16px;
+    font-weight: 900;
 }
 
-.section-header p {
-    color: var(--muted);
+.section-heading p {
+    color: #999;
     font-size: 11px;
     margin-top: 5px;
 }
 
-.section-link {
-    color: #a57e00;
-    font-weight: 800;
+.section-heading a {
+    color: #9a7900;
     font-size: 11px;
-    white-space: nowrap;
+    font-weight: 800;
 }
 
-/* QUICK LINKS */
+/* QUICK ACCESS */
 .quick-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
 .quick-card {
-    display: block;
     background: white;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 15px;
     padding: 19px;
-    transition: .25s;
-    position: relative;
-    overflow: hidden;
+    transition: 0.25s;
 }
 
 .quick-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--yellow);
-    box-shadow: 0 9px 25px rgba(0,0,0,.05);
+    transform: translateY(-3px);
+    border-color: #e7c400;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
 .quick-icon {
-    width: 42px;
-    height: 42px;
-    background: var(--yellow-light);
-    display: grid;
-    place-items: center;
+    width: 39px;
+    height: 39px;
     border-radius: 11px;
-    font-size: 19px;
-    margin-bottom: 15px;
+    background: #fff6cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    margin-bottom: 14px;
 }
 
 .quick-card h3 {
-    font-size: 13px;
-    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 800;
 }
 
 .quick-card p {
+    color: #999;
     font-size: 11px;
-    color: #7a8188;
-    line-height: 1.65;
+    line-height: 1.6;
+    margin-top: 7px;
 }
 
-.quick-arrow {
-    position: absolute;
-    right: 17px;
-    top: 18px;
-    color: #9da2a6;
-    font-size: 15px;
-    transition: .2s;
-}
-
-.quick-card:hover .quick-arrow {
-    color: #b18b00;
-    transform: translateX(3px);
-}
-
-/* TWO COLUMN CONTENT */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
-    gap: 18px;
-    margin-top: 29px;
-}
-
-/* MEMBERSHIP CARD */
-.member-card {
-    background: linear-gradient(135deg, #202326, #111315);
-    border-radius: 14px;
-    padding: 25px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    min-height: 240px;
-    border: 1px solid #2b2e31;
-}
-
-.member-card::after {
-    content: "";
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 30px solid rgba(245,196,0,.06);
-    right: -75px;
-    bottom: -95px;
-}
-
-.member-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.member-card-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.member-card-logo {
-    width: 36px;
-    height: 36px;
-    background: var(--yellow);
-    color: #111;
-    display: grid;
-    place-items: center;
-    border-radius: 9px;
-    font-size: 12px;
+.quick-card .quick-link {
+    display: inline-block;
+    margin-top: 13px;
+    font-size: 10px;
+    color: #927300;
     font-weight: 900;
 }
 
-.member-card-brand strong {
-    font-size: 10px;
-    letter-spacing: .5px;
+/* MEMBERSHIP SECTION */
+.membership-section {
+    margin-bottom: 30px;
 }
 
-.member-card-brand small {
-    display: block;
-    color: #999;
-    font-size: 8px;
-    letter-spacing: 1.5px;
-    margin-top: 3px;
-}
-
-.member-status {
-    color: #b6edcb;
-    font-size: 9px;
-    font-weight: 800;
-    background: rgba(22,132,74,.17);
-    border: 1px solid rgba(22,132,74,.35);
-    padding: 6px 9px;
-    border-radius: 20px;
-}
-
-.member-card-body {
-    margin-top: 32px;
-    position: relative;
-    z-index: 2;
-}
-
-.member-card-body small {
-    font-size: 9px;
-    letter-spacing: 2px;
-    color: #999;
-}
-
-.member-card-body h2 {
-    font-size: 22px;
-    margin: 8px 0 15px;
-    overflow-wrap: anywhere;
-}
-
-.member-card-bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
+.membership-section .section-heading {
     align-items: flex-end;
 }
 
-.member-meta small {
-    display: block;
-    color: #8d9296;
-    font-size: 8px;
-    letter-spacing: 1.5px;
-    margin-bottom: 5px;
-}
-
-.member-meta strong {
-    font-size: 11px;
-    color: #f0f0f0;
-}
-
-.member-card-bottom .member-slogan {
-    color: var(--yellow);
-    font-size: 9px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-/* PROFILE DETAILS */
-.profile-box {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 23px;
-}
-
-.profile-box-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.profile-box-header h3 {
-    font-size: 14px;
-}
-
-.profile-box-header span {
-    color: #8b9298;
-    font-size: 10px;
-}
-
-.profile-row {
-    padding: 13px 0;
-    border-bottom: 1px solid #f0f1f2;
-}
-
-.profile-row:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
-}
-
-.profile-row small {
-    display: block;
-    color: #8a9198;
-    font-size: 9px;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-}
-
-.profile-row strong {
-    font-size: 12px;
-    overflow-wrap: anywhere;
-}
-
-/* COMMUNITY BANNER */
-.community-banner {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    margin-top: 27px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-}
-
-.community-banner-left {
-    display: flex;
-    align-items: center;
-    gap: 17px;
-}
-
-.community-symbol {
-    width: 54px;
-    height: 54px;
-    background: #fff5cf;
-    border-radius: 13px;
-    display: grid;
-    place-items: center;
-    font-size: 23px;
-    flex-shrink: 0;
-}
-
-.community-banner h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-.community-banner p {
-    color: #7b8187;
-    font-size: 11px;
-    line-height: 1.7;
-}
-
-.community-banner .btn-yellow {
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-/* SOCIAL ROW */
-.social-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 17px;
-}
-
-.social-card {
-    background: white;
-    border: 1px solid var(--border);
-    padding: 16px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: .2s;
-}
-
-.social-card:hover {
-    border-color: var(--yellow);
-    transform: translateY(-2px);
-}
-
-.social-icon {
-    width: 38px;
-    height: 38px;
-    background: #f2f3f4;
-    border-radius: 10px;
-    display: grid;
-    place-items: center;
-    font-size: 17px;
-    flex-shrink: 0;
-}
-
-.social-info strong {
-    font-size: 11px;
-    display: block;
-}
-
-.social-info small {
-    color: #81878d;
-    font-size: 9px;
-    display: block;
-    margin-top: 3px;
-}
-
-/* FOOTER */
-.dashboard-footer {
-    margin-top: 35px;
-    padding: 24px 0 10px;
-    border-top: 1px solid #e1e4e7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.dashboard-footer p {
-    color: #858b91;
-    font-size: 10px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: #747b82;
-    font-size: 10px;
-}
-
-.footer-links a:hover {
-    color: #a68100;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1200px) {
-    .main-content {
-        padding: 27px 25px;
-    }
-
-    .quick-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 900px) {
-    .sidebar {
-        width: 225px;
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .member-card {
-        min-height: 230px;
-    }
-}
-
-@media (max-width: 650px) {
-    .dashboard {
-        display: block;
-    }
-
-    .sidebar {
-        position: relative;
-        top: auto;
-        width: 100%;
-        height: auto;
-        min-height: auto;
-        padding: 16px;
-        overflow: visible;
-    }
-
-    .brand {
-        padding-bottom: 15px;
-    }
-
-    .nav-caption {
-        margin: 17px 8px 10px;
-    }
-
-    .sidebar-nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 6px;
-    }
-
-    .nav-link {
-        padding: 10px 11px;
-        font-size: 11px;
-        flex: 0 0 auto;
-    }
-
-    .nav-icon {
-        display: none;
-    }
-
-    .sidebar-community {
-        display: none;
-    }
-
-    .sidebar-bottom {
-        padding-top: 12px;
-    }
-
-    .sidebar-member {
-        padding: 10px 3px;
-    }
-
-    .logout-btn {
-        max-width: 150px;
-    }
-
-    .main-content {
-        padding: 21px 14px;
-    }
-
-    .main-topbar {
-        margin-bottom: 20px;
-        align-items: flex-start;
-    }
-
-    .topbar-heading h1 {
-        font-size: 19px;
-    }
-
-    .club-pill {
-        font-size: 9px;
-        padding: 8px 10px;
-    }
-
-    .hero {
-        padding: 28px 21px;
-        min-height: auto;
-    }
-
-    .hero h2 {
-        font-size: 29px;
-    }
-
-    .hero p {
-        font-size: 12px;
-    }
-
-    .hero::before {
-        font-size: 90px;
-        right: -15px;
-        bottom: -5px;
-        letter-spacing: -5px;
-    }
-
-    .quick-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .quick-card {
-        padding: 16px;
-    }
-
-    .quick-card p {
-        font-size: 10px;
-    }
-
-    .section-header {
-        margin-top: 25px;
-    }
-
-    .content-grid {
-        gap: 13px;
-        margin-top: 22px;
-    }
-
-    .community-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    .community-banner .btn-yellow {
-        width: 100%;
-    }
-
-    .social-row {
-        grid-template-columns: 1fr;
-    }
-
-    .dashboard-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 380px) {
-    .quick-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-    }
-
-    .hero-actions a {
-        width: 100%;
-    }
-
-    .member-card {
-        padding: 19px;
-    }
-
-    .member-card-body h2 {
-        font-size: 18px;
-    }
-
-    .member-card-bottom .member-slogan {
-        font-size: 7px;
-    }
-
-/* ================================
-   DESERT WARRIORS MEMBERSHIP CARD
-================================ */
-
 .membership-card-area {
-    margin-top: 25px;
+    max-width: 760px;
 }
 
+/* DIGITAL MEMBERSHIP CARD */
 .membership-card {
     position: relative;
     overflow: hidden;
+    isolation: isolate;
     width: 100%;
-    max-width: 680px;
     aspect-ratio: 1.586 / 1;
-    padding: 28px 32px;
+    min-height: 280px;
+    padding: clamp(20px, 4vw, 34px);
     border-radius: 22px;
     color: #fff;
     background:
-        radial-gradient(circle at 95% 5%, rgba(255, 210, 0, 0.22), transparent 34%),
-        linear-gradient(135deg, #191919 0%, #252525 48%, #101010 100%);
-    border: 1px solid rgba(255, 205, 0, 0.42);
-    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.25);
+        radial-gradient(circle at 90% 8%, rgba(255, 204, 0, 0.19), transparent 35%),
+        linear-gradient(135deg, #111111 0%, #262626 52%, #101010 100%);
+    border: 1px solid rgba(255, 204, 0, 0.5);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
-    isolation: isolate;
 }
 
-/* Decorative circles */
 .membership-card::before {
     content: "";
     position: absolute;
-    width: 310px;
-    height: 310px;
+    width: 330px;
+    height: 330px;
     border: 1px solid rgba(255, 204, 0, 0.12);
     border-radius: 50%;
     right: -100px;
-    top: -125px;
+    top: -135px;
     z-index: -1;
 }
 
 .membership-card::after {
     content: "";
     position: absolute;
-    width: 220px;
-    height: 220px;
-    border: 35px solid rgba(255, 204, 0, 0.045);
+    width: 190px;
+    height: 190px;
+    border: 30px solid rgba(255, 204, 0, 0.045);
     border-radius: 50%;
     right: -80px;
-    bottom: -125px;
+    bottom: -120px;
     z-index: -1;
 }
 
@@ -1084,7 +523,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    gap: 12px;
 }
 
 .member-club-brand {
@@ -1096,104 +535,105 @@ button {
 .member-club-logo {
     width: 55px;
     height: 55px;
+    flex-shrink: 0;
     border-radius: 50%;
-    background: #ffcc00;
+    background: var(--yellow);
     color: #111;
+    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 950;
-    border: 2px solid #fff;
-    flex-shrink: 0;
 }
 
 .member-club-name {
-    font-size: 17px;
+    font-size: clamp(12px, 2vw, 16px);
     font-weight: 900;
-    letter-spacing: 1.4px;
-    line-height: 1.3;
+    letter-spacing: 1px;
+    line-height: 1.4;
 }
 
 .member-club-subtitle {
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: #ffcc00;
+    color: var(--yellow);
+    font-size: 9px;
+    letter-spacing: 2.2px;
     margin-top: 4px;
 }
 
 .member-card-label {
-    color: #ffcc00;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2.5px;
     text-align: right;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.7;
+    color: var(--yellow);
 }
 
 .member-card-middle {
-    margin-top: 18px;
+    margin: 20px 0;
 }
 
 .member-card-caption {
-    color: #bdbdbd;
-    font-size: 10px;
-    letter-spacing: 3px;
+    color: #aaa;
+    font-size: 9px;
     text-transform: uppercase;
+    letter-spacing: 3px;
     margin-bottom: 8px;
 }
 
 .member-card-fullname {
-    font-size: clamp(18px, 3vw, 29px);
+    font-size: clamp(19px, 3vw, 29px);
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
+    line-height: 1.3;
     text-transform: uppercase;
     overflow-wrap: anywhere;
-    line-height: 1.2;
 }
 
 .member-card-bottom {
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
     gap: 14px;
-    margin-top: 22px;
 }
 
 .member-card-details {
     display: flex;
-    gap: 28px;
     flex-wrap: wrap;
+    gap: clamp(13px, 2vw, 27px);
 }
 
 .member-detail-label {
-    font-size: 9px;
-    color: #aaa;
+    color: #999;
+    font-size: 8px;
+    letter-spacing: 1.6px;
     text-transform: uppercase;
-    letter-spacing: 1.7px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .member-detail-value {
-    font-size: 12px;
     color: #fff;
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 0.7px;
 }
 
 .member-card-status {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #ffcc00;
-    font-size: 10px;
+    color: var(--yellow);
+    font-size: 9px;
     font-weight: 800;
+    letter-spacing: 0.4px;
 }
 
 .member-card-status-dot {
     width: 7px;
     height: 7px;
-    background: #ffcc00;
     border-radius: 50%;
+    background: var(--yellow);
 }
 
 .member-qr-wrap {
@@ -1201,37 +641,51 @@ button {
     padding: 6px;
     border-radius: 7px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 78px;
+    min-height: 78px;
 }
 
-#member-qr-code img {
-    display: block;
+#member-qr-code {
     width: 66px;
     height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#member-qr-code img,
+#member-qr-code canvas {
+    width: 66px !important;
+    height: 66px !important;
+    display: block;
 }
 
 .membership-card-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 18px;
+    margin-top: 17px;
 }
 
 .membership-card-actions button {
     border: none;
     border-radius: 10px;
-    padding: 13px 20px;
-    font-size: 13px;
+    padding: 13px 18px;
+    font-size: 12px;
     font-weight: 800;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
-    transition: 0.25s ease;
+    gap: 8px;
+    transition: 0.2s;
 }
 
 .member-download-btn {
-    background: #ffcc00;
+    background: var(--yellow);
     color: #111;
 }
 
@@ -1251,63 +705,391 @@ button {
     transform: translateY(-2px);
 }
 
-.member-card-note {
-    margin-top: 10px;
-    color: #777;
-    font-size: 12px;
-    line-height: 1.6;
+.membership-card-actions button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
 }
 
-/* Membership card mobile sizing */
-@media (max-width: 600px) {
+.member-card-note {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 11px;
+}
+
+/* PROFILE */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+    margin-bottom: 30px;
+}
+
+.profile-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 22px;
+}
+
+.profile-box h3 {
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 19px;
+}
+
+.profile-row {
+    padding: 13px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.profile-row label {
+    display: block;
+    color: #999;
+    font-size: 10px;
+    margin-bottom: 6px;
+}
+
+.profile-row span {
+    font-size: 12px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* COMMUNITY */
+.community-banner {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.community-banner h3 {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.community-banner p {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 7px;
+}
+
+.community-banner a {
+    background: var(--yellow);
+    color: #111;
+    padding: 12px 17px;
+    border-radius: 9px;
+    font-size: 11px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+/* SOCIAL LINKS */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin-bottom: 30px;
+}
+
+.social-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.2s;
+}
+
+.social-card:hover {
+    border-color: #ddd;
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    width: 39px;
+    height: 39px;
+    border-radius: 10px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.social-card strong {
+    display: block;
+    font-size: 11px;
+}
+
+.social-card span {
+    display: block;
+    color: #999;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+/* FOOTER */
+.dashboard-footer {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.dashboard-footer p {
+    color: #999;
+    font-size: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-links a {
+    color: #777;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: #111;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 26px;
+    }
+
+    .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 215px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .dashboard {
+        display: block;
+    }
+
+    .sidebar {
+        min-height: auto;
+        width: 100%;
+        padding: 13px 14px;
+    }
+
+    .brand {
+        padding: 3px 5px 13px;
+    }
+
+    .brand-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-label,
+    .sidebar-support,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        gap: 5px;
+    }
+
+    .sidebar-nav a {
+        padding: 10px 12px;
+        white-space: nowrap;
+        font-size: 11px;
+    }
+
+    .main-content {
+        padding: 19px 15px;
+    }
+
+    .topbar {
+        margin-bottom: 18px;
+    }
+
+    .topbar-left h1 {
+        font-size: 19px;
+    }
+
+    .topbar-user-name {
+        display: none;
+    }
+
+    .topbar-user-label {
+        display: none;
+    }
+
+    .welcome-banner {
+        padding: 24px;
+        border-radius: 17px;
+    }
+
+    .welcome-banner h2 {
+        font-size: 25px;
+    }
+
+    .quick-grid {
+        gap: 10px;
+    }
+
+    .quick-card {
+        padding: 15px;
+    }
+
     .membership-card {
-        padding: 20px;
-        border-radius: 16px;
+        padding: 19px;
+        min-height: 245px;
+        border-radius: 17px;
     }
 
     .member-club-logo {
-        width: 42px;
-        height: 42px;
-        font-size: 14px;
+        width: 43px;
+        height: 43px;
+        font-size: 11px;
     }
 
     .member-club-name {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .member-club-subtitle {
-        font-size: 8px;
-        letter-spacing: 2px;
+        font-size: 7px;
+        letter-spacing: 1.3px;
     }
 
     .member-card-label {
-        font-size: 8px;
+        font-size: 7px;
         letter-spacing: 1px;
     }
 
     .member-card-details {
-        gap: 14px;
+        gap: 12px;
     }
 
-    #member-qr-code img {
-        width: 50px;
-        height: 50px;
+    .member-detail-label {
+        font-size: 7px;
     }
 
     .member-detail-value {
-        font-size: 10px;
+        font-size: 9px;
+    }
+
+    .member-card-status {
+        font-size: 7px;
+    }
+
+    .member-qr-wrap {
+        min-width: 60px;
+        min-height: 60px;
+        padding: 4px;
+    }
+
+    #member-qr-code,
+    #member-qr-code img,
+    #member-qr-code canvas {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .membership-card-actions {
+        flex-direction: column;
     }
 
     .membership-card-actions button {
-        flex: 1;
+        width: 100%;
+    }
+
+    .community-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .community-banner a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dashboard-footer {
+        flex-direction: column;
     }
 }
 
-/* Print only the membership card */
+@media (max-width: 380px) {
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-card {
+        padding: 15px;
+    }
+
+    .member-card-details {
+        gap: 9px;
+    }
+
+    .member-card-middle {
+        margin: 12px 0;
+    }
+
+    .member-card-fullname {
+        font-size: 17px;
+    }
+}
+
+/* PRINT: ONLY PRINT THE MEMBERSHIP CARD */
 @media print {
     @page {
-        size: A4;
+        size: A4 portrait;
         margin: 15mm;
+    }
+
+    html, body {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        min-height: 0 !important;
     }
 
     body * {
@@ -1320,12 +1102,15 @@ button {
     }
 
     #supporter-membership-card {
-        position: absolute !important;
-        left: 0 !important;
-        top: 30mm !important;
+        position: fixed !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
         width: 100% !important;
-        max-width: 680px !important;
-        margin: auto !important;
+        max-width: 180mm !important;
+        aspect-ratio: 1.586 / 1 !important;
+        height: auto !important;
+        margin: 0 !important;
         box-shadow: none !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -1337,78 +1122,67 @@ button {
     }
 }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
 
-<!-- LOADING -->
-<div id="loading-message">
-    <div class="loading-logo">DW</div>
-    <div class="loading-spinner"></div>
-    <p>Preparing your Warriors supporter portal...</p>
+<!-- AUTHENTICATION LOADING SCREEN -->
+<div id="loading-message" class="loading-screen">
+    <div class="loader"></div>
+    <h3>DESERT WARRIORS FC</h3>
+    <p>Loading your supporter portal...</p>
 </div>
 
 <!-- DASHBOARD -->
-<div class="dashboard" id="dashboard" hidden>
+<div id="dashboard" class="dashboard" hidden>
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
 
-        <a href="index.html" class="brand">
-            <div class="brand-logo">DW</div>
-            <div>
-                <div class="brand-name">DESERT WARRIORS FC</div>
-                <div class="brand-tagline">OFFICIAL SUPPORTER PORTAL</div>
+        <div class="brand">
+            <div class="brand-logo">DWFC</div>
+            <div class="brand-text">
+                DESERT WARRIORS FC
+                <span>SUPPORTER PORTAL</span>
             </div>
-        </a>
+        </div>
 
-        <p class="nav-caption">MEMBER NAVIGATION</p>
+        <div class="nav-label">SUPPORTER MENU</div>
 
         <nav class="sidebar-nav">
-            <a href="dashboard.html" class="nav-link active">
-                <span class="nav-icon">▦</span> Dashboard
+            <a href="dashboard.html" class="active">
+                <span class="nav-icon">⌂</span> Dashboard
             </a>
 
-            <a href="matches.html" class="nav-link">
+            <a href="matches.html">
                 <span class="nav-icon">⚽</span> Fixtures & Results
             </a>
 
-            <a href="news.html" class="nav-link">
+            <a href="news.html">
                 <span class="nav-icon">▤</span> Club News
             </a>
 
-            <a href="team.html" class="nav-link">
-                <span class="nav-icon">♟</span> Our Team
+            <a href="team.html">
+                <span class="nav-icon">♙</span> Our Team
             </a>
 
-            <a href="gallery.html" class="nav-link">
+            <a href="gallery.html">
                 <span class="nav-icon">▧</span> Gallery
             </a>
 
-            <a href="fan-base.html" class="nav-link">
-                <span class="nav-icon">♧</span> Fan Community
+            <a href="fan-base.html">
+                <span class="nav-icon">♥</span> Fan Community
             </a>
 
-            <a href="index.html" class="nav-link">
-                <span class="nav-icon">⌂</span> Main Website
+            <a href="index.html">
+                <span class="nav-icon">↗</span> Main Website
             </a>
         </nav>
 
-        <div class="sidebar-community">
-            <h4>ONE CLUB. ONE FAMILY.</h4>
-            <p>Stay connected. Stand together. Keep the Warriors spirit alive.</p>
-            <a href="fan-base.html" class="community-link">EXPLORE FAN BASE →</a>
-        </div>
-
         <div class="sidebar-bottom">
-            <div class="sidebar-member">
-                <div class="sidebar-avatar" id="avatar">S</div>
-                <div class="sidebar-member-info">
-                    <strong id="mini-name">Supporter</strong>
-                    <small>Warriors Supporter</small>
-                </div>
+            <div class="sidebar-support">
+                <strong>We are Desert Warriors.</strong>
+                <p>One club. One community. One dream. Thank you for standing with us.</p>
             </div>
 
             <button class="logout-btn" id="logout-btn">
@@ -1418,327 +1192,549 @@ button {
 
     </aside>
 
-    <!-- MAIN -->
+    <!-- MAIN CONTENT -->
     <main class="main-content">
 
         <!-- TOP BAR -->
-        <header class="main-topbar">
-            <div class="topbar-heading">
-                <small>DESERT WARRIORS FC / MEMBERS</small>
+        <header class="topbar">
+
+            <div class="topbar-left">
                 <h1>Supporter Dashboard</h1>
+                <p>Your home as part of the Desert Warriors family.</p>
             </div>
 
             <div class="topbar-right">
-                <div class="club-pill">
-                    <span class="status-dot"></span>
-                    Account Active
+                <div class="topbar-user">
+                    <div class="avatar" id="avatar">DW</div>
+                    <div>
+                        <div class="topbar-user-name" id="mini-name">Supporter</div>
+                        <div class="topbar-user-label">Registered Supporter</div>
+                    </div>
                 </div>
             </div>
+
         </header>
 
-        <!-- WELCOME -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-eyebrow">
-                    <span></span> WELCOME TO THE WARRIORS FAMILY
+        <!-- WELCOME HERO -->
+        <section class="welcome-banner">
+
+            <div class="welcome-tag">WELCOME TO THE FAMILY</div>
+
+            <h2>Welcome back,<br><span id="welcome-name">Supporter</span>!</h2>
+
+            <p>
+                You are part of the Desert Warriors FC journey.
+                Stay connected with the club, follow our matches,
+                and be part of the community that drives us forward.
+            </p>
+
+            <div class="hero-actions">
+                <a href="matches.html" class="btn-yellow">⚽ View Fixtures</a>
+                <a href="news.html" class="btn-outline">Latest Club News →</a>
+            </div>
+
+        </section>
+
+        <!-- QUICK LINKS -->
+        <section>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Explore Your Club</h2>
+                    <p>Everything Desert Warriors FC, in one place.</p>
+                </div>
+            </div>
+
+            <div class="quick-grid">
+
+                <a href="matches.html" class="quick-card">
+                    <div class="quick-icon">⚽</div>
+                    <h3>Fixtures & Results</h3>
+                    <p>Follow upcoming matches and see how the Warriors perform.</p>
+                    <span class="quick-link">VIEW MATCHES →</span>
+                </a>
+
+                <a href="news.html" class="quick-card">
+                    <div class="quick-icon">▤</div>
+                    <h3>Club News</h3>
+                    <p>Catch up on announcements, stories and club updates.</p>
+                    <span class="quick-link">READ NEWS →</span>
+                </a>
+
+                <a href="team.html" class="quick-card">
+                    <div class="quick-icon">♙</div>
+                    <h3>Meet the Team</h3>
+                    <p>Discover the players and people representing our club.</p>
+                    <span class="quick-link">MEET THE TEAM →</span>
+                </a>
+
+                <a href="gallery.html" class="quick-card">
+                    <div class="quick-icon">▧</div>
+                    <h3>Photo Gallery</h3>
+                    <p>Relive the moments, action and memories of our club.</p>
+                    <span class="quick-link">VIEW GALLERY →</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- MEMBERSHIP CARD -->
+        <section class="membership-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Your Digital Membership Card</h2>
+                    <p>Your personal Desert Warriors FC supporter identity.</p>
+                </div>
+            </div>
+
+            <div class="membership-card-area">
+
+                <div id="supporter-membership-card" class="membership-card">
+
+                    <!-- Card header -->
+                    <div class="member-card-top">
+
+                        <div class="member-club-brand">
+                            <div class="member-club-logo">DWFC</div>
+
+                            <div>
+                                <div class="member-club-name">DESERT WARRIORS FC</div>
+                                <div class="member-club-subtitle">FOOTBALL • COMMUNITY • PRIDE</div>
+                            </div>
+                        </div>
+
+                        <div class="member-card-label">
+                            OFFICIAL<br>SUPPORTER CARD
+                        </div>
+
+                    </div>
+
+                    <!-- Card supporter name -->
+                    <div class="member-card-middle">
+                        <div class="member-card-caption">PROUD SUPPORTER</div>
+                        <div id="member-card-fullname" class="member-card-fullname">
+                            Loading supporter...
+                        </div>
+                    </div>
+
+                    <!-- Card footer -->
+                    <div class="member-card-bottom">
+
+                        <div class="member-card-details">
+
+                            <div>
+                                <div class="member-detail-label">Membership ID</div>
+                                <div id="member-card-number" class="member-detail-value">DWFC-XXXXXXXX</div>
+                            </div>
+
+                            <div>
+                                <div class="member-detail-label">Member Since</div>
+                                <div id="member-card-joined" class="member-detail-value">--</div>
+                            </div>
+
+                            <div>
+                                <div class="member-detail-label">Status</div>
+                                <div class="member-card-status">
+                                    <span class="member-card-status-dot"></span>
+                                    REGISTERED SUPPORTER
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- QR code -->
+                        <div class="member-qr-wrap">
+                            <div id="member-qr-code"></div>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <h2 id="welcome-name">WELCOME, <em>WARRIOR!</em></h2>
+                <!-- CARD ACTIONS -->
+                <div class="membership-card-actions">
+                    <button type="button" class="member-download-btn" id="download-member-card">
+                        ↓ &nbsp; Download Membership Card
+                    </button>
 
-                <p>
-                    You are part of something bigger. Thank you for standing
-                    with Turkana Desert Warriors FC. Your passion, loyalty and
-                    belief inspire our journey on and off the pitch.
+                    <button type="button" class="member-print-btn" id="print-member-card">
+                        ▣ &nbsp; Print / Save as PDF
+                    </button>
+                </div>
+
+                <p class="member-card-note">
+                    Save your card to your phone or print a physical copy.
+                    Your membership card is linked to your supporter account.
                 </p>
 
-                <div class="hero-actions">
-                    <a href="matches.html" class="btn-yellow">
-                        VIEW FIXTURES & RESULTS →
-                    </a>
-
-                    <a href="news.html" class="btn-outline">
-                        LATEST CLUB NEWS
-                    </a>
-                </div>
             </div>
-        </section>
-
-        <!-- QUICK ACCESS -->
-        <div class="section-header">
-            <div>
-                <h2>Explore Your Club</h2>
-                <p>Everything you need to stay connected with the Warriors.</p>
-            </div>
-        </div>
-
-        <section class="quick-grid">
-
-            <a href="matches.html" class="quick-card">
-                <span class="quick-arrow">↗</span>
-                <div class="quick-icon">⚽</div>
-                <h3>Fixtures & Results</h3>
-                <p>Follow upcoming matches and past results.</p>
-            </a>
-
-            <a href="news.html" class="quick-card">
-                <span class="quick-arrow">↗</span>
-                <div class="quick-icon">📰</div>
-                <h3>Club News</h3>
-                <p>Read the latest stories and announcements.</p>
-            </a>
-
-            <a href="team.html" class="quick-card">
-                <span class="quick-arrow">↗</span>
-                <div class="quick-icon">👥</div>
-                <h3>Our Team</h3>
-                <p>Get to know the Warriors representing our club.</p>
-            </a>
-
-            <a href="gallery.html" class="quick-card">
-                <span class="quick-arrow">↗</span>
-                <div class="quick-icon">📸</div>
-                <h3>Club Gallery</h3>
-                <p>Explore moments, memories and club photographs.</p>
-            </a>
 
         </section>
 
-        <!-- MEMBERSHIP + PROFILE -->
-        <div class="section-header">
-            <div>
-                <h2>Your Supporter Membership</h2>
-                <p>Your account connects you to the Warriors family.</p>
-            </div>
-        </div>
+        <!-- PROFILE -->
+        <section>
 
-        <section class="content-grid">
-
-            <!-- MEMBERSHIP CARD -->
-            <div class="member-card">
-
-                <div class="member-card-top">
-                    <div class="member-card-brand">
-                        <div class="member-card-logo">DW</div>
-                        <div>
-                            <strong>DESERT WARRIORS FC</strong>
-                            <small>SUPPORTER MEMBERSHIP</small>
-                        </div>
-                    </div>
-
-                    <span class="member-status">● REGISTERED</span>
+            <div class="section-heading">
+                <div>
+                    <h2>Your Account</h2>
+                    <p>Your registered supporter information.</p>
                 </div>
-
-                <div class="member-card-body">
-                    <small>OFFICIAL SUPPORTER</small>
-                    <h2 id="member-card-name">Supporter Name</h2>
-
-                    <div class="member-card-bottom">
-                        <div class="member-meta">
-                            <small>MEMBER SINCE</small>
-                            <strong id="member-since">—</strong>
-                        </div>
-
-                        <div class="member-slogan">
-                            STRENGTH • UNITY • VICTORY
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- PROFILE -->
-            <div class="profile-box" id="my-profile">
-                <div class="profile-box-header">
-                    <h3>Account Details</h3>
-                    <span>YOUR PROFILE</span>
+            <div class="profile-grid">
+
+                <div class="profile-box">
+                    <h3>Personal Information</h3>
+
+                    <div class="profile-row">
+                        <label>Full Name</label>
+                        <span id="full-name">--</span>
+                    </div>
+
+                    <div class="profile-row">
+                        <label>Email Address</label>
+                        <span id="email-address">--</span>
+                    </div>
+
+                    <div class="profile-row">
+                        <label>Phone Number</label>
+                        <span id="phone-number">--</span>
+                    </div>
+
                 </div>
 
-                <div class="profile-row">
-                    <small>FULL NAME</small>
-                    <strong id="full-name">Loading...</strong>
+                <div class="profile-box">
+                    <h3>Membership Information</h3>
+
+                    <div class="profile-row">
+                        <label>Account Status</label>
+                        <span style="color:#9a7900;">● Registered</span>
+                    </div>
+
+                    <div class="profile-row">
+                        <label>Member Since</label>
+                        <span id="member-since">--</span>
+                    </div>
+
+                    <div class="profile-row">
+                        <label>Membership ID</label>
+                        <span id="profile-member-id">--</span>
+                    </div>
+
                 </div>
 
-                <div class="profile-row">
-                    <small>EMAIL ADDRESS</small>
-                    <strong id="email-address">Loading...</strong>
-                </div>
-
-                <div class="profile-row">
-                    <small>PHONE NUMBER</small>
-                    <strong id="phone-number">Loading...</strong>
-                </div>
             </div>
 
         </section>
 
         <!-- COMMUNITY -->
-        <section class="community-banner">
-            <div class="community-banner-left">
-                <div class="community-symbol">🤝</div>
+        <section>
+
+            <div class="community-banner">
                 <div>
-                    <h3>Stand With The Warriors</h3>
-                    <p>Be part of our growing fan community. Share the passion. Support the club.</p>
+                    <h3>Join the Desert Warriors Community</h3>
+                    <p>Connect with fellow supporters, celebrate our club and stand together behind the Warriors.</p>
                 </div>
+
+                <a href="fan-base.html">Explore Fan Community →</a>
             </div>
 
-            <a href="fan-base.html" class="btn-yellow">
-                JOIN OUR FAN COMMUNITY →
-            </a>
         </section>
 
         <!-- SOCIAL -->
-        <div class="section-header">
-            <div>
-                <h2>Follow The Warriors</h2>
-                <p>Connect with us on our official social platforms.</p>
+        <section>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Follow the Warriors</h2>
+                    <p>Stay connected through our official channels.</p>
+                </div>
             </div>
-        </div>
 
-        <section class="social-row">
+            <div class="social-grid">
 
-            <a href="https://www.facebook.com/profile.php?id=61558521487571"
-               target="_blank" rel="noopener noreferrer" class="social-card">
-                <div class="social-icon">📘</div>
-                <div class="social-info">
-                    <strong>Facebook</strong>
-                    <small>Follow the club</small>
-                </div>
-            </a>
+                <a class="social-card" href="https://www.facebook.com/profile.php?id=61558521487571" target="_blank" rel="noopener">
+                    <div class="social-icon">f</div>
+                    <div>
+                        <strong>Facebook</strong>
+                        <span>Follow our official page</span>
+                    </div>
+                </a>
 
-            <a href="https://x.com/DWarriors023"
-               target="_blank" rel="noopener noreferrer" class="social-card">
-                <div class="social-icon">𝕏</div>
-                <div class="social-info">
-                    <strong>X / Twitter</strong>
-                    <small>Stay up to date</small>
-                </div>
-            </a>
+                <a class="social-card" href="https://x.com/DWarriors023" target="_blank" rel="noopener">
+                    <div class="social-icon">𝕏</div>
+                    <div>
+                        <strong>X (Twitter)</strong>
+                        <span>Follow club updates</span>
+                    </div>
+                </a>
 
-            <a href="https://whatsapp.com/channel/0029VbCYV7FGehEP8idGwS2u"
-               target="_blank" rel="noopener noreferrer" class="social-card">
-                <div class="social-icon">📱</div>
-                <div class="social-info">
-                    <strong>WhatsApp</strong>
-                    <small>Join our channel</small>
-                </div>
-            </a>
+                <a class="social-card" href="https://whatsapp.com/channel/0029VbCYV7FGehEP8idGwS2u" target="_blank" rel="noopener">
+                    <div class="social-icon">◉</div>
+                    <div>
+                        <strong>WhatsApp Channel</strong>
+                        <span>Join our official channel</span>
+                    </div>
+                </a>
+
+            </div>
 
         </section>
 
         <!-- FOOTER -->
         <footer class="dashboard-footer">
-            <p>© 2026 Turkana Desert Warriors FC. All Rights Reserved.</p>
+
+            <p>© <span id="footer-year"></span> Desert Warriors FC. All rights reserved.</p>
 
             <div class="footer-links">
-                <a href="index.html">Official Website</a>
+                <a href="index.html">Main Website</a>
                 <a href="accessibility.html">Accessibility</a>
                 <a href="cookies.html">Cookies</a>
                 <a href="contact.html">Contact</a>
             </div>
+
         </footer>
 
     </main>
+
 </div>
 
-<!-- AUTH SCRIPT -->
+<!-- DASHBOARD AUTHENTICATION & CARD FUNCTIONALITY -->
 <script type="module">
 import { supabase } from "./supabaseClient.js";
 
+/* -----------------------------------------
+   ELEMENTS
+----------------------------------------- */
 const loadingMessage = document.getElementById("loading-message");
 const dashboard = document.getElementById("dashboard");
 
-async function loadDashboard() {
-
-    const { data: userData, error: userError } =
-        await supabase.auth.getUser();
-
-    if (userError || !userData.user) {
-        window.location.replace("login.html");
-        return;
-    }
-
-    const user = userData.user;
-
-    // Fetch supporter profile from Supabase
-    const { data: profile, error: profileError } = await supabase
-        .from("profiles")
-        .select("full_name, phone")
-        .eq("id", user.id)
-        .maybeSingle();
-
-    if (profileError) {
-        console.error("Profile loading error:", profileError.message);
-    }
-
-    const fullName =
-        profile?.full_name ||
-        user.user_metadata?.full_name ||
-        "Supporter";
-
-    const phone =
-        profile?.phone ||
-        user.user_metadata?.phone ||
-        "Not provided";
-
-    // Populate supporter information
-    document.getElementById("welcome-name").textContent =
-        "WELCOME, " + fullName.toUpperCase() + "!";
-
-    document.getElementById("mini-name").textContent = fullName;
-
-    document.getElementById("avatar").textContent =
-        fullName.trim().charAt(0).toUpperCase() || "S";
-
-    document.getElementById("member-card-name").textContent = fullName;
-    document.getElementById("full-name").textContent = fullName;
-    document.getElementById("email-address").textContent =
-        user.email || "Not available";
-    document.getElementById("phone-number").textContent = phone;
-
-    // Member since date (account creation date)
-    if (user.created_at) {
-        const createdDate = new Date(user.created_at);
-
-        document.getElementById("member-since").textContent =
-            createdDate.toLocaleDateString("en-KE", {
-                month: "short",
-                year: "numeric"
-            });
-    }
-
-    // Reveal dashboard after authentication
+const showDashboard = () => {
     loadingMessage.style.display = "none";
     dashboard.hidden = false;
+};
+
+const showLogin = () => {
+    window.location.href = "login.html";
+};
+
+/* -----------------------------------------
+   DATE FORMATTER
+----------------------------------------- */
+function formatMemberDate(dateString) {
+    if (!dateString) return "--";
+
+    const date = new Date(dateString);
+
+    if (isNaN(date.getTime())) return "--";
+
+    return date.toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    });
 }
 
-// LOGOUT
-document.getElementById("logout-btn").addEventListener("click", async function() {
+/* -----------------------------------------
+   MEMBERSHIP CARD
+----------------------------------------- */
+function initializeSupporterMembershipCard(user, supporterName) {
+    const card = document.getElementById("supporter-membership-card");
+    const nameElement = document.getElementById("member-card-fullname");
+    const numberElement = document.getElementById("member-card-number");
+    const joinedElement = document.getElementById("member-card-joined");
+    const qrElement = document.getElementById("member-qr-code");
 
-    const button = this;
-    button.disabled = true;
-    button.textContent = "Signing out...";
+    if (!card || !user) return;
+
+    // Populate the supporter name
+    const displayName = supporterName || "Desert Warriors Supporter";
+    nameElement.textContent = displayName;
+
+    // Create a stable membership ID from the Supabase account UUID
+    const membershipNumber = "DWFC-" +
+        user.id.replace(/-/g, "").substring(0, 8).toUpperCase();
+
+    numberElement.textContent = membershipNumber;
+
+    // Member since date
+    const joinedDate = user.created_at || new Date().toISOString();
+    joinedElement.textContent = formatMemberDate(joinedDate);
+
+    // Create QR code linking to the club website
+    qrElement.innerHTML = "";
+
+    if (typeof QRCode !== "undefined") {
+        new QRCode(qrElement, {
+            text: "https://desertwarriorsfc.com/",
+            width: 66,
+            height: 66,
+            colorDark: "#111111",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    } else {
+        qrElement.innerHTML = "<span style='font-size:10px;color:#111'>DWFC</span>";
+    }
+
+    // Download membership card as PNG
+    const downloadButton = document.getElementById("download-member-card");
+
+    downloadButton.addEventListener("click", async () => {
+        if (typeof html2canvas === "undefined") {
+            alert("The download feature could not load. Check your internet connection and try again.");
+            return;
+        }
+
+        downloadButton.disabled = true;
+        downloadButton.textContent = "Preparing Card...";
+
+        try {
+            // Wait for the QR code to render
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            const canvas = await html2canvas(card, {
+                scale: 3,
+                backgroundColor: "#171717",
+                useCORS: true,
+                logging: false
+            });
+
+            const image = canvas.toDataURL("image/png");
+
+            const link = document.createElement("a");
+            link.href = image;
+            link.download = membershipNumber + "-Membership-Card.png";
+
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+
+        } catch (error) {
+            console.error("Membership card download error:", error);
+            alert("We could not download your card. Please try again.");
+
+        } finally {
+            downloadButton.disabled = false;
+            downloadButton.innerHTML = "↓ &nbsp; Download Membership Card";
+        }
+    });
+
+    // Print card / save as PDF
+    document.getElementById("print-member-card").addEventListener("click", () => {
+        window.print();
+    });
+}
+
+/* -----------------------------------------
+   LOAD SUPPORTER INFORMATION
+----------------------------------------- */
+async function loadDashboard() {
+    try {
+        const { data: authData, error: authError } = await supabase.auth.getUser();
+
+        if (authError || !authData?.user) {
+            showLogin();
+            return;
+        }
+
+        const user = authData.user;
+
+        // Fetch profile information from Supabase
+        const { data: profile, error: profileError } = await supabase
+            .from("profiles")
+            .select("full_name, phone")
+            .eq("id", user.id)
+            .maybeSingle();
+
+        if (profileError) {
+            console.warn("Profile fetch warning:", profileError.message);
+        }
+
+        // Fallback values from Supabase authentication metadata
+        const fullName =
+            profile?.full_name ||
+            user.user_metadata?.full_name ||
+            "Desert Warriors Supporter";
+
+        const phone =
+            profile?.phone ||
+            user.user_metadata?.phone ||
+            "Not provided";
+
+        const email = user.email || "Not provided";
+
+        const firstName = fullName.trim().split(/\s+/)[0] || "Supporter";
+
+        // Populate dashboard
+        document.getElementById("welcome-name").textContent = firstName;
+        document.getElementById("mini-name").textContent = fullName;
+        document.getElementById("avatar").textContent =
+            fullName.trim().split(/\s+/).map(word => word[0]).join("").substring(0, 2).toUpperCase();
+
+        document.getElementById("full-name").textContent = fullName;
+        document.getElementById("email-address").textContent = email;
+        document.getElementById("phone-number").textContent = phone;
+
+        const formattedDate = formatMemberDate(user.created_at);
+
+        document.getElementById("member-since").textContent = formattedDate;
+        document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+        // Membership number is consistent for this account
+        const membershipNumber = "DWFC-" +
+            user.id.replace(/-/g, "").substring(0, 8).toUpperCase();
+
+        document.getElementById("profile-member-id").textContent = membershipNumber;
+
+        // Initialize membership card
+        initializeSupporterMembershipCard(user, fullName);
+
+        // Show dashboard only after authentication and data setup
+        showDashboard();
+
+    } catch (error) {
+        console.error("Dashboard loading error:", error);
+        alert("We encountered a problem loading your supporter dashboard. Please try logging in again.");
+        showLogin();
+    }
+}
+
+/* -----------------------------------------
+   SIGN OUT
+----------------------------------------- */
+document.getElementById("logout-btn").addEventListener("click", async () => {
+    const logoutButton = document.getElementById("logout-btn");
+
+    logoutButton.disabled = true;
+    logoutButton.textContent = "Signing Out...";
 
     const { error } = await supabase.auth.signOut();
 
     if (error) {
-        alert("Sign out failed: " + error.message);
-        button.disabled = false;
-        button.textContent = "↪ Sign Out";
+        console.error("Logout error:", error.message);
+        alert("Unable to sign out right now. Please try again.");
+        logoutButton.disabled = false;
+        logoutButton.textContent = "↪ Sign Out";
         return;
     }
 
-    window.location.replace("login.html");
+    window.location.href = "login.html";
 });
 
-// LOAD
-loadDashboard().catch(error => {
-    console.error("Dashboard error:", error);
-    loadingMessage.innerHTML =
-        "<div class='loading-logo'>DW</div>" +
-        "<p>We couldn't load your supporter portal.</p>" +
-        "<p style='margin-top:8px;font-size:13px'>Please refresh the page or sign in again.</p>" +
-        "<a href='login.html' style='margin-top:15px;color:#f5c400'>Return to Login</a>";
+/* -----------------------------------------
+   PRINT CLEANUP
+----------------------------------------- */
+window.addEventListener("beforeprint", () => {
+    document.title = "Desert Warriors FC Membership Card";
 });
+
+/* -----------------------------------------
+   INITIALIZE
+----------------------------------------- */
+document.getElementById("footer-year").textContent = new Date().getFullYear();
+loadDashboard();
 </script>
 
 </body>
