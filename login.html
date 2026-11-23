@@ -9,183 +9,606 @@
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --dw-yellow: #f5c400;
+            --dw-dark: #141414;
+            --dw-dark-2: #1d1d1d;
+            --dw-white: #ffffff;
+            --dw-grey: #a7a7a7;
+            --dw-border: #e5e5e5;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f5f2;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f5f7;
+            min-height: 100vh;
             color: #222;
         }
 
-        .login-container {
-            width: 90%;
-            max-width: 450px;
-            margin: 65px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 35px 20px;
         }
 
-        h1 {
-            text-align: center;
-            color: #176b35;
-        }
-
-        .intro {
-            text-align: center;
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-            margin: 15px 0 7px;
-            font-weight: bold;
-        }
-
-        input {
+        .auth-shell {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+            max-width: 1050px;
+            min-height: 620px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
         }
 
-        button {
-            width: 100%;
-            padding: 13px;
-            margin-top: 22px;
-            border: none;
-            border-radius: 5px;
-            background: #176b35;
+        /* LEFT BRAND PANEL */
+
+        .auth-brand-panel {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 80% 15%, rgba(245,196,0,0.17), transparent 35%),
+                linear-gradient(145deg, #242424, #111111 70%);
             color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        button:hover {
-            background: #105329;
+        .auth-brand-panel::before {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            border: 1px solid rgba(245,196,0,0.12);
+            border-radius: 50%;
+            right: -180px;
+            bottom: -150px;
         }
 
-        button:disabled {
-            opacity: 0.6;
+        .auth-brand-panel::after {
+            content: "";
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            border: 1px solid rgba(245,196,0,0.12);
+            border-radius: 50%;
+            right: -120px;
+            bottom: -90px;
         }
 
-        #message {
-            margin-top: 18px;
-            text-align: center;
+        .auth-brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .auth-brand-text strong {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 1.2px;
             line-height: 1.5;
         }
 
-        .register-link {
-            text-align: center;
-            margin-top: 20px;
+        .auth-brand-text span {
+            color: #bcbcbc;
+            font-size: 11px;
+            display: block;
+            margin-top: 4px;
         }
 
-        a {
-            color: #176b35;
+        .auth-brand-content {
+            position: relative;
+            z-index: 2;
+            margin: 50px 0;
+        }
+
+        .auth-eyebrow {
+            color: var(--dw-yellow);
+            font-size: 11px;
             font-weight: bold;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .auth-brand-content h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.12;
+            margin: 20px 0;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .auth-brand-content h2 span {
+            color: var(--dw-yellow);
+        }
+
+        .auth-brand-content p {
+            color: #c7c7c7;
+            line-height: 1.8;
+            font-size: 14px;
+            max-width: 360px;
+        }
+
+        .auth-brand-divider {
+            width: 55px;
+            height: 4px;
+            background: var(--dw-yellow);
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+
+        .auth-brand-footer {
+            position: relative;
+            z-index: 2;
+            font-size: 11px;
+            color: #969696;
+            letter-spacing: 1px;
+        }
+
+        /* RIGHT FORM PANEL */
+
+        .auth-form-panel {
+            padding: 55px 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .auth-form-top {
+            margin-bottom: 32px;
+        }
+
+        .auth-form-top .small-label {
+            color: #9a9a9a;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .auth-form-top h1 {
+            color: #171717;
+            font-size: 34px;
+            font-weight: 800;
+            margin: 13px 0 10px;
+        }
+
+        .auth-form-top p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .auth-form label {
+            display: block;
+            color: #333;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 9px;
+        }
+
+        .auth-input-group {
+            margin-bottom: 20px;
+        }
+
+        .auth-input-wrap {
+            position: relative;
+        }
+
+        .auth-input-wrap input {
+            width: 100%;
+            height: 50px;
+            padding: 0 15px;
+            border: 1px solid #dedede;
+            border-radius: 8px;
+            outline: none;
+            background: #fafafa;
+            color: #222;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        .auth-input-wrap input:focus {
+            background: #fff;
+            border-color: #d6aa00;
+            box-shadow: 0 0 0 3px rgba(245,196,0,0.13);
+        }
+
+        .auth-input-wrap input::placeholder {
+            color: #aaa;
+        }
+
+        .auth-password-toggle {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            color: #777;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+            padding: 5px;
+        }
+
+        .auth-password-toggle:hover {
+            color: #111;
+        }
+
+        .auth-form-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 2px 0 24px;
+            font-size: 12px;
+        }
+
+        .auth-remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #666;
+        }
+
+        .auth-remember input {
+            accent-color: #d5aa00;
+        }
+
+        .auth-form-options a {
+            color: #8c7000;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .auth-form-options a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-submit {
+            width: 100%;
+            min-height: 51px;
+            border: none;
+            border-radius: 8px;
+            background: var(--dw-yellow);
+            color: #171717;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .auth-submit:hover {
+            background: #dfb300;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(220, 175, 0, 0.22);
+        }
+
+        .auth-submit:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        #message {
+            font-size: 13px;
+            text-align: center;
+            line-height: 1.6;
+            margin-top: 18px;
+            color: #555;
+        }
+
+        .auth-bottom {
+            text-align: center;
+            margin-top: 27px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .auth-bottom a {
+            color: #171717;
+            font-weight: 800;
+            text-decoration: none;
+            margin-left: 4px;
+        }
+
+        .auth-bottom a:hover {
+            color: #ad8900;
+        }
+
+        .auth-back-home {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            font-size: 12px;
+            color: #999;
+            text-decoration: none;
+        }
+
+        .auth-back-home:hover {
+            color: #222;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+            .auth-shell {
+                max-width: 520px;
+                grid-template-columns: 1fr;
+            }
+
+            .auth-brand-panel {
+                padding: 30px;
+                min-height: 300px;
+            }
+
+            .auth-brand-content {
+                margin: 40px 0 25px;
+            }
+
+            .auth-brand-content h2 {
+                font-size: 36px;
+            }
+
+            .auth-brand-footer {
+                margin-top: 10px;
+            }
+
+            .auth-form-panel {
+                padding: 40px 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .auth-page {
+                padding: 15px;
+            }
+
+            .auth-shell {
+                border-radius: 12px;
+            }
+
+            .auth-brand-panel {
+                padding: 25px;
+                min-height: 260px;
+            }
+
+            .auth-brand img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .auth-brand-text strong {
+                font-size: 11px;
+            }
+
+            .auth-brand-content h2 {
+                font-size: 31px;
+            }
+
+            .auth-brand-content p {
+                font-size: 13px;
+            }
+
+            .auth-form-panel {
+                padding: 32px 24px;
+            }
+
+            .auth-form-top h1 {
+                font-size: 29px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="login-container">
+<div class="auth-page">
+    <div class="auth-shell">
 
-        <h1>Welcome Back!</h1>
+        <!-- BRAND PANEL -->
+        <section class="auth-brand-panel">
 
-        <p class="intro">
-            Login to your Desert Warriors FC supporter account.
-        </p>
+            <a href="index.html" class="auth-brand"
+               style="text-decoration:none;color:white;">
+                <img src="logo.jfif" alt="Desert Warriors FC Logo">
 
-        <form id="login-form">
+                <div class="auth-brand-text">
+                    <strong>TURKANA DESERT WARRIORS FC</strong>
+                    <span>United by Passion. Driven by Purpose.</span>
+                </div>
+            </a>
 
-            <label for="email">Email Address</label>
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                autocomplete="email"
-                required
-            >
+            <div class="auth-brand-content">
+                <span class="auth-eyebrow">THE WARRIORS FAMILY</span>
 
-            <label for="password">Password</label>
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-                autocomplete="current-password"
-                required
-            >
+                <h2>
+                    WELCOME<br>
+                    <span>BACK, WARRIOR.</span>
+                </h2>
 
-            <button type="submit" id="login-button">
-                Login
-            </button>
+                <div class="auth-brand-divider"></div>
 
-        </form>
+                <p>
+                    Your passion. Your club. Your community.
+                    Sign in and continue being part of the
+                    Desert Warriors FC journey.
+                </p>
+            </div>
 
-        <p id="message" role="status" aria-live="polite"></p>
+            <div class="auth-brand-footer">
+                STRENGTH • UNITY • VICTORY
+            </div>
 
-        <div class="register-link">
-            Don't have an account?
-            <a href="register.html">Register here</a>
-        </div>
+        </section>
+
+
+        <!-- LOGIN FORM -->
+        <section class="auth-form-panel">
+
+            <div class="auth-form-top">
+                <span class="small-label">SUPPORTER PORTAL</span>
+                <h1>Sign In</h1>
+
+                <p>
+                    Enter your account details below to access
+                    your supporter account.
+                </p>
+            </div>
+
+            <form id="login-form" class="auth-form">
+
+                <div class="auth-input-group">
+                    <label for="email">Email Address</label>
+
+                    <div class="auth-input-wrap">
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="auth-input-group">
+                    <label for="password">Password</label>
+
+                    <div class="auth-input-wrap">
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="auth-password-toggle"
+                            id="togglePassword">
+                            SHOW
+                        </button>
+                    </div>
+                </div>
+
+                <div class="auth-form-options">
+                    <label class="auth-remember">
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+
+                    <a href="mailto:desertwarriors023@gmail.com?subject=Password%20Assistance">
+                        Need help signing in?
+                    </a>
+                </div>
+
+                <button type="submit" id="login-button" class="auth-submit">
+                    SIGN IN TO YOUR ACCOUNT
+                </button>
+
+            </form>
+
+            <p id="message" role="status" aria-live="polite"></p>
+
+            <div class="auth-bottom">
+                Don't have an account?
+                <a href="register.html">Create Account</a>
+            </div>
+
+            <a href="index.html" class="auth-back-home">
+                ← Back to Desert Warriors FC website
+            </a>
+
+        </section>
 
     </div>
+</div>
 
-    <script type="module">
 
-        import { supabase } from "./supabaseClient.js";
+<script type="module">
 
-        const form = document.getElementById("login-form");
-        const message = document.getElementById("message");
-        const button = document.getElementById("login-button");
+    import { supabase } from "./supabaseClient.js";
 
-        form.addEventListener("submit", async function(event) {
+    const form = document.getElementById("login-form");
+    const message = document.getElementById("message");
+    const button = document.getElementById("login-button");
 
-            event.preventDefault();
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
 
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value;
+    togglePassword.addEventListener("click", function () {
+        const isPassword = passwordInput.type === "password";
 
-            button.disabled = true;
-            button.textContent = "Logging in...";
-            message.textContent = "";
+        passwordInput.type = isPassword ? "text" : "password";
+        togglePassword.textContent = isPassword ? "HIDE" : "SHOW";
+    });
 
-            try {
+    form.addEventListener("submit", async function(event) {
 
-                const { data, error } =
-                    await supabase.auth.signInWithPassword({
-                        email: email,
-                        password: password
-                    });
+        event.preventDefault();
 
-                if (error) {
-                    throw error;
-                }
+        const email = document.getElementById("email").value.trim();
+        const password = passwordInput.value;
 
-                message.textContent = "Login successful! Welcome to Desert Warriors FC.";
+        button.disabled = true;
+        button.textContent = "SIGNING IN...";
+        message.textContent = "";
 
-                window.location.href = "dashboard.html";
+        try {
 
-            } catch (error) {
+            const { data, error } =
+                await supabase.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
 
-                message.textContent = "Login failed: " + error.message;
-
-            } finally {
-
-                button.disabled = false;
-                button.textContent = "Login";
-
+            if (error) {
+                throw error;
             }
 
-        });
+            message.textContent =
+                "Login successful! Welcome to Desert Warriors FC.";
 
-    </script>
+            window.location.href = "dashboard.html";
+
+        } catch (error) {
+
+            message.textContent = "Login failed: " + error.message;
+
+        } finally {
+
+            button.disabled = false;
+            button.textContent = "SIGN IN TO YOUR ACCOUNT";
+
+        }
+
+    });
+
+</script>
 
 </body>
 </html>

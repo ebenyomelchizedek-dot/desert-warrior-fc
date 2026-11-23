@@ -4,105 +4,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Official website of Turkana Desert Warriors Football Club. Follow the team, fixtures, news, partners and club activities.">
+
     <title>Turkana Desert Warriors FC | Official Website</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="dw-home-v5">
 
 <!-- =========================
-     HEADER
+     TOP INFORMATION BAR
 ========================= -->
-<header class="header">
+<div class="dw-topbar">
+    <div class="dw-topbar-inner">
+        <p>NAPETET, LODWAR, KENYA</p>
 
-    <div class="club-brand">
+        <div class="dw-topbar-links">
+            <a href="mailto:desertwarriors023@gmail.com">
+                desertwarriors023@gmail.com
+            </a>
 
-        <img src="logo.jfif" alt="Turkana Desert Warriors FC Logo">
-
-        <div class="club-name">
-            <h1>Turkana Desert Warriors FC</h1>
-            <p>Strength • Unity • Victory</p>
+            <a href="tel:0741920064">
+                0741920064
+            </a>
         </div>
-
     </div>
+</div>
 
-    <nav class="nav-links">
+<!-- =========================
+     NAVIGATION
+========================= -->
+<header class="dw-header">
 
+    <a href="index.html" class="dw-brand">
+        <img src="logo.jfif" alt="Turkana Desert Warriors FC logo">
+
+        <div class="dw-brand-copy">
+            <strong>TURKANA DESERT WARRIORS FC</strong>
+            <span>United by Passion. Driven by Purpose.</span>
+        </div>
+    </a>
+
+    <button class="dw-menu-toggle"
+            id="contactMenuToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="dw-main-nav" id="contactMainNav">
         <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="team.html">Team</a>
+        <a href="about.html">The Club</a>
+        <a href="team.html">Our Team</a>
         <a href="matches.html">Matches</a>
         <a href="news.html">News</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
-
     </nav>
-    <div class="header-actions">
 
-  <form class="search-bar" id="site-search">
-    <input
-      type="search"
-      id="search-input"
-      placeholder="Search the website..."
-      aria-label="Search the website"
-    >
-
-    <button type="submit">Search</button>
-  </form>
-
- <span id="supporter-greeting" hidden></span>
-
-<a href="login.html" class="login-btn" id="login-link">
-    Login
-</a>
-
-<a href="register.html" class="register-btn" id="register-link">
-    Join Us
-</a>
-
-<a href="#" class="login-btn" id="logout-btn" hidden>
-    Logout
-</a>
-
-</div>
+    <div class="dw-header-actions">
+        <a href="login.html" class="dw-login">Login</a>
+        <a href="register.html" class="dw-join">Join Us</a>
+    </div>
 
 </header>
 
+<main>
 
 <!-- =========================
-     HERO SECTION
+     HERO
 ========================= -->
-<section class="home-hero">
+<section class="home5-hero">
 
-    <div class="home-hero-overlay">
+    <div class="home5-hero-image"></div>
+    <div class="home5-hero-overlay"></div>
 
-        <div class="home-hero-content">
+    <div class="home5-hero-content">
 
-            <span class="hero-tag">WELCOME TO</span>
+        <span class="home5-eyebrow">
+            THE OFFICIAL HOME OF DESERT WARRIORS FC
+        </span>
 
-            <h1>TURKANA DESERT WARRIORS FC</h1>
+        <div class="home5-hero-line"></div>
 
-            <div class="hero-line"></div>
+        <h1>
+            ONE CLUB.
+            <span>ONE DESERT.</span>
+            ONE DREAM.
+        </h1>
 
-            <h2>Strength. Unity. Victory.</h2>
+        <p>
+            From the heart of Lodwar, we rise together.
+            Built on passion, discipline, teamwork and the
+            courage to dream bigger.
+        </p>
+
+        <div class="home5-hero-buttons">
+            <a href="team.html" class="home5-btn home5-btn-yellow">
+                MEET THE TEAM <span>↗</span>
+            </a>
+
+            <a href="matches.html" class="home5-btn home5-btn-outline">
+                MATCHES & RESULTS
+            </a>
+        </div>
+
+        <div class="home5-hero-signature">
+            <span>STRENGTH</span>
+            <i></i>
+            <span>UNITY</span>
+            <i></i>
+            <span>VICTORY</span>
+        </div>
+
+    </div>
+
+    <div class="home5-hero-side-label">
+        DWFC — EST. 2020
+    </div>
+
+</section>
+
+<!-- =========================
+     CLUB FACTS STRIP
+========================= -->
+<section class="home5-facts">
+
+    <div class="home5-fact">
+        <span class="home5-fact-number">2020</span>
+        <span class="home5-fact-label">YEAR FOUNDED</span>
+    </div>
+
+    <div class="home5-fact">
+        <span class="home5-fact-number">LODWAR</span>
+        <span class="home5-fact-label">OUR HOME TOWN</span>
+    </div>
+
+    <div class="home5-fact">
+        <span class="home5-fact-number">NAPETET</span>
+        <span class="home5-fact-label">OUR CLUB LOCATION</span>
+    </div>
+
+    <div class="home5-fact home5-fact-last">
+        <span class="home5-fact-number">ONE FAMILY</span>
+        <span class="home5-fact-label">OUR CLUB IDENTITY</span>
+    </div>
+
+</section>
+
+<!-- =========================
+     ABOUT / INTRODUCTION
+========================= -->
+<section class="home5-intro section">
+
+    <div class="home5-section-heading">
+        <span class="home5-section-tag">WHO WE ARE</span>
+
+        <h2>
+            More Than
+            <em>Just Football.</em>
+        </h2>
+
+        <p>
+            Building a club where ambition, discipline and
+            community come together.
+        </p>
+    </div>
+
+    <div class="home5-intro-grid">
+
+        <div class="home5-intro-story">
+
+            <div class="home5-intro-mark">DWFC</div>
+
+            <h3>A Club With A Purpose</h3>
 
             <p>
-                Welcome to the official website of Turkana Desert Warriors Football Club.
-                A football family built on talent, discipline, teamwork and
-                the passion to compete.
+                Founded in April 2020, Turkana Desert Warriors
+                Football Club was established to nurture football
+                talent, promote sportsmanship and create opportunities
+                for young players to develop.
             </p>
 
-            <div class="home-buttons">
+            <p>
+                From Napetet in Lodwar, the club continues to build
+                a strong foundation focused on professionalism,
+                teamwork, youth development and positive community impact.
+            </p>
 
-                <a href="team.html" class="home-btn primary-btn">
-                    ⚽ Meet Our Team
-                </a>
+            <a href="about.html" class="home5-text-link">
+                DISCOVER OUR STORY <span>→</span>
+            </a>
 
-                <a href="about.html" class="home-btn secondary-btn">
-                    Learn More
-                </a>
+        </div>
 
+        <div class="home5-mission-card">
+
+            <div class="home5-mission-top">
+                <span class="home5-mission-icon">⚽</span>
+                <span>OUR MISSION</span>
+            </div>
+
+            <h3>
+                Developing talent.
+                Building character.
+                Growing together.
+            </h3>
+
+            <p>
+                To promote football excellence through structured
+                player development, strong governance, community
+                engagement and strategic partnerships.
+            </p>
+
+            <div class="home5-mission-bottom">
+                <span>DESERT WARRIORS FC</span>
+                <span>2020 — ∞</span>
             </div>
 
         </div>
@@ -111,593 +230,534 @@
 
 </section>
 
-
 <!-- =========================
-     CLUB QUICK FACTS
+     EXPLORE THE CLUB
 ========================= -->
-<section class="club-facts">
+<section class="home5-explore section">
 
-    <div class="fact-card">
-        <div class="fact-icon">🏆</div>
-        <h3>Founded</h3>
-        <p>April 2020</p>
+    <div class="home5-section-heading home5-heading-light">
+
+        <span class="home5-section-tag">EXPLORE DESERT WARRIORS</span>
+
+        <h2>
+            Inside <em>The Club</em>
+        </h2>
+
+        <p>
+            Everything that makes Desert Warriors FC
+            more than a football club.
+        </p>
+
     </div>
 
-    <div class="fact-card">
-        <div class="fact-icon">📍</div>
-        <h3>Location</h3>
-        <p>Napetet, Lodwar, Kenya</p>
-    </div>
+    <div class="home5-explore-grid">
 
-    <div class="fact-card">
-        <div class="fact-icon">🏟️</div>
-        <h3>Home Ground</h3>
-        <p>Lodwar Mixed Primary School Ground</p>
-    </div>
+        <a href="team.html" class="home5-explore-card">
 
-    <div class="fact-card">
-        <div class="fact-icon">⚽</div>
-        <h3>Club</h3>
-        <p>Turkana Desert Warriors FC</p>
+            <span class="home5-card-number">01</span>
+
+            <div class="home5-card-icon">⚽</div>
+
+            <h3>Our Team</h3>
+
+            <p>
+                Meet the players, coaches and technical team
+                representing Desert Warriors FC.
+            </p>
+
+            <span class="home5-card-link">
+                MEET THE TEAM ↗
+            </span>
+
+        </a>
+
+        <a href="matches.html" class="home5-explore-card">
+
+            <span class="home5-card-number">02</span>
+
+            <div class="home5-card-icon">🏆</div>
+
+            <h3>Matches</h3>
+
+            <p>
+                Follow our fixtures, results and the journey
+                through the football season.
+            </p>
+
+            <span class="home5-card-link">
+                VIEW MATCHES ↗
+            </span>
+
+        </a>
+
+        <a href="about.html" class="home5-explore-card">
+
+            <span class="home5-card-number">03</span>
+
+            <div class="home5-card-icon">🌱</div>
+
+            <h3>Development</h3>
+
+            <p>
+                Learn about our commitment to nurturing talent,
+                discipline and the future of football.
+            </p>
+
+            <span class="home5-card-link">
+                OUR PURPOSE ↗
+            </span>
+
+        </a>
+
+        <a href="#home5-partners" class="home5-explore-card">
+
+            <span class="home5-card-number">04</span>
+
+            <div class="home5-card-icon">🤝</div>
+
+            <h3>Partners</h3>
+
+            <p>
+                Explore our supporters and discover opportunities
+                to grow together with the club.
+            </p>
+
+            <span class="home5-card-link">
+                SUPPORT THE CLUB ↗
+            </span>
+
+        </a>
+
     </div>
 
 </section>
 
-
 <!-- =========================
-     ABOUT PREVIEW
+     NEWS
 ========================= -->
-<section class="home-about">
+<section class="home5-news section">
 
-    <div class="home-section-heading">
+    <div class="home5-news-heading">
 
-        <span>OUR STORY</span>
+        <div class="home5-section-heading home5-heading-left">
 
-        <h2>More Than Just Football</h2>
+            <span class="home5-section-tag">FROM THE CLUB</span>
 
-        <div class="section-line"></div>
+            <h2>
+                The Latest
+                <em>Stories.</em>
+            </h2>
+
+            <p>
+                Updates, announcements and moments
+                from the Desert Warriors family.
+            </p>
+
+        </div>
+
+        <a href="news.html" class="home5-news-all">
+            VISIT NEWS CENTRE <span>↗</span>
+        </a>
 
     </div>
 
+    <div class="home5-news-feature">
 
-    <div class="home-about-content">
+        <div class="home5-news-photo">
+            <img src="players_photo.jpg"
+                 alt="Desert Warriors FC players">
 
-        <div class="home-about-text">
+            <div class="home5-news-photo-label">
+                <span>DESERT WARRIORS FC</span>
+                <span>CLUB NEWS</span>
+            </div>
+        </div>
+
+        <div class="home5-news-content">
+
+            <span class="home5-news-category">
+                NEWS & ANNOUNCEMENTS
+            </span>
+
+            <h3>
+                Follow The Journey
+                Of Desert Warriors FC
+            </h3>
 
             <p>
-                Turkana Desert Warriors Football Club was founded in 2020 with a
-                vision of nurturing football talent, promoting sportsmanship
-                and creating opportunities for young players to develop.
+                Keep up with club announcements, team activities,
+                training updates and important developments
+                throughout the season.
             </p>
 
-            <p>
-                The club continues to build a strong foundation based on
-                professionalism, discipline, teamwork and community
-                development.
-            </p>
-
-            <a href="about.html" class="read-more-btn">
-                Discover Our Story →
+            <a href="news.html" class="home5-text-link">
+                READ CLUB NEWS <span>→</span>
             </a>
 
         </div>
 
-
-        <div class="home-about-highlight">
-
-            <div class="highlight-icon">⚽</div>
-
-            <h3>Our Mission</h3>
-
-            <p>
-                To promote football excellence through structured player
-                development, professionalism, community engagement and
-                strategic partnerships.
-            </p>
-
-        </div>
-
     </div>
 
 </section>
 
-
 <!-- =========================
-     EXPLORE THE CLUB
+     HOME GROUND
 ========================= -->
-<section class="home-explore">
+<section class="home5-ground">
 
-    <div class="home-section-heading">
+    <div class="home5-ground-content">
 
-        <span>EXPLORE</span>
+        <span class="home5-section-tag">OUR HOME • OUR PRIDE</span>
 
-        <h2>Discover Desert Warriors FC</h2>
-
-        <div class="section-line"></div>
-
-    </div>
-
-
-    <div class="home-cards">
-
-        <div class="home-card">
-            <div class="home-card-icon">👥</div>
-            <h3>Our Team</h3>
-            <p>
-                Meet the players and technical team representing
-                Desert Warriors FC.
-            </p>
-            <a href="team.html">View Team →</a>
-        </div>
-
-
-        <div class="home-card">
-            <div class="home-card-icon">📅</div>
-            <h3>Matches</h3>
-            <p>
-                Follow our fixtures, results and upcoming football
-                competitions.
-            </p>
-            <a href="matches.html">View Matches →</a>
-        </div>
-
-
-        <div class="home-card">
-            <div class="home-card-icon">📰</div>
-            <h3>Latest News</h3>
-            <p>
-                Stay updated with the latest news and developments
-                from the club.
-            </p>
-            <a href="news.html">Read News →</a>
-        </div>
-
-
-        <div class="home-card">
-            <div class="home-card-icon">📸</div>
-            <h3>Gallery</h3>
-            <p>
-                Explore photos and memorable moments from Desert
-                Warriors FC.
-            </p>
-            <a href="gallery.html">View Gallery →</a>
-        </div>
-
-
-        <div class="home-card">
-            <div class="home-card-icon">🤝</div>
-            <h3>Support the Club</h3>
-            <p>
-                Learn how you can support the growth and development
-                of Desert Warriors FC.
-            </p>
-            <a href="contact.html">Support Us →</a>
-        </div>
-
-
-        <div class="home-card">
-            <div class="home-card-icon">📩</div>
-            <h3>Contact Us</h3>
-            <p>
-                Have a question, suggestion or partnership proposal?
-                Get in touch with us.
-            </p>
-            <a href="contact.html">Contact Us →</a>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CALL TO ACTION
-========================= -->
-<section class="home-cta">
-
-    <div class="home-cta-content">
-
-        <span>BE PART OF THE JOURNEY</span>
-
-        <h2>One Club. One Family. One Dream.</h2>
+        <h2>
+            Lodwar Mixed
+            <em>Primary School Ground</em>
+        </h2>
 
         <p>
-            Follow Turkana Desert Warriors FC as we continue our journey of
-            football excellence and community development.
+            Our home ground in Lodwar, Kenya.
         </p>
 
-        <a href="contact.html" class="cta-button">
-            Get In Touch →
+        <a href="contact.html" class="home5-btn home5-btn-yellow">
+            CONTACT THE CLUB <span>↗</span>
         </a>
 
+    </div>
+
+    <div class="home5-ground-decoration">
+        <span>DWFC</span>
     </div>
 
 </section>
 
+<!-- =========================
+     SPONSORS AND PARTNERS
+========================= -->
+<section class="home5-partners section" id="home5-partners">
 
-<!-- =====================================
-     DESERT WARRIORS FC PARTNERS & SPONSORS
-====================================== -->
-        
-<!-- DESERT WARRIORS FC SPONSORS & PARTNERS -->
+    <div class="home5-section-heading home5-heading-light">
 
-<section class="dw-sponsors" id="partners">
+        <span class="home5-section-tag">GROWING TOGETHER</span>
 
-    <div class="dw-sponsors-heading">
-        <h2>DESERT WARRIORS FC</h2>
-        <p>OFFICIAL PARTNERS & SPONSORS</p>
-    </div>
+        <h2>
+            Partners.
+            <em>Sponsors.</em>
+        </h2>
 
-    <!-- MAIN SPONSORS -->
-    <div class="dw-main-sponsors">
-
-        <a href="training-ground.html" class="dw-main-logo">
-            <img src="training-ground.png"
-                 alt="Training Ground">
-            <span>DESERT WARRIORS FC TRAINING GROUND</span>
-        </a>
-
-        <a href="fan-base.html" class="dw-main-logo">
-           <img src="dwfc-fanbase.png"
-               alt="DWFC Fan Base">
-            <span>DWFC FAN BASE OFFICIAL CLUB</span>
-        </a>
-
-        <a href="main-sponsor.html" class="dw-main-logo">
-            <img src="main-sponsor.png"
-                 alt="Main Sponsor">
-            <span>MAIN SECONDARY SPONSOR</span>
-        </a>
+        <p>
+            We appreciate the organisations, partners and
+            supporters contributing to our journey.
+        </p>
 
     </div>
 
-    <div class="dw-sponsor-divider"></div>
+    <!-- FEATURED CLUB LINKS -->
+    <div class="home5-featured-partners">
 
-    <!-- OTHER OFFICIAL PARTNERS -->
-    <div class="dw-partner-logos">
+        <a href="training-ground.html" class="home5-feature-partner">
+
+            <div class="home5-partner-image">
+                <img src="training-ground.png"
+                     alt="Desert Warriors FC Training Ground">
+            </div>
+
+            <div class="home5-partner-info">
+                <span>CLUB PROJECT</span>
+                <h3>Training Ground</h3>
+                <span class="home5-partner-arrow">↗</span>
+            </div>
+
+        </a>
+
+        <a href="fan-base.html" class="home5-feature-partner">
+
+            <div class="home5-partner-image">
+                <img src="dwfc-fanbase.png"
+                     alt="Desert Warriors FC Fan Base">
+            </div>
+
+            <div class="home5-partner-info">
+                <span>SUPPORTERS</span>
+                <h3>Official Fan Base</h3>
+                <span class="home5-partner-arrow">↗</span>
+            </div>
+
+        </a>
+
+        <a href="main-sponsor.html" class="home5-feature-partner">
+
+            <div class="home5-partner-image">
+                <img src="main-sponsor.png"
+                     alt="Main sponsor">
+            </div>
+
+            <div class="home5-partner-info">
+                <span>CLUB PARTNERSHIP</span>
+                <h3>Main / Secondary Sponsor</h3>
+                <span class="home5-partner-arrow">↗</span>
+            </div>
+
+        </a>
+
+    </div>
+
+    <!-- PARTNER LOGOS -->
+    <div class="home5-partner-logos">
 
         <a href="https://redcross.or.ke"
-           class="dw-partner-logo">
+           target="_blank"
+           rel="noopener noreferrer"
+           class="home5-logo-partner">
+
             <img src="kenya-red-cross.png"
                  alt="Kenya Red Cross">
+
             <span>KENYA RED CROSS</span>
         </a>
 
-        <a href="https://www.example.com"
-           target="_blank" rel="noopener noreferrer"
-           class="dw-partner-logo">
+        <a href="#" class="home5-logo-partner">
+
             <img src="turkcity-brand.png"
-                 alt="Partner 2">
+                 alt="Turkcity Brand">
+
             <span>TURKCITY BRAND</span>
         </a>
 
-        <a href="https://www.example.com"
-           target="_blank" rel="noopener noreferrer"
-           class="dw-partner-logo">
+        <a href="#" class="home5-logo-partner">
+
             <img src="images/partners/partner-3.png"
                  alt="Partner 3">
+
             <span>PARTNER 3</span>
         </a>
 
-        <a href="https://www.example.com"
-           target="_blank" rel="noopener noreferrer"
-           class="dw-partner-logo">
+        <a href="#" class="home5-logo-partner">
+
             <img src="images/partners/partner-4.png"
                  alt="Partner 4">
+
             <span>PARTNER 4</span>
         </a>
 
-        <a href="https://www.example.com"
-           target="_blank" rel="noopener noreferrer"
-           class="dw-partner-logo">
+        <a href="#" class="home5-logo-partner">
+
             <img src="images/partners/partner-5.png"
                  alt="Partner 5">
+
             <span>PARTNER 5</span>
         </a>
 
-        <a href="https://www.example.com"
-           target="_blank" rel="noopener noreferrer"
-           class="dw-partner-logo">
+        <a href="#" class="home5-logo-partner">
+
             <img src="images/partners/partner-6.png"
                  alt="Partner 6">
+
             <span>PARTNER 6</span>
         </a>
 
-        <a href="https://www.example.com"
-           target="_blank" rel="noopener noreferrer"
-           class="dw-partner-logo">
+        <a href="#" class="home5-logo-partner">
+
             <img src="images/partners/partner-7.png"
                  alt="Partner 7">
+
             <span>PARTNER 7</span>
         </a>
 
-        <a href="https://www.example.com"
-           target="_blank" rel="noopener noreferrer"
-           class="dw-partner-logo">
+        <a href="#" class="home5-logo-partner">
+
             <img src="images/partners/partner-8.png"
                  alt="Partner 8">
+
             <span>PARTNER 8</span>
         </a>
 
     </div>
 
-</section>
+    <!-- PARTNERSHIP CTA -->
+    <div class="home5-partner-cta">
 
+        <div class="home5-partner-cta-copy">
 
-    <!-- =================================
-         BECOME A PARTNER
-    ================================== -->
+            <span>LET'S BUILD SOMETHING GREAT</span>
 
-    <div class="dw-become-partner">
-
-        <div>
-
-            <span>
-                PARTNER WITH US
-            </span>
-
-            <h2>
-                Become a Desert Warriors FC Partner
-            </h2>
+            <h3>
+                Become Part Of
+                <em>Our Journey.</em>
+            </h3>
 
             <p>
-                Interested in supporting Desert Warriors FC?
-                We welcome businesses, organisations and
-                individuals interested in partnering with
-                the club as we continue to grow.
+                We welcome businesses, organisations and individuals
+                interested in supporting the growth of Desert Warriors FC.
             </p>
 
         </div>
 
-
-        <a href="contact.html"
-           class="dw-partner-contact">
-
-            Become a Partner
-            <span>→</span>
-
+        <a href="contact.html" class="home5-btn home5-btn-yellow">
+            BECOME A PARTNER <span>↗</span>
         </a>
 
     </div>
 
 </section>
 
-<!-- DESERT WARRIORS FC MATCH CALENDAR -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+<!-- =========================
+     FINAL CALL TO ACTION
+========================= -->
+<section class="home5-final-cta">
 
-    const modal = document.getElementById("dwCalendarModal");
-    const openBtn = document.getElementById("openMatchCalendar");
-    const closeBtn = document.getElementById("closeMatchCalendar");
-    const monthYear = document.getElementById("calendarMonthYear");
-    const calendarDays = document.getElementById("calendarDays");
-    const details = document.getElementById("selectedMatchDetails");
+    <div class="home5-final-cta-content">
 
-    /* ==========================
-       MATCH DATABASE
-       Add future fixtures here.
-    =========================== */
+        <span class="home5-section-tag">BE PART OF THE JOURNEY</span>
 
-    const fixtures = {
-         "2026-10-03": {
-            opponent: "Turkana University FC",
-            venue: "University Ground",
-            time: "3:00 PM (EAT)",
-            competition: "Club Friendly"
-        },
-         "2026-10-10": {
-            opponent: "Super United FC",
-            venue: "Lodwar Mixed Primary School Ground",
-            time: "3:00 PM (EAT)",
-            competition: "Club Friendly"
-        },
-         "2026-10-15": {
-            opponent: "Earthmovers FC",
-            venue: "Lodwar Prison Ground",
-            time: "3:00 PM (EAT)",
-            competition: "Club Friendly"
-        },
-        "2026-10-25": {
-            opponent: "Highlands FC",
-            venue: "Lodwar Mixed Primary School Ground",
-            time: "3:00 PM (EAT)",
-            competition: "Club Friendly"
-        },
-        "2026-11-01": {
-            opponent: "Nape FC",
-            venue: "Lodwar Mixed Primary School Ground",
-            time: "3:00 PM (EAT)",
-            competition: "Club Friendly"
-        },
-        "2026-11-15": {
-            opponent: "Lodwar Tumaini Hospital FC",
-            venue: "Lodwar Mixed Primary School Ground",
-            time: ":00 PM (EAT)",
-            competition: "Club Friendly"
-        }
-    };
+        <h2>
+            One Club.
+            One Family.
+            <em>One Dream.</em>
+        </h2>
 
-    const today = new Date();
-    let currentMonth = today.getMonth();
-    let currentYear = today.getFullYear();
-    let selectedDate = null;
+        <p>
+            Support our players. Follow the club.
+            Grow with Desert Warriors FC.
+        </p>
 
-    function formatKey(y, m, d) {
-        return y + "-" +
-            String(m + 1).padStart(2, "0") + "-" +
-            String(d).padStart(2, "0");
-    }
+        <div class="home5-final-buttons">
 
-    function openCalendar() {
-        modal.classList.add("dw-calendar-open");
-        document.body.classList.add("dw-calendar-lock");
-        renderCalendar();
-    }
+            <a href="register.html" class="home5-btn home5-btn-yellow">
+                JOIN OUR FAN BASE <span>↗</span>
+            </a>
 
-    function closeCalendar() {
-        modal.classList.remove("dw-calendar-open");
-        document.body.classList.remove("dw-calendar-lock");
-    }
+            <a href="contact.html" class="home5-btn home5-btn-outline">
+                CONTACT US
+            </a>
 
-    function renderCalendar() {
+        </div>
 
-        calendarDays.innerHTML = "";
+    </div>
 
-        const firstDay =
-            new Date(currentYear, currentMonth, 1).getDay();
+</section>
 
-        const daysInMonth =
-            new Date(currentYear, currentMonth + 1, 0).getDate();
+</main>
 
-        monthYear.textContent =
-            new Date(currentYear, currentMonth)
-            .toLocaleString("en-US", {
-                month: "long",
-                year: "numeric"
-            });
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="dw-footer home5-footer">
 
-        /* Empty cells before month starts */
+    <div class="home5-footer-grid">
 
-        for (let i = 0; i < firstDay; i++) {
-            const blank = document.createElement("div");
-            calendarDays.appendChild(blank);
-        }
+        <div class="home5-footer-brand">
 
-        /* Create every day */
+            <img src="logo.jfif" alt="Desert Warriors FC logo">
 
-        for (let day = 1; day <= daysInMonth; day++) {
+            <h3>Turkana Desert Warriors FC</h3>
 
-            const key = formatKey(currentYear, currentMonth, day);
+            <p>Strength • Unity • Victory</p>
 
-            const cell = document.createElement("button");
-            cell.className = "dw-calendar-day";
-            cell.textContent = day;
+            <span>United by passion. Driven by purpose.</span>
 
-            if (
-                day === today.getDate() &&
-                currentMonth === today.getMonth() &&
-                currentYear === today.getFullYear()
-            ) {
-                cell.classList.add("dw-today");
-            }
+        </div>
 
-            if (fixtures[key]) {
-                cell.classList.add("dw-has-match");
-            }
+        <div class="home5-footer-column">
 
-            if (selectedDate === key) {
-                cell.classList.add("dw-selected-day");
-            }
+            <h3>Explore</h3>
 
-            cell.addEventListener("click", function () {
+            <a href="about.html">About the Club</a>
+            <a href="team.html">Our Team</a>
+            <a href="matches.html">Fixtures & Results</a>
+            <a href="news.html">News Centre</a>
+            <a href="gallery.html">Gallery</a>
 
-                selectedDate = key;
-                renderCalendar();
-                showFixture(key);
+        </div>
 
-            });
+        <div class="home5-footer-column">
 
-            calendarDays.appendChild(cell);
-        }
+            <h3>Get Involved</h3>
 
-        if (!selectedDate) {
-            details.innerHTML =
-                "<p>Select any day to view fixture details.</p>";
-        }
-    }
+            <a href="register.html">Join the Fan Base</a>
+            <a href="fan-base.html">Supporters Portal</a>
+            <a href="#home5-partners">Our Partners</a>
+            <a href="contact.html">Become a Partner</a>
+            <a href="contact.html">Contact Us</a>
 
-    function showFixture(key) {
+        </div>
 
-        if (fixtures[key]) {
+        <div class="home5-footer-column">
 
-            const match = fixtures[key];
+            <h3>Contact</h3>
 
-            details.innerHTML = `
-                <p><strong>📅 Date:</strong> ${key}</p>
-                <p><strong>⚽ Fixture:</strong> Desert Warriors FC vs ${match.opponent}</p>
-                <p><strong>🏆 Competition:</strong> ${match.competition}</p>
-                <p><strong>🕒 Kick-off:</strong> ${match.time}</p>
-                <p><strong>📍 Venue:</strong> ${match.venue}</p>
-            `;
+            <a href="mailto:desertwarriors023@gmail.com">
+                desertwarriors023@gmail.com
+            </a>
 
-        } else {
+            <a href="tel:0741920064">0741920064</a>
 
-            details.innerHTML = `
-                <p><strong>📅 Date:</strong> ${key}</p>
-                <p>No fixture has been added for this day yet.</p>
-                <p>Future opponents, time and venue will appear here.</p>
-            `;
+            <p>Napetet, Lodwar, Kenya</p>
 
-        }
+        </div>
 
-    }
+    </div>
 
-    document.getElementById("prevMonth").onclick = function () {
+    <div class="home5-footer-bottom">
 
-        currentMonth--;
+        <p>© 2026 Turkana Desert Warriors FC. All Rights Reserved.</p>
 
-        if (currentMonth < 0) {
-            currentMonth = 11;
-            currentYear--;
-        }
+        <div class="home5-footer-legal">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="accessibility.html">Accessibility</a>
+        </div>
 
-        renderCalendar();
+    </div>
 
-    };
+</footer>
 
-    document.getElementById("nextMonth").onclick = function () {
-
-        currentMonth++;
-
-        if (currentMonth > 11) {
-            currentMonth = 0;
-            currentYear++;
-        }
-
-        renderCalendar();
-
-    };
-
-    openBtn.onclick = openCalendar;
-    closeBtn.onclick = closeCalendar;
-
-    window.onclick = function (e) {
-        if (e.target === modal) closeCalendar();
-    };
-
-    renderCalendar();
-
-});
-</script>
-<!-- MATCH CALENDAR BUTTON -->
-
-<button id="openMatchCalendar" class="dw-calendar-button">
-    📅 <span>Match Calendar</span>
+<!-- =========================
+     FLOATING MATCH CALENDAR
+========================= -->
+<button id="openMatchCalendar"
+        class="home5-calendar-button"
+        type="button">
+    <span class="home5-calendar-icon">📅</span>
+    <span>Match Calendar</span>
 </button>
 
-<!-- MATCH CALENDAR WINDOW -->
+<!-- CALENDAR MODAL -->
+<div id="calendarModal" class="home5-calendar-modal">
 
-<div id="dwCalendarModal" class="dw-calendar-modal">
+    <div class="home5-calendar-box">
 
-    <div class="dw-calendar-box">
+        <div class="home5-calendar-header">
 
-        <div class="dw-calendar-header">
             <div>
-                <h2>📅 Desert Warriors FC</h2>
-                <p>DWFC Official Match Day Calendar</p>
+                <span>DESERT WARRIORS FC</span>
+                <h2>Match Day Calendar</h2>
+                <p>Fixtures & match day information</p>
             </div>
 
             <button id="closeMatchCalendar"
-                    class="dw-calendar-close">&times;</button>
+                    type="button"
+                    aria-label="Close calendar">
+                &times;
+            </button>
+
         </div>
 
-        <div class="dw-calendar-navigation">
-            <button id="prevMonth">&#10094;</button>
+        <div class="home5-calendar-navigation">
+
+            <button id="prevMonth" type="button" aria-label="Previous month">
+                ❮
+            </button>
+
             <h3 id="calendarMonthYear"></h3>
-            <button id="nextMonth">&#10095;</button>
+
+            <button id="nextMonth" type="button" aria-label="Next month">
+                ❯
+            </button>
+
         </div>
 
-        <div class="dw-calendar-weekdays">
+        <div class="home5-calendar-weekdays">
             <span>Sun</span>
             <span>Mon</span>
             <span>Tue</span>
@@ -707,200 +767,406 @@ document.addEventListener("DOMContentLoaded", function () {
             <span>Sat</span>
         </div>
 
-        <div id="calendarDays" class="dw-calendar-days"></div>
+        <div id="calendarDays" class="home5-calendar-days"></div>
 
-        <div class="dw-calendar-details">
-            <h3>Match Details</h3>
-            <div id="selectedMatchDetails">
-                <p>Select a date to view fixtures.</p>
+        <div class="home5-calendar-legend">
+            <span class="home5-calendar-legend-dot"></span>
+            <span>Fixture scheduled</span>
+        </div>
+
+        <div class="home5-calendar-details">
+
+            <div class="home5-calendar-details-heading">
+                <span>⚽</span>
+                <h3>Match Details</h3>
             </div>
+
+            <div id="selectedMatchDetails">
+                <p>Select a date to view match information.</p>
+            </div>
+
         </div>
 
     </div>
+
 </div>
- 
+
 <!-- =========================
-     FOOTER
+     COOKIE CONSENT
 ========================= -->
-<footer class="footer">
+<div id="cookie-banner" class="home5-cookie-banner">
 
-    <div class="footer-content">
+    <div class="home5-cookie-content">
+
+        <div class="home5-cookie-icon">🍪</div>
 
         <div>
-            <h3>Turkana Desert Warriors FC</h3>
+            <h3>Your privacy matters</h3>
 
             <p>
-                Strength • Unity • Victory
+                This website uses cookies to improve your browsing experience.
+                Read our <a href="privacy.html">Privacy Policy</a>.
             </p>
         </div>
 
+        <div class="home5-cookie-actions">
 
-        <div>
-            <h3>Contact</h3>
+            <button id="accept-cookies" type="button">
+                Accept All
+            </button>
 
-            <p>📧 desertwarriors023@gmail.com</p>
-            <p>📞 0741920064</p>
-            <p>📍 Napetet, Lodwar, Kenya</p>
-
-        </div>
-
-
-        <div>
-            <h3>Quick Links</h3>
-
-            <p>
-                <a href="about.html">About</a> |
-                <a href="team.html">Team</a> |
-                <a href="news.html">News</a>
-            </p>
-
-            <p>
-                <a href="gallery.html">Gallery</a> |
-                <a href="contact.html">Contact</a>
-            </p>
+            <button id="reject-cookies" type="button">
+                Reject Optional
+            </button>
 
         </div>
 
     </div>
-
-
-    <div class="footer-bottom">
-<!-- =====================================
- DESERT WARRIORS FC SOCIAL MEDIA FOOTER
-====================================== -->
-
-<section class="dw-social-section">
-
-    <div class="dw-social-logo">
-        <h2>DESERT WARRIORS FC</h2>
-        <p>United by Passion. Driven by Purpose.</p>
-    </div>
-
-    <div class="dw-social-links">
-
-        <a href="https://www.facebook.com/profile.php?id=61558521487571"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Facebook">
-            f
-        </a>
-
-        <a href="https://whatsapp.com/channel/0029VbCYV7FGehEP8idGwS2u"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="WhatsApp">
-            W
-        </a>
-
-        <a href="https://x.com/DWarriors023"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="X">
-            X
-        </a>
-
-    </div>
-
-    <div class="dw-social-bottom">
-        </div>
-        
-<!-- FOOTER LEGAL AND SUPPORT LINKS -->
-
-<div class="dw-footer-links">
-
-    <a href="contact.html">Help Centre</a>
-
-    <a href="terms.html">Terms &amp; Conditions</a>
-
-    <a href="privacy.html">Privacy Policy</a>
-
-    <a href="cookies.html">Cookie Policy</a>
-
-    <a href="accessibility.html">Accessibility Statement</a>
 
 </div>
 
-</section>
-
-        <p>
-            © 2026 Turkana Desert Warriors FC. All Rights Reserved.
-        </p>
-
-        <p>
-            Website created for Turkana Desert Warriors FC
-        </p>
-
-    </div>
-
-</footer>
+<!-- =========================
+     HOMEPAGE JAVASCRIPT
+========================= -->
 <script>
-  document.getElementById("site-search")
-    .addEventListener("submit", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
 
-      event.preventDefault();
+    /* MOBILE NAVIGATION */
+    const menuToggle = document.getElementById("contactMenuToggle");
+    const mainNav = document.getElementById("contactMainNav");
 
-      const query = document
-        .getElementById("search-input")
-        .value.trim();
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener("click", function () {
+            const isOpen = mainNav.classList.toggle("dw-nav-open");
 
-      if (query) {
-        window.location.href =
-          "search.html?q=" + encodeURIComponent(query);
-      }
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+    }
+
+    /* FIXTURES */
+    const fixtures = {
+        "2026-10-03": {
+            opponent: "Turkana University FC",
+            venue: "University Ground",
+            time: "3:00 PM (EAT)"
+        },
+
+        "2026-10-10": {
+            opponent: "Super United FC",
+            venue: "Lodwar Mixed Primary School Ground",
+            time: "3:00 PM (EAT)"
+        },
+
+        "2026-10-15": {
+            opponent: "Earthmovers FC",
+            venue: "Lodwar Prison Ground",
+            time: "3:00 PM (EAT)"
+        },
+
+        "2026-10-25": {
+            opponent: "Highlands FC",
+            venue: "Lodwar Mixed Primary School Ground",
+            time: "3:00 PM (EAT)"
+        },
+
+        "2026-11-01": {
+            opponent: "Nape FC",
+            venue: "Lodwar Mixed Primary School Ground",
+            time: "3:00 PM (EAT)"
+        },
+
+        "2026-11-15": {
+            opponent: "Lodwar Tumaini Hospital FC",
+            venue: "Lodwar Mixed Primary School Ground",
+            time: "3:00 PM (EAT)"
+        }
+    };
+
+    /* CALENDAR ELEMENTS */
+    const modal = document.getElementById("calendarModal");
+    const openBtn = document.getElementById("openMatchCalendar");
+    const closeBtn = document.getElementById("closeMatchCalendar");
+    const monthYear = document.getElementById("calendarMonthYear");
+    const calendarDays = document.getElementById("calendarDays");
+    const details = document.getElementById("selectedMatchDetails");
+    const prevMonth = document.getElementById("prevMonth");
+    const nextMonth = document.getElementById("nextMonth");
+
+    const today = new Date();
+
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+    let selectedDate = null;
+
+    function dateKey(year, month, day) {
+        return year + "-" +
+            String(month + 1).padStart(2, "0") + "-" +
+            String(day).padStart(2, "0");
+    }
+
+    function formatDate(key) {
+        return new Date(key + "T12:00:00").toLocaleDateString("en-KE", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+    }
+
+    function showMatch(key) {
+        selectedDate = key;
+        const match = fixtures[key];
+
+        if (!match) {
+            details.innerHTML = `
+                <div class="home5-match-detail-card home5-no-match">
+                    <span class="home5-match-detail-label">NO FIXTURE LISTED</span>
+                    <h4>No match scheduled</h4>
+                    <p>
+                        There is currently no fixture listed for this date.
+                        Select a highlighted date to view fixture details.
+                    </p>
+                </div>
+            `;
+            renderCalendar();
+            return;
+        }
+
+        details.innerHTML = `
+            <div class="home5-match-detail-card">
+                <span class="home5-match-detail-label">MATCH DAY FIXTURE</span>
+
+                <div class="home5-match-versus">
+                    <div class="home5-match-club">
+                        <img src="logo.jfif" alt="Desert Warriors FC">
+                        <strong>DESERT<br>WARRIORS</strong>
+                    </div>
+
+                    <span class="home5-match-vs">VS</span>
+
+                    <div class="home5-match-opponent">
+                <span class="home5-opponent-icon">⚽</span>
+                <strong>${match.opponent}</strong>
+                    </div>
+                </div>
+
+                <div class="home5-match-meta">
+                    <p><span>📅</span><strong>Date</strong><span>${formatDate(key)}</span></p>
+                    <p><span>🕒</span><strong>Kick-off</strong><span>${match.time}</span></p>
+                    <p><span>📍</span><strong>Venue</strong><span>${match.venue}</span></p>
+                </div>
+            </div>
+        `;
+
+        renderCalendar();
+    }
+
+    function renderCalendar() {
+        if (!calendarDays || !monthYear) return;
+
+        calendarDays.innerHTML = "";
+
+        const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+        const totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+        monthYear.textContent = new Date(currentYear, currentMonth, 1)
+            .toLocaleDateString("en-KE", {
+                month: "long",
+                year: "numeric"
+            });
+
+        /* Blank cells before month begins */
+        for (let i = 0; i < firstDay; i++) {
+            const empty = document.createElement("div");
+            empty.className = "home5-calendar-empty";
+            calendarDays.appendChild(empty);
+        }
+
+        /* Date buttons */
+        for (let day = 1; day <= totalDays; day++) {
+            const key = dateKey(currentYear, currentMonth, day);
+            const button = document.createElement("button");
+
+            button.type = "button";
+            button.textContent = day;
+            button.className = "home5-calendar-date";
+
+            if (fixtures[key]) {
+                button.classList.add("home5-has-match");
+                button.setAttribute("aria-label", "Fixture on " + formatDate(key));
+                button.title = fixtures[key].opponent;
+            }
+
+            if (
+                day === today.getDate() &&
+                currentMonth === today.getMonth() &&
+                currentYear === today.getFullYear()
+            ) {
+                button.classList.add("home5-today");
+            }
+
+            if (selectedDate === key) {
+                button.classList.add("home5-selected-date");
+            }
+
+            button.addEventListener("click", function () {
+                showMatch(key);
+            });
+
+            calendarDays.appendChild(button);
+        }
+    }
+
+    // =====================================
+// FIXED CALENDAR OPEN / CLOSE
+// =====================================
+
+function openCalendar() {
+    if (!modal) return;
+
+    renderCalendar();
+
+    modal.classList.add("show-calendar");
+    modal.style.display = "flex";
+    modal.style.visibility = "visible";
+    modal.style.opacity = "1";
+
+    document.body.style.overflow = "hidden";
+
+    if (!selectedDate) {
+        details.innerHTML = `
+            <div class="match-detail-card">
+                <h4>WELCOME TO MATCH DAY</h4>
+                <p>Select a highlighted date to discover the fixture details.</p>
+                <p>Look for the yellow dates marked with ⚽.</p>
+            </div>
+        `;
+    }
+}
+
+function closeCalendar() {
+    if (!modal) return;
+
+    modal.classList.remove("show-calendar");
+    modal.style.display = "none";
+    modal.style.visibility = "hidden";
+    modal.style.opacity = "0";
+
+    document.body.style.overflow = "";
+}
+
+if (openBtn) {
+    openBtn.addEventListener("click", openCalendar);
+}
+
+if (closeBtn) {
+    closeBtn.addEventListener("click", closeCalendar);
+}
+
+if (modal) {
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            closeCalendar();
+        }
     });
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeCalendar();
+    }
+});
+
+    /* PREVIOUS MONTH */
+    if (prevMonth) {
+        prevMonth.addEventListener("click", function () {
+            currentMonth--;
+
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+
+            selectedDate = null;
+            renderCalendar();
+
+            details.innerHTML = `
+                <div class="home5-match-detail-card home5-calendar-welcome">
+                    <h4>Select a match day</h4>
+                    <p>Choose a date to view fixture information.</p>
+                </div>
+            `;
+        });
+    }
+
+    /* NEXT MONTH */
+    if (nextMonth) {
+        nextMonth.addEventListener("click", function () {
+            currentMonth++;
+
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+
+            selectedDate = null;
+            renderCalendar();
+
+            details.innerHTML = `
+                <div class="home5-match-detail-card home5-calendar-welcome">
+                    <h4>Select a match day</h4>
+                    <p>Choose a date to view fixture information.</p>
+                </div>
+            `;
+        });
+    }
+
+    /* COOKIE CONSENT */
+    const banner = document.getElementById("cookie-banner");
+    const acceptCookies = document.getElementById("accept-cookies");
+    const rejectCookies = document.getElementById("reject-cookies");
+
+    let cookieChoice = null;
+
+    try {
+        cookieChoice = localStorage.getItem("cookieChoice");
+    } catch (error) {
+        cookieChoice = null;
+    }
+
+    if (banner && !cookieChoice) {
+        banner.style.display = "block";
+    } else if (banner) {
+        banner.style.display = "none";
+    }
+
+    function saveCookieChoice(choice) {
+        try {
+            localStorage.setItem("cookieChoice", choice);
+        } catch (error) {
+            /* Banner still closes if storage is unavailable */
+        }
+
+        if (banner) {
+            banner.style.display = "none";
+        }
+    }
+
+    if (acceptCookies) {
+        acceptCookies.addEventListener("click", function () {
+            saveCookieChoice("accepted");
+        });
+    }
+
+    if (rejectCookies) {
+        rejectCookies.addEventListener("click", function () {
+            saveCookieChoice("rejected");
+        });
+    }
+
+});
 </script>
 
 </body>
-<!-- Cookie Consent Pop-up -->
-<div id="cookie-banner" class="cookie-banner">
-  <div class="cookie-content">
-    <h3>We value your privacy</h3>
-
-    <p>
-      Desert Warriors FC uses cookies to improve your
-      browsing experience and understand how visitors
-      use our website.
-    </p>
-
-    <p>
-      You can accept all cookies or reject optional
-      cookies. Read our
-      <a href="privacy.html">Privacy Policy</a>.
-    </p>
-
-    <div class="cookie-buttons">
-      <button id="accept-cookies">
-        Accept All
-      </button>
-
-      <button id="reject-cookies">
-        Reject Optional
-      </button>
-    </div>
-  </div>
-</div>
-<script>
-  const banner = document.getElementById("cookie-banner");
-
-  const savedChoice = localStorage.getItem("cookieChoice");
-
-  // Show the banner if no choice has been made
-  if (!savedChoice) {
-    banner.style.display = "block";
-  }
-
-  // Accept all cookies
-  document.getElementById("accept-cookies")
-    .addEventListener("click", function () {
-      localStorage.setItem("cookieChoice", "accepted");
-      banner.style.display = "none";
-    });
-
-  // Reject optional cookies
-  document.getElementById("reject-cookies")
-    .addEventListener("click", function () {
-      localStorage.setItem("cookieChoice", "rejected");
-      banner.style.display = "none";
-    });
-</script>
 </html>
