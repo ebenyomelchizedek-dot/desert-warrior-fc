@@ -1120,6 +1120,19 @@ a {
     .member-card-note {
         display: none !important;
     }
+    .brand-logo img,
+.member-club-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.brand-logo,
+.member-club-logo {
+    overflow: hidden;
+    background: transparent;
+}
 }
 </style>
 </head>
@@ -1140,7 +1153,9 @@ a {
     <aside class="sidebar">
 
         <div class="brand">
-            <div class="brand-logo">DWFC</div>
+            <div class="brand-logo">
+    <img src="logo.jfif" alt="Desert Warriors FC Logo">
+</div>
             <div class="brand-text">
                 DESERT WARRIORS FC
                 <span>SUPPORTER PORTAL</span>
@@ -1296,7 +1311,9 @@ a {
                     <div class="member-card-top">
 
                         <div class="member-club-brand">
-                            <div class="member-club-logo">DWFC</div>
+                            <div class="member-club-logo">
+    <img src="logo.jfif" alt="Desert Warriors FC Crest">
+</div>
 
                             <div>
                                 <div class="member-club-name">DESERT WARRIORS FC</div>
