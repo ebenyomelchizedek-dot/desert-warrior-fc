@@ -1025,8 +1025,320 @@ button {
     .member-card-bottom .member-slogan {
         font-size: 7px;
     }
+
+/* ================================
+   DESERT WARRIORS MEMBERSHIP CARD
+================================ */
+
+.membership-card-area {
+    margin-top: 25px;
+}
+
+.membership-card {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 680px;
+    aspect-ratio: 1.586 / 1;
+    padding: 28px 32px;
+    border-radius: 22px;
+    color: #fff;
+    background:
+        radial-gradient(circle at 95% 5%, rgba(255, 210, 0, 0.22), transparent 34%),
+        linear-gradient(135deg, #191919 0%, #252525 48%, #101010 100%);
+    border: 1px solid rgba(255, 205, 0, 0.42);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    isolation: isolate;
+}
+
+/* Decorative circles */
+.membership-card::before {
+    content: "";
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    border: 1px solid rgba(255, 204, 0, 0.12);
+    border-radius: 50%;
+    right: -100px;
+    top: -125px;
+    z-index: -1;
+}
+
+.membership-card::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 35px solid rgba(255, 204, 0, 0.045);
+    border-radius: 50%;
+    right: -80px;
+    bottom: -125px;
+    z-index: -1;
+}
+
+.member-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.member-club-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.member-club-logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #ffcc00;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 950;
+    border: 2px solid #fff;
+    flex-shrink: 0;
+}
+
+.member-club-name {
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+    line-height: 1.3;
+}
+
+.member-club-subtitle {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #ffcc00;
+    margin-top: 4px;
+}
+
+.member-card-label {
+    color: #ffcc00;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-align: right;
+}
+
+.member-card-middle {
+    margin-top: 18px;
+}
+
+.member-card-caption {
+    color: #bdbdbd;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.member-card-fullname {
+    font-size: clamp(18px, 3vw, 29px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+    line-height: 1.2;
+}
+
+.member-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.member-card-details {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.member-detail-label {
+    font-size: 9px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    margin-bottom: 5px;
+}
+
+.member-detail-value {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.member-card-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffcc00;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.member-card-status-dot {
+    width: 7px;
+    height: 7px;
+    background: #ffcc00;
+    border-radius: 50%;
+}
+
+.member-qr-wrap {
+    background: white;
+    padding: 6px;
+    border-radius: 7px;
+    flex-shrink: 0;
+}
+
+#member-qr-code img {
+    display: block;
+    width: 66px;
+    height: 66px;
+}
+
+.membership-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.membership-card-actions button {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    transition: 0.25s ease;
+}
+
+.member-download-btn {
+    background: #ffcc00;
+    color: #111;
+}
+
+.member-download-btn:hover {
+    background: #ffe066;
+    transform: translateY(-2px);
+}
+
+.member-print-btn {
+    background: #222;
+    color: white;
+    border: 1px solid #444 !important;
+}
+
+.member-print-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.member-card-note {
+    margin-top: 10px;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Membership card mobile sizing */
+@media (max-width: 600px) {
+    .membership-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .member-club-logo {
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .member-club-name {
+        font-size: 13px;
+    }
+
+    .member-club-subtitle {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .member-card-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .member-card-details {
+        gap: 14px;
+    }
+
+    #member-qr-code img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .member-detail-value {
+        font-size: 10px;
+    }
+
+    .membership-card-actions button {
+        flex: 1;
+    }
+}
+
+/* Print only the membership card */
+@media print {
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #supporter-membership-card,
+    #supporter-membership-card * {
+        visibility: visible !important;
+    }
+
+    #supporter-membership-card {
+        position: absolute !important;
+        left: 0 !important;
+        top: 30mm !important;
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: auto !important;
+        box-shadow: none !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .membership-card-actions,
+    .member-card-note {
+        display: none !important;
+    }
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
