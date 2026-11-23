@@ -1,698 +1,1187 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore photographs and video highlights from Turkana Desert Warriors FC.">
     <title>Gallery | Turkana Desert Warriors FC</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
+<body class="dw-gallery-v3-page">
 
-<body>
+    <!-- TOP BAR -->
+    <div class="dw-topbar">
+        <div class="dw-topbar-inner">
+            <p>Turkana Desert Warriors Football Club</p>
+            <div class="dw-topbar-links">
+                <a href="mailto:desertwarriors023@gmail.com">desertwarriors023@gmail.com</a>
+                <a href="tel:0741920064">0741920064</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="dw-header">
+        <a href="index.html" class="dw-brand">
+            <img src="logo.jfif" alt="Desert Warriors FC Logo">
+            <div class="dw-brand-copy">
+                <strong>TURKANA DESERT WARRIORS FC</strong>
+                <span>United by Passion. Driven by Purpose.</span>
+            </div>
+        </a>
+
+        <button class="dw-menu-toggle" id="galleryMenuToggle"
+                aria-label="Open navigation menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="dw-main-nav" id="galleryMainNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">The Club</a>
+            <a href="team.html">Our Team</a>
+            <a href="matches.html">Matches</a>
+            <a href="news.html">News</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="dw-header-actions">
+            <a href="login.html" class="dw-login">Login</a>
+            <a href="register.html" class="dw-join">Join Us</a>
+        </div>
+    </header>
 
 
-<!-- =================================================
-     NAVIGATION
-================================================= -->
+    <!-- GALLERY HERO -->
+    <section class="gallery-v3-hero">
+        <div class="gallery-v3-overlay"></div>
 
-<header class="navbar">
-
-    <div class="logo-area">
-
-        <img src="logo.jfif"
-             alt="Desert Warriors FC Logo">
-
-        <div class="club-name">
-
-            <h2>TURKANA DESERT WARRIORS FC</h2>
-
+        <div class="gallery-v3-hero-content">
+            <span>THE WARRIORS IN PICTURES</span>
+            <h1>OUR <strong>GALLERY</strong></h1>
+            <div class="gallery-v3-line"></div>
             <p>
-                United by Passion. Driven by Purpose.
+                Every photograph tells a story.
+                Explore the passion, teamwork, memories and
+                moments that define Desert Warriors FC.
             </p>
 
+            <a href="#photo-gallery" class="gallery-v3-button">
+                Explore Gallery
+            </a>
+        </div>
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="gallery-v3-intro">
+        <div class="gallery-v3-intro-inner">
+            <div>
+                <span class="gallery-v3-label">OUR JOURNEY</span>
+                <h2>Moments That Tell Our Story</h2>
+            </div>
+
+            <p>
+                From the players on the pitch to the management,
+                supporters and community, every moment is part
+                of the Desert Warriors FC journey.
+                These are the memories that bring us together.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery-v3-photos" id="photo-gallery">
+
+        <div class="gallery-v3-heading">
+            <span class="gallery-v3-label">PHOTO COLLECTION</span>
+            <h2>Turkana Desert Warriors Moments</h2>
+            <p>A collection of special moments from our club.</p>
         </div>
 
-    </div>
+        <!-- FILTER BUTTONS -->
+        <div class="gallery-v3-filters">
+            <button class="gallery-filter active" data-filter="all">All Photos</button>
+            <button class="gallery-filter" data-filter="club">Club</button>
+            <button class="gallery-filter" data-filter="team">Team</button>
+            <button class="gallery-filter" data-filter="supporters">Supporters</button>
+        </div>
 
+        <div class="gallery-v3-grid">
 
-    <nav>
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="about.html">
-            About
-        </a>
-
-        <a href="team.html">
-            Team
-        </a>
-
-        <a href="matches.html">
-            Matches
-        </a>
-
-        <a href="news.html">
-            News
-        </a>
-
-        <a href="gallery.html"
-           class="active">
-            Gallery
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </nav>
-
-</header>
-
-
-
-<!-- =================================================
-     GALLERY HERO
-================================================= -->
-
-<section class="new-gallery-hero">
-
-    <div class="gallery-hero-content">
-
-        <span>
-            TURKANA DESERT WARRIORS FC
-        </span>
-
-        <h1>
-            OUR GALLERY
-        </h1>
-
-        <div class="gallery-gold-line"></div>
-
-        <p>
-            Explore the moments, people, passion and memories
-            that make Turkana Desert Warriors Football Club.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     GALLERY INTRO
-================================================= -->
-
-<section class="gallery-introduction">
-
-    <span>
-        OUR JOURNEY
-    </span>
-
-    <h2>
-        Moments That Tell Our Story
-    </h2>
-
-    <div class="gallery-small-line"></div>
-
-    <p>
-        From the players on the pitch to the management,
-        supporters and community, every moment is part of
-        the Desert Warriors FC journey.
-    </p>
-
-</section>
-
-
-
-<!-- =================================================
-     PHOTO GALLERY
-================================================= -->
-
-<section class="new-gallery-section">
-
-    <div class="gallery-section-title">
-
-        <span>
-            PHOTOS
-        </span>
-
-        <h2>
-            Turkana Desert Warriors Moments
-        </h2>
-
-        <p>
-            A collection of special moments from our club.
-        </p>
-
-    </div>
-
-
-    <div class="new-gallery-grid">
-
-
-        <!-- PHOTO 1 -->
-
-        <div class="new-gallery-card">
-
-            <div class="gallery-image">
-
-                <img src="logo.jfif"
-                     alt="Desert Warriors FC Logo">
-
-                <div class="gallery-overlay">
-
-                    <span>
-                        CLUB
+            <!-- PHOTO 1 -->
+            <article class="gallery-v3-card" data-category="club">
+                <button class="gallery-v3-photo-button"
+                        data-image="logo.jfif"
+                        data-caption="Turkana Desert Warriors FC — Our Club Identity">
+                    <img src="logo.jfif" alt="Desert Warriors FC Logo" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
                     </span>
-
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>CLUB IDENTITY</span>
+                    <h3>Turkana Desert Warriors FC</h3>
+                    <p>Our club identity.</p>
                 </div>
+            </article>
 
-            </div>
-
-            <div class="new-gallery-caption">
-
-                <h3>
-                    Turkana Desert Warriors FC
-                </h3>
-
-                <p>
-                    Our club identity.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PHOTO 2 -->
-
-        <div class="new-gallery-card">
-
-            <div class="gallery-image">
-
-                <img src="players_Photo.jpg"
-                     alt="Desert Warriors FC Team">
-
-                <div class="gallery-overlay">
-
-                    <span>
-                        TEAM
+            <!-- PHOTO 2 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="players_Photo.jpg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
                     </span>
-
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
                 </div>
+            </article>
 
-            </div>
-
-            <div class="new-gallery-caption">
-
-                <h3>
-                    Turkana Desert Warriors FC Team
-                </h3>
-
-                <p>
-                    Our players united on the field.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PHOTO 3 -->
-
-        <div class="new-gallery-card">
-
-            <div class="gallery-image">
-
-                <img src="clubs_photo.jpg"
-                     alt="Desert Warriors FC Club">
-
-                <div class="gallery-overlay">
-
-                    <span>
-                        UNITY
+            <!-- PHOTO 3 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="clubs_photo.jpg"
+                        data-caption="United as Warriors">
+                    <img src="clubs_photo.jpg" alt="Desert Warriors FC Club" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
                     </span>
-
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>UNITY</span>
+                    <h3>United as Warriors</h3>
+                    <p>A team built on passion and love for football.</p>
                 </div>
+            </article>
 
-            </div>
-
-            <div class="new-gallery-caption">
-
-                <h3>
-                    United as Warriors
-                </h3>
-
-                <p>
-                    A team built on passion and love for football.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PHOTO 4 -->
-
-        <div class="new-gallery-card">
-
-            <div class="gallery-image">
-
-                <img src="clubs_photo.jpg"
-                     alt="Desert Warriors FC Players and Management">
-
-                <div class="gallery-overlay">
-
-                    <span>
-                        MANAGEMENT
+            <!-- PHOTO 4 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="clubs_photo.jpg"
+                        data-caption="Players and Management">
+                    <img src="TEAM7.jpeg" alt="Desert Warriors FC Players and Management" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
                     </span>
-
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>MANAGEMENT</span>
+                    <h3>Players & Management</h3>
+                    <p>United by passion, driven by purpose.</p>
+                    <small>President / CEO: Mr. Joshua Taban</small>
                 </div>
+            </article>
 
-            </div>
-
-            <div class="new-gallery-caption">
-
-                <h3>
-                    Players & Management
-                </h3>
-
-                <p>
-                    United by passion, driven by purpose.
-                </p>
-
-                <small>
-                    President / CEO: Mr. Joshua Taban
-                </small>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PHOTO 5 -->
-
-        <div class="new-gallery-card">
-
-            <div class="gallery-image">
-
-                <img src="DWFC2.png"
-                     alt="Desert Warriors FC Supporters">
-
-                <div class="gallery-overlay">
-
-                    <span>
-                        SUPPORTERS
+            <!-- PHOTO 5 -->
+            <article class="gallery-v3-card" data-category="supporters">
+                <button class="gallery-v3-photo-button"
+                        data-image="DWFC2.png"
+                        data-caption="Thank You to Our Supporters">
+                    <img src="DWFC2.png" alt="Desert Warriors FC Supporters" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
                     </span>
-
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>SUPPORTERS</span>
+                    <h3>Thank You to Our Supporters</h3>
+                    <p>
+                        Thank you to our loyal fans, partners,
+                        families, players, staff and community.
+                    </p>
                 </div>
+            </article>
 
-            </div>
-
-            <div class="new-gallery-caption">
-
-                <h3>
-                    Thank You to Our Supporters
-                </h3>
-
-                <p>
-                    Thank you to our loyal fans, partners,
-                    families, players, staff and community.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PHOTO 6 -->
-
-        <div class="new-gallery-card">
-
-            <div class="gallery-image">
-
-                <img src="DWFC3.jpg"
-                     alt="Desert Warriors FC Yellow Flag">
-
-                <div class="gallery-overlay">
-
-                    <span>
-                        WARRIOR SPIRIT
+            <!-- PHOTO 6 -->
+            <article class="gallery-v3-card" data-category="club">
+                <button class="gallery-v3-photo-button"
+                        data-image="DWFC3.jpg"
+                        data-caption="Always Looking Good in Yellow">
+                    <img src="DWFC3.jpg" alt="Desert Warriors FC Yellow Flag" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
                     </span>
-
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>WARRIOR SPIRIT</span>
+                    <h3>Always Looking Good in Yellow 💛</h3>
+                    <p>
+                        Yellow represents the pride, passion and
+                        warrior spirit of Desert Warriors FC.
+                    </p>
                 </div>
+            </article>
+            <!-- PHOTO 7 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="players_Photo.jpg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 8 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM1.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 9 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM2.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 10 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM3.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 11 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM4.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 12 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM5.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 13 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM6.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 14 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM8.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 15 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM9.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 16 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM10.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 17 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM11.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 18 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM12.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 19 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM13.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 20 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM14.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 21 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM15.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 22 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM16.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 23 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM17.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 24 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM18.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 25 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM19.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 26 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM20.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 27 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM21.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 28 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM22.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 29 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM23.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 30 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM24.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 31 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM25.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 32 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM26.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 33 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM27.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 34 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM28.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 35 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM29.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 36 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM30.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 37 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM31.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 38 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM32.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 39 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM33.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 40 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM34.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 41 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM35.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 42 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM36.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 43 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM37.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 44 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM38.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
+            <!-- PHOTO 45 -->
+            <article class="gallery-v3-card" data-category="team">
+                <button class="gallery-v3-photo-button"
+                        data-image="players_Photo.jpg"
+                        data-caption="Turkana Desert Warriors FC — Our Team">
+                    <img src="TEAM39.jpeg" alt="Desert Warriors FC Team" loading="lazy">
+                    <span class="gallery-v3-photo-overlay">
+                        <span>VIEW PHOTO ↗</span>
+                    </span>
+                </button>
+                <div class="gallery-v3-caption">
+                    <span>THE TEAM</span>
+                    <h3>Turkana Desert Warriors FC Team</h3>
+                    <p>Our players united on the field.</p>
+                </div>
+            </article>
 
+        </div>
+    </section>
+
+
+    <!-- PHOTO LIGHTBOX -->
+    <div class="gallery-v3-lightbox" id="galleryLightbox"
+         aria-hidden="true">
+        <button class="gallery-v3-close" id="galleryClose"
+                aria-label="Close image">&times;</button>
+
+        <button class="gallery-v3-prev" id="galleryPrev"
+                aria-label="Previous image">&#10094;</button>
+
+        <div class="gallery-v3-lightbox-content">
+            <img src="" alt="" id="galleryLightboxImage">
+            <p id="galleryLightboxCaption"></p>
+        </div>
+
+        <button class="gallery-v3-next" id="galleryNext"
+                aria-label="Next image">&#10095;</button>
+    </div>
+
+
+    <!-- VIDEO HIGHLIGHTS -->
+    <section class="gallery-v3-videos" id="video-highlights">
+
+        <div class="gallery-v3-heading">
+            <span class="gallery-v3-label">VIDEO HIGHLIGHTS</span>
+            <h2>Watch the Warriors</h2>
+            <p>
+                Experience the Desert Warriors FC journey
+                through video highlights and club moments.
+            </p>
+        </div>
+
+        <div class="gallery-v3-video-grid">
+
+            <!-- VIDEO 1 -->
+            <article class="gallery-v3-video-card">
+                <div class="gallery-v3-video-frame">
+                    <video controls preload="metadata">
+                        <source src="DWFCVD1.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+                <div class="gallery-v3-video-info">
+                    <span>CLUB HIGHLIGHT</span>
+                    <h3>New Jerseys, New Season</h3>
+                    <p>
+                        The Desert Warriors FC boys doing warm-ups
+                        after receiving their new jerseys for the season.
+                        A new season brings new energy and ambitions.
+                    </p>
+                </div>
+            </article>
+
+            <!-- VIDEO 2 -->
+            <article class="gallery-v3-video-card">
+                <div class="gallery-v3-video-frame">
+                    <video controls preload="metadata">
+                        <source src="Season_Preparation.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+                <div class="gallery-v3-video-info">
+                    <span>CLUB HIGHLIGHT</span>
+                    <h3>26/27 Season Preparation</h3>
+                    <p>
+                        The Desert Warriors FC boys preparing for the
+                        new season. Heads up, boys, for the new season!
+                    </p>
+                </div>
+            </article>
+
+            <!-- VIDEO 3 -->
+            <article class="gallery-v3-video-card">
+                <div class="gallery-v3-video-frame">
+                    <video controls preload="metadata">
+                        <source src="Winning_mentality.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+                <div class="gallery-v3-video-info">
+                    <span>CLUB HIGHLIGHT</span>
+                    <h3>Winning Mentality</h3>
+                    <p>
+                        When the boys mean business, they bring
+                        the winning mentality that defines
+                        Desert Warriors FC.
+                    </p>
+                </div>
+            </article>
+
+            <!-- VIDEO 4 -->
+            <article class="gallery-v3-video-card">
+                <div class="gallery-v3-video-frame">
+                    <video controls preload="metadata">
+                        <source src="Celebration_moments.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+                <div class="gallery-v3-video-info">
+                    <span>CLUB HIGHLIGHT</span>
+                    <h3>Celebration Moments</h3>
+                    <p>
+                        We celebrate the victories and milestones
+                        that define Desert Warriors FC.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- SUPPORTERS CTA -->
+    <section class="gallery-v3-cta">
+        <div class="gallery-v3-cta-content">
+            <span>STAND WITH THE WARRIORS</span>
+            <h2>Every Moment Matters</h2>
+            <p>
+                Our journey would not be complete without our
+                supporters. Thank you for standing with
+                Desert Warriors FC.
+            </p>
+
+            <div class="gallery-v3-cta-buttons">
+                <a href="contact.html" class="gallery-v3-button">
+                    Get Involved
+                </a>
+                <a href="fan-base.html" class="gallery-v3-outline">
+                    Join Our Fan Base
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="dw-footer">
+        <div class="dw-footer-content">
+
+            <div class="dw-footer-brand">
+                <img src="logo.jfif" alt="Desert Warriors FC Logo">
+                <h3>TURKANA DESERT WARRIORS FC</h3>
+                <p>United by Passion. Driven by Purpose.</p>
             </div>
 
-            <div class="new-gallery-caption">
-
-                <h3>
-                    Always Looking Good in Yellow 💛
-                </h3>
-
-                <p>
-                    Yellow represents the pride, passion and
-                    warrior spirit of Desert Warriors FC.
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     VIDEO SECTION
-================================================= -->
-
-<section class="gallery-video-section">
-
-    <div class="gallery-section-title">
-
-        <span>
-            VIDEO HIGHLIGHTS
-        </span>
-
-        <h2>
-            Watch the Warriors
-        </h2>
-
-        <p>
-            Experience the Desert Warriors FC journey
-            through video highlights and club moments.
-        </p>
-
-    </div>
-
-
-    <div class="featured-video-card">
-
-
-        <div class="video-wrapper">
-
-            <video controls preload="metadata">
-
-                <source src="DWFCVD1.mp4"
-                        type="video/mp4">
-
-                Your browser does not support
-                video playback.
-
-            </video>
-
-        </div>
-
-
-        <div class="video-information">
-
-            <span>
-                CLUB HIGHLIGHT
-            </span>
-
-            <h2>
-                New Jerseys, New Season
-            </h2>
-
-            <div class="video-gold-line"></div>
-
-            <p>
-                The Desert Warriors FC boys doing warm-ups
-                after receiving their new jerseys for the season.
-            </p>
-
-            <p>
-                A new season brings new energy, new ambitions
-                and another opportunity for the Warriors
-                to represent the club with pride.
-            </p>
-
-        </div>
-
-    </div>
-
-     <div class="featured-video-card">
-
-
-        <div class="video-wrapper">
-
-            <video controls preload="metadata">
-
-                <source src="Season_Preparation.mp4"
-                        type="video/mp4">
-
-                Your browser does not support
-                video playback.
-
-            </video>
-
-        </div>
-
-
-        <div class="video-information">
-
-            <span>
-                CLUB HIGHLIGHT
-            </span>
-
-            <h2>
-                26/27 Season Preparation
-            </h2>
-
-            <div class="video-gold-line"></div>
-
-            <p>
-                The Desert Warriors FC boys doing Early preparation for the new seasonwarm-ups.
-            </p>
-
-            <p>
-                A new season brings new energy, new ambitions
-                and another opportunity for the Warriors
-                to represent the club with pride. Heads up Boys for the new season.
-            </p>
-
-        </div>
-
-    </div>
-
- <div class="featured-video-card">
-
-
-        <div class="video-wrapper">
-
-            <video controls preload="metadata">
-
-                <source src="Winning_mentality.mp4"
-                        type="video/mp4">
-
-                Your browser does not support
-                video playback.
-
-            </video>
-
-        </div>
-
-
-        <div class="video-information">
-
-            <span>
-                CLUB HIGHLIGHT
-            </span>
-
-            <h2>
-                Winning Mentality
-            </h2>
-
-            <div class="video-gold-line"></div>
-
-            <p>
-                When the Boys mean business, they bring the winning mentality
-                that defines the Desert Warriors FC.
-            </p>
-
-            <p>
-                We keep moving forward with the winning mentality
-                that defines the Desert Warriors FC.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="featured-video-card">
-
-
-        <div class="video-wrapper">
-
-            <video controls preload="metadata">
-
-                <source src="Celebration_moments.mp4"
-                        type="video/mp4">
-
-                Your browser does not support
-                video playback.
-
-            </video>
-
-        </div>
-
-
-        <div class="video-information">
-
-            <span>
-                CLUB HIGHLIGHT
-            </span>
-
-            <h2>
-                Celebration Moments
-            </h2>
-
-            <div class="video-gold-line"></div>
-
-            <p>
-                We celebrate the victories and milestones
-                that define the Desert Warriors FC.
-            </p>
-
-            <p>
-                We keep our momentum going forward with the winning mentality
-                that defines the Desert Warriors FC.
-            </p>
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================
-     SUPPORTERS MESSAGE
-================================================= -->
-
-<section class="gallery-supporters">
-
-    <div class="gallery-supporters-content">
-
-        <span>
-            STAND WITH THE WARRIORS
-        </span>
-
-        <h2>
-            Every Moment Matters
-        </h2>
-
-        <div class="gallery-gold-line"></div>
-
-        <p>
-            Our journey would not be complete without our
-            supporters. Thank you for standing with
-            Desert Warriors FC.
-        </p>
-
-        <a href="contact.html">
-            Get Involved →
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     FOOTER
-================================================= -->
-
-<footer class="footer">
-
-    <div class="gallery-footer-content">
-
-        <div>
-
-            <h3>
-                TURKANA DESERT WARRIORS FC
-            </h3>
-
-            <p>
-                United by Passion. Driven by Purpose.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                QUICK LINKS
-            </h3>
-
-            <p>
-                <a href="index.html">Home</a> |
-                <a href="team.html">Team</a>
-            </p>
-
-            <p>
-                <a href="news.html">News</a> |
+            <div class="dw-footer-links">
+                <h4>QUICK LINKS</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About the Club</a>
+                <a href="team.html">Our Team</a>
+                <a href="matches.html">Matches</a>
+                <a href="news.html">News</a>
                 <a href="contact.html">Contact</a>
-            </p>
+            </div>
+
+            <div class="dw-footer-contact">
+                <h4>CONTACT US</h4>
+                <p>Napetet, Lodwar, Kenya</p>
+                <a href="mailto:desertwarriors023@gmail.com">
+                    desertwarriors023@gmail.com
+                </a>
+                <a href="tel:0741920064">0741920064</a>
+            </div>
+
+            <div class="dw-footer-social">
+                <h4>FOLLOW THE WARRIORS</h4>
+                <a href="https://www.facebook.com/profile.php?id=61558521487571"
+                   target="_blank" rel="noopener">Facebook</a>
+                <a href="https://x.com/DWarriors023"
+                   target="_blank" rel="noopener">X / Twitter</a>
+                <a href="https://whatsapp.com/channel/0029VbCYV7FGehEP8idGwS2u"
+                   target="_blank" rel="noopener">WhatsApp Channel</a>
+            </div>
 
         </div>
 
-
-        <div>
-
-            <h3>
-                CONTACT
-            </h3>
-
+        <div class="dw-footer-bottom">
             <p>
-                📧 desertwarriors023@gmail.com
+                © 2026 Turkana Desert Warriors FC. All Rights Reserved.
+                | Built by Melchizedek Ebenyo
             </p>
-
-            <p>
-                📞 0741920064
-            </p>
-
         </div>
+    </footer>
 
-    </div>
+
+    <!-- GALLERY FUNCTIONALITY -->
+    <script>
+        // MOBILE NAVIGATION
+        const galleryMenuToggle =
+            document.getElementById("galleryMenuToggle");
+
+        const galleryMainNav =
+            document.getElementById("galleryMainNav");
+
+        galleryMenuToggle.addEventListener("click", function () {
+            galleryMainNav.classList.toggle("dw-nav-open");
+
+            const isOpen =
+                galleryMainNav.classList.contains("dw-nav-open");
+
+            galleryMenuToggle.setAttribute("aria-expanded", isOpen);
+            galleryMenuToggle.textContent = isOpen ? "✕" : "☰";
+        });
 
 
-    <div class="gallery-footer-bottom">
+        // PHOTO FILTERS
+        const galleryFilters =
+            document.querySelectorAll(".gallery-filter");
 
-        <p>
-            © 2026 Turkana Desert Warriors FC.
-            All Rights Reserved.
-            | Built by Melchizedek Ebenyo
-        </p>
+        const galleryCards =
+            document.querySelectorAll(".gallery-v3-card");
 
-    </div>
+        galleryFilters.forEach(function (filterButton) {
+            filterButton.addEventListener("click", function () {
+                const selectedFilter =
+                    filterButton.getAttribute("data-filter");
 
-</footer>
+                galleryFilters.forEach(function (button) {
+                    button.classList.remove("active");
+                });
 
+                filterButton.classList.add("active");
+
+                galleryCards.forEach(function (card) {
+                    const category = card.getAttribute("data-category");
+
+                    if (selectedFilter === "all" ||
+                        selectedFilter === category) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+
+
+        // PHOTO LIGHTBOX
+        const galleryLightbox =
+            document.getElementById("galleryLightbox");
+
+        const lightboxImage =
+            document.getElementById("galleryLightboxImage");
+
+        const lightboxCaption =
+            document.getElementById("galleryLightboxCaption");
+
+        const photoButtons =
+            document.querySelectorAll(".gallery-v3-photo-button");
+
+        const galleryClose =
+            document.getElementById("galleryClose");
+
+        const galleryPrev =
+            document.getElementById("galleryPrev");
+
+        const galleryNext =
+            document.getElementById("galleryNext");
+
+        let currentPhotoIndex = 0;
+
+        const visiblePhotoButtons = function () {
+            return Array.from(photoButtons).filter(function (button) {
+                return button.closest(".gallery-v3-card").style.display !== "none";
+            });
+        };
+
+        function showGalleryPhoto(index) {
+            const visiblePhotos = visiblePhotoButtons();
+
+            if (!visiblePhotos.length) return;
+
+            currentPhotoIndex =
+                (index + visiblePhotos.length) % visiblePhotos.length;
+
+            const selectedPhoto = visiblePhotos[currentPhotoIndex];
+
+            lightboxImage.src =
+                selectedPhoto.getAttribute("data-image");
+
+            lightboxCaption.textContent =
+                selectedPhoto.getAttribute("data-caption");
+
+            galleryLightbox.classList.add("gallery-v3-open");
+            galleryLightbox.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        photoButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const visiblePhotos = visiblePhotoButtons();
+                const index = visiblePhotos.indexOf(button);
+                showGalleryPhoto(index);
+            });
+        });
+
+        function closeGalleryLightbox() {
+            galleryLightbox.classList.remove("gallery-v3-open");
+            galleryLightbox.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        galleryClose.addEventListener("click", closeGalleryLightbox);
+
+        galleryPrev.addEventListener("click", function () {
+            showGalleryPhoto(currentPhotoIndex - 1);
+        });
+
+        galleryNext.addEventListener("click", function () {
+            showGalleryPhoto(currentPhotoIndex + 1);
+        });
+
+        galleryLightbox.addEventListener("click", function (event) {
+            if (event.target === galleryLightbox) {
+                closeGalleryLightbox();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (!galleryLightbox.classList.contains("gallery-v3-open")) return;
+
+            if (event.key === "Escape") {
+                closeGalleryLightbox();
+            }
+
+            if (event.key === "ArrowLeft") {
+                showGalleryPhoto(currentPhotoIndex - 1);
+            }
+
+            if (event.key === "ArrowRight") {
+                showGalleryPhoto(currentPhotoIndex + 1);
+            }
+        });
+    </script>
 
 </body>
-
 </html>

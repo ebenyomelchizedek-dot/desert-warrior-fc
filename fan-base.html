@@ -2,985 +2,1074 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Desert Warriors FC Fan Base Official Club Sponsorship Programme. Become a die-hard supporter and help build the future of Desert Warriors FC.">
-
-    <title>DWFC Fan Base | Official Club Sponsor</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* =================================
-           DWFC FAN BASE PAGE
-        ================================= */
-
-        .fan-page {
-            background: #f5f6f8;
-            color: #172033;
-            font-family: Arial, sans-serif;
-        }
-
-        .fan-page * {
-            box-sizing: border-box;
-        }
-
-        .fan-container {
-            width: min(1150px, 92%);
-            margin: auto;
-        }
-
-        .fan-hero {
-             position: relative;
-             background:
-        linear-gradient(
-            rgba(10, 17, 30, 0.78),
-            rgba(10, 17, 30, 0.82)
-        ),
-        url("images/fan-base-background.jpg");
-
-           background-size: cover;
-           background-position: center;
-           background-repeat: no-repeat;
-
-           color: white;
-           padding: 110px 20px;
-           text-align: center;
-           min-height: 550px;
-
-           display: flex;
-           align-items: center;
-           justify-content: center;
-        }
-
-        .fan-hero-logo {
-            width: 125px;
-            height: 125px;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
-
-        .fan-hero h1 {
-            color: #f5c400;
-            font-size: clamp(30px, 5vw, 55px);
-            margin: 10px 0;
-            font-weight: 900;
-        }
-
-        .fan-hero h2 {
-            font-size: clamp(17px, 3vw, 25px);
-            margin: 15px 0;
-        }
-
-        .fan-hero p {
-            max-width: 750px;
-            margin: 15px auto;
-            line-height: 1.8;
-            color: #e0e5ed;
-        }
-
-        .fan-tagline {
-            color: #f5c400 !important;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .fan-button {
-            display: inline-block;
-            background: #f5c400;
-            color: #111827;
-            text-decoration: none;
-            padding: 15px 28px;
-            margin-top: 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .fan-button:hover {
-            background: white;
-            transform: translateY(-3px);
-        }
-
-        .fan-section {
-            padding: 65px 20px;
-        }
-
-        .fan-section-heading {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .fan-section-heading h2 {
-            color: #172033;
-            font-size: clamp(25px, 4vw, 36px);
-            margin-bottom: 12px;
-        }
-
-        .fan-section-heading p {
-            color: #647084;
-            line-height: 1.7;
-            max-width: 750px;
-            margin: auto;
-        }
-
-        .fan-story {
-            background: white;
-        }
-
-        .fan-story-content {
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.9;
-            color: #465064;
-        }
-
-        .fan-story-content p {
-            margin-bottom: 18px;
-        }
-
-        .fan-highlight {
-            border-left: 5px solid #f5c400;
-            background: #fff9df;
-            padding: 22px;
-            margin: 25px 0;
-            border-radius: 5px;
-            color: #263044;
-        }
-
-        /* Sponsorship figures */
-
-        .fan-figures {
-            background: #111b2b;
-            color: white;
-        }
-
-        .fan-figures .fan-section-heading h2 {
-            color: white;
-        }
-
-        .fan-figures .fan-section-heading p {
-            color: #d3d9e3;
-        }
-
-        .fan-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .fan-stat-card {
-            background: #202e43;
-            border: 1px solid #3b4a60;
-            border-radius: 10px;
-            text-align: center;
-            padding: 30px 15px;
-        }
-
-        .fan-stat-card h3 {
-            color: #f5c400;
-            font-size: clamp(25px, 4vw, 37px);
-            margin: 0 0 12px;
-        }
-
-        .fan-stat-card p {
-            color: #e0e5ed;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .fan-note {
-            text-align: center;
-            color: #d3d9e3;
-            font-size: 13px;
-            line-height: 1.7;
-            margin: 25px auto 0;
-            max-width: 800px;
-        }
-
-        /* Contribution cards */
-
-        .fan-contribution-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-            max-width: 750px;
-            margin: auto;
-        }
-
-        .fan-contribution-card {
-            background: white;
-            border-radius: 10px;
-            padding: 35px 20px;
-            text-align: center;
-            border-bottom: 5px solid #f5c400;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        }
-
-        .fan-contribution-card h3 {
-            color: #172033;
-            font-size: 20px;
-        }
-
-        .fan-contribution-card h2 {
-            color: #bd9400;
-            font-size: 38px;
-            margin: 15px 0;
-        }
-
-        .fan-contribution-card p {
-            color: #647084;
-        }
-
-        /* Membership benefits */
-
-        .fan-benefits {
-            background: #fff;
-        }
-
-        .fan-benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .fan-benefit-card {
-            background: #f5f6f8;
-            padding: 27px;
-            border-radius: 9px;
-            border-top: 4px solid #f5c400;
-        }
-
-        .fan-benefit-card .fan-number {
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #172033;
-            color: #f5c400;
-            font-weight: bold;
-            border-radius: 50%;
-            margin-bottom: 17px;
-        }
-
-        .fan-benefit-card h3 {
-            color: #172033;
-            font-size: 18px;
-        }
-
-        .fan-benefit-card p {
-            color: #647084;
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        /* Accountability */
-
-        .fan-accountability {
-            background: #edf0f4;
-        }
-
-        .fan-accountability-content {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .fan-accountability-content p {
-            color: #465064;
-            line-height: 1.8;
-        }
-
-        .fan-accountability-content ul {
-            padding-left: 22px;
-            line-height: 2;
-            color: #465064;
-        }
-
-        /* Why support */
-
-        .fan-impact {
-            background: #fff;
-        }
-
-        .fan-impact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .fan-impact-card {
-            padding: 25px;
-            background: #f5f6f8;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .fan-impact-card h3 {
-            color: #172033;
-        }
-
-        .fan-impact-card p {
-            color: #647084;
-            line-height: 1.7;
-        }
-
-        /* Gallery */
-
-        .fan-gallery {
-            background: #f5f6f8;
-        }
-
-        .fan-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .fan-gallery-item {
-            background: white;
-            border-radius: 9px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-        }
-
-        .fan-gallery-item img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .fan-gallery-item p {
-            padding: 15px;
-            margin: 0;
-            font-weight: bold;
-            color: #172033;
-        }
-
-        /* Join section */
-
-        .fan-join {
-            background: #172033;
-            text-align: center;
-            color: white;
-            padding: 75px 20px;
-        }
-
-        .fan-join h2 {
-            color: #f5c400;
-            font-size: clamp(27px, 4vw, 40px);
-        }
-
-        .fan-join p {
-            max-width: 750px;
-            margin: 20px auto;
-            line-height: 1.8;
-            color: #e0e5ed;
-        }
-
-        .fan-contact-details {
-            margin-top: 25px;
-            line-height: 2;
-        }
-
-        .fan-contact-details a {
-            color: #f5c400;
-            text-decoration: none;
-        }
-
-        .fan-back {
-            display: inline-block;
-            margin-top: 25px;
-            color: white;
-            text-decoration: none;
-            border: 1px solid white;
-            padding: 12px 23px;
-            border-radius: 5px;
-        }
-
-        .fan-back:hover {
-            background: white;
-            color: #172033;
-        }
-
-        /* Mobile responsiveness */
-
-        @media (max-width: 850px) {
-            .fan-stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .fan-benefit-grid,
-            .fan-impact-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .fan-hero {
-                padding: 60px 15px;
-            }
-
-            .fan-section {
-                padding: 45px 15px;
-            }
-
-            .fan-stats-grid,
-            .fan-contribution-grid,
-            .fan-benefit-grid,
-            .fan-impact-grid,
-            .fan-gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .fan-gallery-item img {
-                height: 220px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan Base | Desert Warriors FC</title>
+
+  <style>
+    :root {
+      --yellow: #f5c400;
+      --red: #d62828;
+      --dark: #111315;
+      --dark2: #1c1f22;
+      --white: #ffffff;
+      --muted: #aeb3b8;
+      --light: #f4f5f6;
+      --border: #e5e7eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    .fan-header {
+      background: #111315;
+      color: white;
+      padding: 16px 6%;
+      border-bottom: 3px solid var(--yellow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .fan-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .fan-brand-mark {
+      height: 48px;
+      width: 48px;
+      background: var(--yellow);
+      color: #111;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .fan-brand-copy strong {
+      display: block;
+      font-size: 15px;
+      letter-spacing: 1px;
+      font-weight: 900;
+    }
+
+    .fan-brand-copy span {
+      display: block;
+      color: #aaa;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .fan-back-link {
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .fan-back-link:hover {
+      color: var(--yellow);
+    }
+
+    /* HERO */
+    .fan-hero {
+      position: relative;
+      min-height: 490px;
+      padding: 85px 6%;
+      background:
+        linear-gradient(90deg, rgba(13,14,15,.98) 0%, rgba(13,14,15,.90) 55%, rgba(13,14,15,.58) 100%),
+        radial-gradient(circle at 80% 40%, #555, #111);
+      color: white;
+      overflow: hidden;
+    }
+
+    .fan-hero::before {
+      content: "WARRIORS";
+      position: absolute;
+      right: -30px;
+      bottom: -45px;
+      font-size: clamp(90px, 17vw, 230px);
+      font-weight: 900;
+      color: rgba(255,255,255,.035);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .fan-hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 7px;
+      height: 100%;
+      background: var(--yellow);
+    }
+
+    .fan-hero-content {
+      max-width: 1150px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fan-eyebrow {
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+
+    .fan-hero h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.06;
+      font-weight: 900;
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+
+    .fan-hero h1 span {
+      color: var(--yellow);
+    }
+
+    .fan-hero p {
+      max-width: 620px;
+      color: #d0d0d0;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .fan-hero-actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .fan-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 23px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .6px;
+      transition: .25s;
+    }
+
+    .fan-btn-yellow {
+      background: var(--yellow);
+      color: #111;
+    }
+
+    .fan-btn-yellow:hover {
+      background: #ffda35;
+      transform: translateY(-3px);
+    }
+
+    .fan-btn-outline {
+      border: 1px solid #777;
+      color: white;
+    }
+
+    .fan-btn-outline:hover {
+      background: white;
+      color: #111;
+    }
+
+    /* INTRO */
+    .fan-intro {
+      max-width: 1150px;
+      padding: 0 20px;
+      margin: -40px auto 75px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .fan-intro-card {
+      background: white;
+      border-radius: 15px;
+      padding: 35px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 35px;
+      align-items: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,.07);
+    }
+
+    .fan-intro-card h2 {
+      font-size: 28px;
+      line-height: 1.3;
+      color: #17191b;
+      margin-bottom: 15px;
+    }
+
+    .fan-intro-card h2 span {
+      color: #d5a900;
+    }
+
+    .fan-intro-card p {
+      font-size: 14px;
+      color: #686d73;
+    }
+
+    .fan-intro-highlight {
+      background: #17191b;
+      border-radius: 12px;
+      padding: 27px;
+      border-bottom: 4px solid var(--yellow);
+    }
+
+    .fan-intro-highlight .highlight-label {
+      color: var(--yellow);
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .fan-intro-highlight h3 {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .fan-intro-highlight p {
+      color: #c2c2c2;
+      font-size: 13px;
+    }
+
+    /* SECTION GENERAL */
+    .fan-section {
+      max-width: 1150px;
+      padding: 0 20px;
+      margin: 0 auto 75px;
+    }
+
+    .fan-section-heading {
+      margin-bottom: 30px;
+    }
+
+    .fan-section-heading .eyebrow {
+      color: #bd9900;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    .fan-section-heading h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      color: #18191b;
+      margin-bottom: 10px;
+    }
+
+    .fan-section-heading p {
+      color: #6b7076;
+      max-width: 700px;
+      font-size: 14px;
+    }
+
+    /* BENEFITS */
+    .fan-benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .fan-benefit-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fan-benefit-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--yellow);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+
+    .fan-benefit-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 0;
+      background: var(--yellow);
+      transition: .3s;
+    }
+
+    .fan-benefit-card:hover::after {
+      height: 100%;
+    }
+
+    .fan-benefit-icon {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      background: #fff4c4;
+      border-radius: 12px;
+      font-size: 25px;
+      margin-bottom: 19px;
+    }
+
+    .fan-benefit-card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      color: #202124;
+    }
+
+    .fan-benefit-card p {
+      color: #6b7076;
+      font-size: 13px;
+    }
+
+    /* SUPPORT SECTION */
+    .fan-support-section {
+      background: #17191b;
+      padding: 75px 20px;
+      margin-bottom: 75px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fan-support-section::before {
+      content: "DWFC";
+      position: absolute;
+      left: -15px;
+      bottom: -60px;
+      font-size: 230px;
+      font-weight: 900;
+      color: rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+
+    .fan-support-inner {
+      max-width: 1150px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fan-support-heading {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 38px;
+    }
+
+    .fan-support-heading .eyebrow {
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .fan-support-heading h2 {
+      color: white;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .fan-support-heading p {
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .fan-support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .fan-support-card {
+      background: #222427;
+      border: 1px solid #333538;
+      border-radius: 12px;
+      padding: 27px;
+      transition: .3s;
+    }
+
+    .fan-support-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-4px);
+    }
+
+    .fan-support-number {
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .fan-support-card h3 {
+      color: white;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .fan-support-card p {
+      color: #b8b8b8;
+      font-size: 13px;
+    }
+
+    /* MATCHDAY */
+    .fan-matchday {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 25px;
+      align-items: stretch;
+      margin-bottom: 75px;
+    }
+
+    .fan-matchday-panel {
+      background: var(--yellow);
+      padding: 38px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .fan-matchday-panel .eyebrow {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 13px;
+    }
+
+    .fan-matchday-panel h2 {
+      font-size: 34px;
+      line-height: 1.15;
+      margin-bottom: 17px;
+      color: #151515;
+    }
+
+    .fan-matchday-panel p {
+      font-size: 14px;
+      color: #353535;
+      margin-bottom: 22px;
+    }
+
+    .fan-matchday-panel .fan-btn {
+      background: #151515;
+      color: white;
+      align-self: flex-start;
+    }
+
+    .fan-matchday-panel .fan-btn:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    .fan-matchday-info {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 35px;
+      border-radius: 14px;
+    }
+
+    .fan-matchday-info h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #18191b;
+    }
+
+    .fan-matchday-info p {
+      color: #6b7076;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .fan-matchday-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .fan-matchday-list li {
+      padding: 13px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+      color: #444;
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+    }
+
+    .fan-matchday-list li:last-child {
+      border-bottom: none;
+    }
+
+    .fan-matchday-list span {
+      color: #c19b00;
+      font-weight: 900;
+    }
+
+    /* COMMUNITY */
+    .fan-community-banner {
+      background: linear-gradient(120deg, #1b1d1f, #111315);
+      color: white;
+      border-radius: 15px;
+      padding: 43px;
+      margin-bottom: 75px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #292b2e;
+    }
+
+    .fan-community-banner::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      top: -50px;
+      width: 250px;
+      height: 250px;
+      border: 35px solid rgba(245,196,0,.08);
+      border-radius: 50%;
+    }
+
+    .fan-community-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .fan-community-banner .eyebrow {
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .fan-community-banner h2 {
+      font-size: clamp(27px, 4vw, 39px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .fan-community-banner p {
+      color: #c3c3c3;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    /* SOCIAL */
+    .fan-social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .fan-social-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: .3s;
+    }
+
+    .fan-social-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--yellow);
+    }
+
+    .fan-social-card .social-icon {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .fan-social-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .fan-social-card p {
+      color: #6b7076;
+      font-size: 12px;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .fan-social-card a {
+      font-size: 12px;
+      font-weight: 900;
+      color: #202124;
+    }
+
+    .fan-social-card a:hover {
+      color: #c19b00;
+    }
+
+    /* FOOTER */
+    .fan-footer {
+      background: #111315;
+      color: white;
+      text-align: center;
+      padding: 35px 6%;
+      border-top: 3px solid var(--yellow);
+    }
+
+    .fan-footer strong {
+      color: var(--yellow);
+    }
+
+    .fan-footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 17px 0;
+    }
+
+    .fan-footer-links a {
+      color: #ddd;
+      font-size: 12px;
+    }
+
+    .fan-footer-links a:hover {
+      color: var(--yellow);
+    }
+
+    .fan-footer p {
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .fan-intro-card {
+        grid-template-columns: 1fr;
+      }
+
+      .fan-benefits,
+      .fan-support-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .fan-matchday {
+        grid-template-columns: 1fr;
+      }
+
+      .fan-social-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .fan-header {
+        padding: 14px 5%;
+      }
+
+      .fan-hero {
+        padding: 65px 6%;
+        min-height: auto;
+      }
+
+      .fan-hero h1 {
+        font-size: 40px;
+      }
+
+      .fan-intro {
+        padding: 0 14px;
+      }
+
+      .fan-intro-card {
+        padding: 23px;
+      }
+
+      .fan-benefits,
+      .fan-support-grid,
+      .fan-social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fan-section {
+        padding: 0 14px;
+      }
+
+      .fan-support-section {
+        padding: 55px 14px;
+      }
+
+      .fan-matchday-panel,
+      .fan-matchday-info {
+        padding: 26px;
+      }
+
+      .fan-community-banner {
+        padding: 27px;
+        margin-left: 14px;
+        margin-right: 14px;
+      }
+
+      .fan-hero-actions {
+        flex-direction: column;
+      }
+
+      .fan-hero-actions .fan-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
-<body class="fan-page">
+<body>
 
-    <!-- HERO SECTION -->
-    <section class="fan-hero">
+  <!-- HEADER -->
+  <header class="fan-header">
+    <a href="index.html" class="fan-brand">
+      <div class="fan-brand-mark">DW</div>
+      <div class="fan-brand-copy">
+        <strong>DESERT WARRIORS FC</strong>
+        <span>STRENGTH • UNITY • VICTORY</span>
+      </div>
+    </a>
 
-        <div class="fan-container">
+    <a href="index.html" class="fan-back-link">← Back to Website</a>
+  </header>
 
-            <img
-                src="images/partners/dwfc-fan-base.png"
-                alt="DWFC Fan Base Logo"
-                class="fan-hero-logo"
-                onerror="this.style.display='none';"
-            >
+  <!-- HERO -->
+  <section class="fan-hero">
+    <div class="fan-hero-content">
+      <div class="fan-eyebrow">ONE CLUB. ONE FAMILY.</div>
 
-            <h1>DWFC FAN BASE</h1>
+      <h1>WELCOME TO THE <span>WARRIORS FAMILY.</span></h1>
 
-            <h2>OFFICIAL CLUB SPONSORSHIP PROGRAMME</h2>
+      <p>
+        More than football. More than a team. We are a community united
+        by passion, pride, loyalty and the love of the beautiful game.
+        Welcome to the Desert Warriors FC Fan Base.
+      </p>
 
-            <p class="fan-tagline">
-                UNITED BY PASSION. DRIVEN BY PURPOSE.
-            </p>
+      <div class="fan-hero-actions">
+        <a href="register.html" class="fan-btn fan-btn-yellow">
+          JOIN THE WARRIORS FAMILY
+        </a>
 
-            <p>
-                Become a die-hard supporter of Desert Warriors FC.
-                Stand with your club, support its growth and become
-                part of the movement building its future.
-            </p>
+        <a href="matches.html" class="fan-btn fan-btn-outline">
+          EXPLORE MATCHES
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <a href="contact.html" class="contact-btn">Contact Us</a>
-                BECOME A DIE-HARD SUPPORTER
-            </a>
+  <!-- INTRO -->
+  <section class="fan-intro">
+    <div class="fan-intro-card">
+      <div>
+        <h2>Behind Every Warrior Is A <span>Supporter.</span></h2>
 
+        <p>
+          Desert Warriors FC is built on the spirit of togetherness.
+          Every cheer from the sidelines, every message of encouragement,
+          every supporter wearing our colours and every person who believes
+          in our journey makes our club stronger.
+        </p>
+
+        <p style="margin-top: 13px;">
+          Our supporters are part of our identity. The Fan Base is where
+          passion meets purpose and where the Warriors family continues
+          to grow.
+        </p>
+      </div>
+
+      <div class="fan-intro-highlight">
+        <div class="highlight-label">THE WARRIORS SPIRIT</div>
+        <h3>Strength. Unity. Victory.</h3>
+        <p>
+          Standing together through every challenge, celebrating every
+          achievement and believing in the future of Desert Warriors FC.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="fan-section">
+    <div class="fan-section-heading">
+      <div class="eyebrow">THE WARRIORS COMMUNITY</div>
+      <h2>Be Part Of Something Bigger</h2>
+      <p>
+        Being a Warrior supporter means being connected to a club,
+        a community and a journey that continues to grow.
+      </p>
+    </div>
+
+    <div class="fan-benefits">
+
+      <div class="fan-benefit-card">
+        <div class="fan-benefit-icon">⚽</div>
+        <h3>Matchday Experience</h3>
+        <p>
+          Follow the team, keep up with fixtures and results, and be
+          part of the excitement every time the Warriors take the field.
+        </p>
+      </div>
+
+      <div class="fan-benefit-card">
+        <div class="fan-benefit-icon">📢</div>
+        <h3>Club Updates</h3>
+        <p>
+          Stay connected with club news, announcements, training updates,
+          team activities and important developments.
+        </p>
+      </div>
+
+      <div class="fan-benefit-card">
+        <div class="fan-benefit-icon">🤝</div>
+        <h3>Community & Unity</h3>
+        <p>
+          Connect through the shared passion of football, support one
+          another and help build a stronger Warriors community.
+        </p>
+      </div>
+
+      <div class="fan-benefit-card">
+        <div class="fan-benefit-icon">🟡</div>
+        <h3>Club Pride</h3>
+        <p>
+          Represent Desert Warriors FC with pride, respect the badge
+          and carry the spirit of the club wherever you go.
+        </p>
+      </div>
+
+      <div class="fan-benefit-card">
+        <div class="fan-benefit-icon">📸</div>
+        <h3>Moments & Memories</h3>
+        <p>
+          Relive special moments through club photos, match memories,
+          celebrations and the stories behind our journey.
+        </p>
+      </div>
+
+      <div class="fan-benefit-card">
+        <div class="fan-benefit-icon">🌟</div>
+        <h3>Be Part Of Our Journey</h3>
+        <p>
+          Support our ambitions as we continue to develop the club,
+          grow our community and work towards a brighter future.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW TO SUPPORT -->
+  <section class="fan-support-section">
+    <div class="fan-support-inner">
+
+      <div class="fan-support-heading">
+        <div class="eyebrow">EVERY SUPPORT COUNTS</div>
+        <h2>How You Can Stand With The Warriors</h2>
+        <p>
+          A strong club is built by people who believe in it.
+          There are many ways to be part of the Desert Warriors FC family.
+        </p>
+      </div>
+
+      <div class="fan-support-grid">
+
+        <div class="fan-support-card">
+          <div class="fan-support-number">01 / SHOW UP</div>
+          <h3>Support On Matchday</h3>
+          <p>
+            Attend matches, encourage the players and create an atmosphere
+            that reminds the team they are never alone.
+          </p>
         </div>
 
-    </section>
-
-
-    <!-- OUR STORY -->
-    <section class="fan-section fan-story">
-
-        <div class="fan-container">
-
-            <div class="fan-section-heading">
-                <h2>OUR STORY</h2>
-                <p>
-                    From independent supporters to one united family.
-                </p>
-            </div>
-
-            <div class="fan-story-content">
-
-                <p>
-                    The Desert Warriors FC Fan Base is built on passion,
-                    loyalty and a shared commitment to the growth of
-                    Desert Warriors Football Club.
-                </p>
-
-                <p>
-                    Initially, supporters came together independently,
-                    each showing their commitment to the club in their
-                    own way. Their dedication demonstrated that
-                    Desert Warriors FC had a growing community of
-                    people who believed in its vision and future.
-                </p>
-
-                <p>
-                    Early in the 2026/27 season, the club took an
-                    important step towards bringing these supporters
-                    together through a supporters' sponsorship
-                    initiative. The initiative introduced a sponsorship
-                    kit targeting 3,000 loyal fans willing to become
-                    part of the club's sponsorship docket.
-                </p>
-
-                <div class="fan-highlight">
-                    <strong>
-                        3,000 SUPPORTERS. ONE CLUB. ONE DREAM.
-                    </strong>
-
-                    <p>
-                        The initiative represents a new chapter in our
-                        journey: transforming individual support into
-                        collective strength and creating a structured
-                        platform through which fans can contribute
-                        directly to the club's development.
-                    </p>
-                </div>
-
-                <p>
-                    For the 2026/27 season, the DWFC Fan Base proudly
-                    takes its place as the club's main sponsor,
-                    demonstrating that the greatest strength of a
-                    football club can come from the people who stand
-                    behind it.
-                </p>
-
-            </div>
-
+        <div class="fan-support-card">
+          <div class="fan-support-number">02 / STAY CONNECTED</div>
+          <h3>Follow Our Journey</h3>
+          <p>
+            Follow our official platforms, share club updates and help
+            more people discover Desert Warriors FC.
+          </p>
         </div>
 
-    </section>
-
-
-    <!-- SPONSORSHIP FIGURES -->
-    <section class="fan-section fan-figures">
-
-        <div class="fan-container">
-
-            <div class="fan-section-heading">
-                <h2>OUR BIG TARGET</h2>
-                <p>
-                    We are building a movement of 3,000 loyal supporters
-                    who believe in the future of Desert Warriors FC.
-                </p>
-            </div>
-
-            <div class="fan-stats-grid">
-
-                <div class="fan-stat-card">
-                    <h3>3,000</h3>
-                    <p>Target Die-Hard Supporters</p>
-                </div>
-
-                <div class="fan-stat-card">
-                    <h3>KSh 400</h3>
-                    <p>Monthly Contribution Per Supporter</p>
-                </div>
-
-                <div class="fan-stat-card">
-                    <h3>KSh 1.2M</h3>
-                    <p>Potential Monthly Collections</p>
-                </div>
-
-                <div class="fan-stat-card">
-                    <h3>KSh 14.4M</h3>
-                    <p>Potential Annual Collections</p>
-                </div>
-
-            </div>
-
-            <p class="fan-note">
-                These figures represent the programme's potential
-                collections if all 3,000 registered supporters
-                contribute KSh 400 every month. They are targets,
-                not confirmed collections.
-            </p>
-
+        <div class="fan-support-card">
+          <div class="fan-support-number">03 / SPREAD THE WORD</div>
+          <h3>Grow The Family</h3>
+          <p>
+            Invite friends, family and fellow football lovers to join
+            the Warriors community and stand behind the club.
+          </p>
         </div>
 
-    </section>
-
-
-    <!-- CONTRIBUTION -->
-    <section class="fan-section">
-
-        <div class="fan-container">
-
-            <div class="fan-section-heading">
-                <h2>YOUR CONTRIBUTION. OUR FUTURE.</h2>
-
-                <p>
-                    We are not asking you to contribute millions.
-                    We are asking you to contribute consistently.
-                </p>
-            </div>
-
-            <div class="fan-contribution-grid">
-
-                <div class="fan-contribution-card">
-                    <h3>WEEKLY CONTRIBUTION</h3>
-                    <h2>KSh 100</h2>
-                    <p>Just KSh 100 every week.</p>
-                </div>
-
-                <div class="fan-contribution-card">
-                    <h3>MONTHLY CONTRIBUTION</h3>
-                    <h2>KSh 400</h2>
-                    <p>Just KSh 400 every month.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MEMBERSHIP BENEFITS -->
-    <section class="fan-section fan-benefits">
-
-        <div class="fan-container">
-
-            <div class="fan-section-heading">
-                <h2>WHAT MAKES THE DWFC FAN BASE SPECIAL?</h2>
-
-                <p>
-                    Membership is about more than making a contribution.
-                    It is about belonging, participation and accountability.
-                </p>
-            </div>
-
-            <div class="fan-benefit-grid">
-
-                <div class="fan-benefit-card">
-                    <div class="fan-number">01</div>
-
-                    <h3>OFFICIAL SHIRT SPONSORSHIP</h3>
-
-                    <p>
-                        The front of the Desert Warriors FC official
-                        playing shirt will proudly carry the inscription
-                        DWFC FAN BASE, representing thousands of
-                        supporters standing behind their club.
-                    </p>
-                </div>
-
-                <div class="fan-benefit-card">
-                    <div class="fan-number">02</div>
-
-                    <h3>FINANCIAL TRANSPARENCY</h3>
-
-                    <p>
-                        A proposed Fan Base Oversight Committee will
-                        monitor supporters' contributions and promote
-                        responsible financial management.
-                    </p>
-                </div>
-
-                <div class="fan-benefit-card">
-                    <div class="fan-number">03</div>
-
-                    <h3>A VOICE IN CLUB DEVELOPMENT</h3>
-
-                    <p>
-                        Registered supporters will have an organised
-                        platform to participate in discussions about
-                        the club's growth and future ambitions.
-                    </p>
-                </div>
-
-                <div class="fan-benefit-card">
-                    <div class="fan-number">04</div>
-
-                    <h3>REGULAR REPORTS</h3>
-
-                    <p>
-                        Registered supporters will receive periodic
-                        updates on contributions, expenditure,
-                        club projects and achievements.
-                    </p>
-                </div>
-
-                <div class="fan-benefit-card">
-                    <div class="fan-number">05</div>
-
-                    <h3>OFFICIAL MEMBERSHIP NUMBER</h3>
-
-                    <p>
-                        Every registered supporter will receive a
-                        unique DWFC Fan Base membership identification
-                        number.
-                    </p>
-                </div>
-
-                <div class="fan-benefit-card">
-                    <div class="fan-number">06</div>
-
-                    <h3>MEMBERSHIP CARD</h3>
-
-                    <p>
-                        Registered supporters will receive an official
-                        DWFC Fan Base membership card recognising
-                        their membership.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FINANCIAL ACCOUNTABILITY -->
-    <section class="fan-section fan-accountability">
-
-        <div class="fan-container">
-
-            <div class="fan-section-heading">
-                <h2>OUR COMMITMENT TO ACCOUNTABILITY</h2>
-
-                <p>
-                    Our supporters deserve to know how their money
-                    is being used.
-                </p>
-            </div>
-
-            <div class="fan-accountability-content">
-
-                <p>
-                    Desert Warriors FC is committed to establishing
-                    a Fan Base Oversight Committee whose members
-                    will be elected or approved by registered
-                    supporters in accordance with the programme's
-                    governance arrangements.
-                </p>
-
-                <p>The committee will be responsible for:</p>
-
-                <ul>
-                    <li>Reviewing and scrutinising the club's financial records.</li>
-
-                    <li>Monitoring how supporters' contributions are received and utilised.</li>
-
-                    <li>Approving agreed financial accountability reports.</li>
-
-                    <li>Ensuring members receive regular financial updates.</li>
-
-                    <li>Promoting transparency, accountability and responsible financial management.</li>
-                </ul>
-
-                <p>
-                    Our vision is to build a sponsorship programme
-                    where every supporter feels confident, informed
-                    and proud of their contribution.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- WHY YOUR SUPPORT MATTERS -->
-    <section class="fan-section fan-impact">
-
-        <div class="fan-container">
-
-            <div class="fan-section-heading">
-                <h2>WHY YOUR SUPPORT MATTERS</h2>
-
-                <p>
-                    Your contribution can help strengthen the
-                    foundation and future of Desert Warriors FC.
-                </p>
-            </div>
-
-            <div class="fan-impact-grid">
-
-                <div class="fan-impact-card">
-                    <h3>CLUB OPERATIONS</h3>
-
-                    <p>
-                        Help strengthen the club's daily operations
-                        and organisational capacity.
-                    </p>
-                </div>
-
-                <div class="fan-impact-card">
-                    <h3>PLAYER SUPPORT</h3>
-
-                    <p>
-                        Contribute towards supporting our players
-                        and improving their football environment.
-                    </p>
-                </div>
-
-                <div class="fan-impact-card">
-                    <h3>TRAINING FACILITIES</h3>
-
-                    <p>
-                        Help improve our training environment
-                        and football facilities.
-                    </p>
-                </div>
-
-                <div class="fan-impact-card">
-                    <h3>COMPETITION EXPENSES</h3>
-
-                    <p>
-                        Help the club meet competition and
-                        match-related expenses.
-                    </p>
-                </div>
-
-                <div class="fan-impact-card">
-                    <h3>FOOTBALL EQUIPMENT</h3>
-
-                    <p>
-                        Support the purchase of equipment
-                        needed by our players and technical team.
-                    </p>
-                </div>
-
-                <div class="fan-impact-card">
-                    <h3>LONG-TERM DEVELOPMENT</h3>
-
-                    <p>
-                        Invest in a stronger, more sustainable
-                        future for Desert Warriors FC.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SUPPORTERS GALLERY -->
-    <section class="fan-section fan-gallery">
-
-        <div class="fan-container">
-
-            <div class="fan-section-heading">
-                <h2>OUR FAN BASE IN ACTION</h2>
-
-                <p>
-                    Celebrating the people whose passion and loyalty
-                    continue to drive Desert Warriors FC forward.
-                </p>
-            </div>
-
-            <div class="fan-gallery-grid">
-
-                <div class="fan-gallery-item">
-                    <img src="images/fan-base/supporters-1.jpg"
-                         alt="Desert Warriors FC supporters"
-                         onerror="this.style.display='none';">
-
-                    <p>Our Loyal Supporters</p>
-                </div>
-
-                <div class="fan-gallery-item">
-                    <img src="images/fan-base/supporters-2.jpg"
-                         alt="DWFC Fan Base members"
-                         onerror="this.style.display='none';">
-
-                    <p>United Behind Our Club</p>
-                </div>
-
-                <div class="fan-gallery-item">
-                    <img src="images/fan-base/supporters-3.jpg"
-                         alt="Desert Warriors FC fan activities"
-                         onerror="this.style.display='none';">
-
-                    <p>Building Our Future Together</p>
-                </div>
-
-                <div class="fan-gallery-item">
-                    <img src="images/fan-base/supporters-4.jpg"
-                         alt="Desert Warriors FC fan sponsorship kit"
-                         onerror="this.style.display='none';">
-
-                    <p>The Fan Base Sponsorship Initiative</p>
-                </div>
-
-                <div class="fan-gallery-item">
-                    <img src="images/fan-base/supporters-5.jpg"
-                         alt="Desert Warriors FC supporters at a match"
-                         onerror="this.style.display='none';">
-
-                    <p>Passion on Matchday</p>
-                </div>
-
-                <div class="fan-gallery-item">
-                    <img src="images/fan-base/supporters-6.jpg"
-                         alt="Desert Warriors FC supporters together"
-                         onerror="this.style.display='none';">
-
-                    <p>One Family. One Dream.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- JOIN THE FAN BASE -->
-    <section class="fan-join" id="fan-join">
-
-        <div class="fan-container">
-
-            <h2>BECOME A DIE-HARD SUPPORTER!</h2>
-
-            <p>
-                Whether you are in Lodwar, Nairobi, Turkana,
-                another part of Kenya or abroad, you can be
-                part of this movement.
-            </p>
-
-            <h3>3,000 SUPPORTERS. ONE CLUB. ONE DREAM.</h3>
-
-            <p>
-                Join the DWFC FAN BASE today and become one of
-                the people building the future of Desert Warriors
-                Football Club.
-            </p>
-
-            <a href="https://wa.me/254741920064?text=Hello%20Desert%20Warriors%20FC.%20I%20would%20like%20to%20join%20the%20DWFC%20Fan%20Base%20Official%20Club%20Sponsorship%20Programme."
-               class="fan-button"
-               target="_blank"
-               rel="noopener">
-                CONTACT US TO JOIN
-            </a>
-
-            <div class="fan-contact-details">
-
-                <p>
-                    Email:
-                    <a href="mailto:desertwarriors023@gmail.com">
-                        desertwarriors023@gmail.com
-                    </a>
-                </p>
-
-                <p>
-                    Phone: 0741920064 / 0748769548
-                </p>
-
-            </div>
-
-            <h2>BE MORE THAN A FAN.</h2>
-
-            <h3>BECOME A CLUB BUILDER!</h3>
-
-            <p class="fan-tagline">
-                UNITED BY PASSION. DRIVEN BY PURPOSE.
-            </p>
-
-            <a href="index.html" class="fan-back">
-                BACK TO DESERT WARRIORS FC
-            </a>
-
-        </div>
-
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATCHDAY -->
+  <section class="fan-section">
+    <div class="fan-matchday">
+
+      <div class="fan-matchday-panel">
+        <div class="eyebrow">MATCHDAY • WARRIORS</div>
+
+        <h2>THE GAME IS BETTER TOGETHER.</h2>
+
+        <p>
+          The players bring the fight on the pitch. The supporters bring
+          the energy beyond it. Together, we make the Warriors stronger.
+        </p>
+
+        <a href="matches.html" class="fan-btn">
+          VIEW FIXTURES & RESULTS →
+        </a>
+      </div>
+
+      <div class="fan-matchday-info">
+        <h3>Every Match. Every Moment. Together.</h3>
+
+        <p>
+          The Warriors journey is filled with moments that deserve to be
+          shared. Whether it's a big win, a difficult challenge or a
+          new beginning, our supporters remain an important part of our story.
+        </p>
+
+        <ul class="fan-matchday-list">
+          <li><span>01</span> Check the upcoming fixtures.</li>
+          <li><span>02</span> Wear the Warriors colours with pride.</li>
+          <li><span>03</span> Support the team with respect and passion.</li>
+          <li><span>04</span> Celebrate the club and share our moments.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JOIN COMMUNITY -->
+  <section class="fan-community-banner">
+    <div class="fan-community-content">
+      <div class="eyebrow">YOUR CLUB. YOUR COMMUNITY. YOUR FAMILY.</div>
+
+      <h2>YOUR PLACE IN THE WARRIORS FAMILY STARTS HERE.</h2>
+
+      <p>
+        Create your supporter account and stay connected with Desert
+        Warriors FC. Be part of our growing community and follow
+        the journey of your club.
+      </p>
+
+      <div class="fan-hero-actions">
+        <a href="register.html" class="fan-btn fan-btn-yellow">
+          CREATE SUPPORTER ACCOUNT
+        </a>
+
+        <a href="login.html" class="fan-btn fan-btn-outline">
+          SUPPORTER LOGIN
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL MEDIA -->
+  <section class="fan-section">
+    <div class="fan-section-heading">
+      <div class="eyebrow">FOLLOW THE WARRIORS</div>
+      <h2>Stay Connected</h2>
+      <p>
+        Follow Desert Warriors FC across our official platforms
+        and never miss a moment of the journey.
+      </p>
+    </div>
+
+    <div class="fan-social-grid">
+
+      <div class="fan-social-card">
+        <div class="social-icon">📘</div>
+        <h3>Facebook</h3>
+        <p>
+          Follow our Facebook page for club news, updates,
+          announcements and matchday moments.
+        </p>
+        <a href="https://www.facebook.com/profile.php?id=61558521487571"
+           target="_blank" rel="noopener noreferrer">
+          FOLLOW ON FACEBOOK →
+        </a>
+      </div>
+
+      <div class="fan-social-card">
+        <div class="social-icon">𝕏</div>
+        <h3>X / Twitter</h3>
+        <p>
+          Stay updated with our latest club information,
+          announcements and football conversations.
+        </p>
+        <a href="https://x.com/DWarriors023"
+           target="_blank" rel="noopener noreferrer">
+          FOLLOW ON X →
+        </a>
+      </div>
+
+      <div class="fan-social-card">
+        <div class="social-icon">📱</div>
+        <h3>WhatsApp Channel</h3>
+        <p>
+          Join our WhatsApp channel to stay connected with
+          updates from Desert Warriors FC.
+        </p>
+        <a href="https://whatsapp.com/channel/0029VbCYV7FGehEP8idGwS2u"
+           target="_blank" rel="noopener noreferrer">
+          JOIN OUR CHANNEL →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fan-footer">
+    <p><strong>DESERT WARRIORS FC</strong></p>
+
+    <div class="fan-footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="team.html">Team</a>
+      <a href="matches.html">Matches</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
+
+    <p>Strength • Unity • Victory</p>
+    <p style="margin-top: 10px;">© 2026 Desert Warriors FC. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>

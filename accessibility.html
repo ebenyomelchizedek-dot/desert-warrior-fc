@@ -2,393 +2,674 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Desert Warriors FC accessibility statement and commitment to an inclusive website experience.">
+<title>Accessibility | Desert Warriors FC</title>
 
-  <title>Accessibility Statement | Desert Warriors FC</title>
+<style>
+:root {
+    --yellow: #f5c400;
+    --dark: #111418;
+    --dark2: #20252b;
+    --text: #262b31;
+    --muted: #6d747d;
+    --light: #f5f6f7;
+    --white: #ffffff;
+    --border: #e6e8eb;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.75;
+}
+
+a {
+    color: inherit;
+}
+
+.access-wrapper {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+/* HERO */
+.access-hero {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(245,196,0,.14), transparent 30%),
+        linear-gradient(120deg, #111418, #272c32);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 85px 0 75px;
+    border-bottom: 5px solid var(--yellow);
+}
+
+.access-hero::after {
+    content: "DWFC";
+    position: absolute;
+    right: -20px;
+    bottom: -60px;
+    font-size: clamp(100px, 20vw, 260px);
+    font-weight: 900;
+    color: rgba(255,255,255,.035);
+    pointer-events: none;
+}
+
+.access-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--yellow);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.access-eyebrow::before {
+    content: "";
+    width: 32px;
+    height: 3px;
+    background: var(--yellow);
+}
+
+.access-hero h1 {
+    font-size: clamp(36px, 5.5vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    font-weight: 900;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.access-hero h1 span {
+    color: var(--yellow);
+}
+
+.access-hero > .access-wrapper > p {
+    max-width: 680px;
+    color: #d0d4d9;
+    font-size: 16px;
+}
+
+.access-meta {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #c2c7cd;
+    font-size: 13px;
+}
+
+.access-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* GLANCE PANEL */
+.access-glance {
+    margin-top: -35px;
+    position: relative;
+    z-index: 2;
+}
+
+.access-glance-card {
+    background: white;
+    padding: 27px 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0,0,0,.08);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.access-glance-icon {
+    min-width: 58px;
+    height: 58px;
+    background: var(--yellow);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+}
+
+.access-glance-card h2 {
+    font-size: 17px;
+    margin-bottom: 4px;
+    color: var(--dark);
+}
+
+.access-glance-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* MAIN */
+.access-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+    padding: 55px 0 75px;
+}
+
+.access-sidebar {
+    background: white;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    position: sticky;
+    top: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.025);
+}
+
+.access-sidebar-label {
+    font-size: 11px;
+    color: #969ca4;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.access-sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: var(--dark);
+}
+
+.access-sidebar nav {
+    display: grid;
+    gap: 5px;
+}
+
+.access-sidebar nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 7px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #59616a;
+    transition: .25s ease;
+}
+
+.access-sidebar nav a:hover {
+    background: #fff8d9;
+    color: #17191b;
+    padding-left: 17px;
+}
+
+.access-sidebar nav a span {
+    color: #a5aab0;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.access-sidebar-contact {
+    margin-top: 25px;
+    padding: 17px;
+    background: #f5f6f7;
+    border-radius: 8px;
+    border-left: 3px solid var(--yellow);
+}
+
+.access-sidebar-contact strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.access-sidebar-contact p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.access-sidebar-contact a {
+    color: #20252b;
+    font-weight: bold;
+    word-break: break-word;
+    text-decoration: none;
+}
+
+/* ARTICLE */
+.access-content {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 42px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.025);
+}
+
+.access-content section {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eceef0;
+    scroll-margin-top: 25px;
+}
+
+.access-content section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.access-section-number {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: #8c7500;
+    background: #fff7d5;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.access-content h2 {
+    font-size: 23px;
+    color: var(--dark);
+    letter-spacing: -.5px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.access-content p {
+    color: #5d646c;
+    font-size: 14px;
+    margin-bottom: 13px;
+}
+
+.access-content ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.access-content li {
+    color: #5d646c;
+    font-size: 14px;
+    margin-bottom: 9px;
+    padding-left: 5px;
+}
+
+.access-content li::marker {
+    color: #c6a000;
+}
+
+.access-content a {
+    color: #8a6b00;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.access-content a:hover {
+    text-decoration: underline;
+}
+
+/* CONTACT PANEL */
+.access-contact-box {
+    background: linear-gradient(135deg, #171a1e, #292e34);
+    color: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 25px;
+    border-bottom: 4px solid var(--yellow);
+}
+
+.access-contact-box h2 {
+    color: white;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.access-contact-box p {
+    color: #cbd0d5;
+}
+
+.access-contact-details {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.access-contact-details a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--yellow);
+    word-break: break-word;
+    font-size: 14px;
+}
+
+.access-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--yellow);
+    color: #151719 !important;
+    padding: 13px 20px;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none !important;
+    transition: .25s;
+}
+
+.access-back:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+.access-footer {
+    background: #111418;
+    color: #aeb4ba;
+    text-align: center;
+    padding: 28px 15px;
+    border-top: 3px solid var(--yellow);
+    font-size: 13px;
+}
+
+.access-footer strong {
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .access-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 40px;
     }
 
-    :root {
-      --navy: #10152b;
-      --gold: #d5a52b;
-      --text: #333847;
-      --background: #f4f5f8;
+    .access-sidebar {
+        position: static;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.8;
+    .access-sidebar nav {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Hero section */
+    .access-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 600px) {
     .access-hero {
-      background: linear-gradient(120deg, #10152b, #202b49);
-      color: white;
-      padding: 75px 9%;
-      border-bottom: 5px solid var(--gold);
+        padding: 65px 0 60px;
     }
 
     .access-hero h1 {
-      font-size: clamp(30px, 5vw, 48px);
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
+        letter-spacing: -1px;
     }
 
-    .access-hero p {
-      color: #d5d9e5;
-      font-size: 15px;
+    .access-glance-card {
+        padding: 20px;
+        align-items: flex-start;
+        gap: 15px;
     }
 
-    .access-hero .updated {
-      margin-top: 12px;
-      color: #c6a74e;
-      font-size: 13px;
+    .access-glance-icon {
+        min-width: 45px;
+        height: 45px;
+        font-size: 21px;
     }
 
-    /* Main layout */
-    .access-container {
-      display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 35px;
-      max-width: 1250px;
-      margin: 55px auto;
-      padding: 0 25px;
-      align-items: start;
+    .access-layout {
+        padding: 30px 0 45px;
     }
 
-    /* Contents navigation */
-    .access-nav {
-      background: white;
-      padding: 27px 23px;
-      border-radius: 10px;
-      border: 1px solid #e6e8ee;
-      box-shadow: 0 8px 25px rgba(16, 21, 43, 0.05);
-      position: sticky;
-      top: 25px;
-    }
-
-    .access-nav h3 {
-      color: var(--navy);
-      font-size: 17px;
-      margin-bottom: 17px;
-      padding-bottom: 13px;
-      border-bottom: 2px solid var(--gold);
-    }
-
-    .access-nav a {
-      display: block;
-      color: #555d6d;
-      text-decoration: none;
-      font-size: 13px;
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f1f4;
-      transition: 0.2s;
-    }
-
-    .access-nav a:hover {
-      color: #a47a12;
-      padding-left: 5px;
-    }
-
-    /* Main article */
+    .access-sidebar,
     .access-content {
-      background: white;
-      padding: 45px;
-      border-radius: 10px;
-      border: 1px solid #e6e8ee;
-      box-shadow: 0 8px 25px rgba(16, 21, 43, 0.05);
+        padding: 22px;
     }
 
-    .access-content section {
-      margin-bottom: 35px;
-      padding-bottom: 27px;
-      border-bottom: 1px solid #e9ebf0;
-      scroll-margin-top: 25px;
-    }
-
-    .access-content section:last-of-type {
-      border-bottom: none;
+    .access-sidebar nav {
+        grid-template-columns: 1fr;
     }
 
     .access-content h2 {
-      color: var(--navy);
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 15px;
-      position: relative;
-      padding-left: 14px;
+        font-size: 20px;
     }
 
-    .access-content h2::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 5px;
-      height: 23px;
-      width: 4px;
-      background: var(--gold);
-      border-radius: 3px;
-    }
-
-    .access-content p {
-      color: #555d6d;
-      font-size: 14px;
-      margin-bottom: 13px;
-    }
-
-    .access-content ul {
-      padding-left: 25px;
-      margin: 12px 0;
-    }
-
+    .access-content p,
     .access-content li {
-      color: #555d6d;
-      font-size: 14px;
-      margin-bottom: 7px;
+        font-size: 13px;
     }
 
-    .access-content a {
-      color: #9b7415;
-      text-decoration: none;
+    .access-contact-box {
+        padding: 23px;
     }
-
-    .access-content a:hover {
-      text-decoration: underline;
-    }
-
-    /* Home link */
-    .access-back {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 11px 20px;
-      background: var(--navy);
-      color: white !important;
-      border-radius: 5px;
-      font-size: 13px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .access-back:hover {
-      background: #273453;
-      text-decoration: none !important;
-    }
-
-    /* Footer */
-    .access-footer {
-      background: var(--navy);
-      color: #d5d9e5;
-      text-align: center;
-      padding: 28px 15px;
-      border-top: 4px solid var(--gold);
-      font-size: 13px;
-    }
-
-    /* Mobile layout */
-    @media (max-width: 800px) {
-      .access-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin: 25px auto;
-        padding: 0 15px;
-      }
-
-      .access-hero {
-        padding: 50px 7%;
-      }
-
-      .access-nav {
-        position: static;
-      }
-
-      .access-content {
-        padding: 25px 20px;
-      }
-
-      .access-content h2 {
-        font-size: 18px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <header class="access-hero">
-    <h1>Accessibility Statement</h1>
-    <p>Desert Warriors Football Club</p>
-    <p class="updated">Last Updated: 1 November 2026</p>
-  </header>
+<header class="access-hero">
+    <div class="access-wrapper">
+        <div class="access-eyebrow">Club Website Information</div>
+        <h1>Accessibility <span>& Inclusion.</span></h1>
+        <p>
+            Desert Warriors FC is committed to making our digital home
+            more accessible, welcoming and easier to use for everyone.
+        </p>
 
-  <main class="access-container">
+        <div class="access-meta">
+            <span>◉ Desert Warriors Football Club</span>
+            <span>▣ Updated: 1 November 2026</span>
+        </div>
+    </div>
+</header>
 
-    <aside class="access-nav">
-      <h3>On This Page</h3>
-      <a href="#commitment">1. Our Commitment</a>
-      <a href="#accessibility">2. Accessibility Approach</a>
-      <a href="#features">3. Website Accessibility Features</a>
-      <a href="#improvements">4. Ongoing Improvements</a>
-      <a href="#limitations">5. Known Limitations</a>
-      <a href="#assistance">6. Accessibility Assistance</a>
-      <a href="#feedback">7. Feedback and Suggestions</a>
-      <a href="#contact">8. Contact Us</a>
+<div class="access-wrapper access-glance">
+    <div class="access-glance-card">
+        <div class="access-glance-icon">♿</div>
+        <div>
+            <h2>Accessibility at a Glance</h2>
+            <p>
+                We aim to create a website experience that is perceivable,
+                operable, understandable and robust across devices and
+                browsing environments.
+            </p>
+        </div>
+    </div>
+</div>
+
+<main class="access-wrapper access-layout">
+
+    <aside class="access-sidebar">
+        <div class="access-sidebar-label">Explore this document</div>
+        <h2>On This Page</h2>
+
+        <nav>
+            <a href="#commitment"><span>01</span> Our Commitment</a>
+            <a href="#accessibility"><span>02</span> Accessibility Approach</a>
+            <a href="#features"><span>03</span> Website Features</a>
+            <a href="#improvements"><span>04</span> Improvements</a>
+            <a href="#limitations"><span>05</span> Known Limitations</a>
+            <a href="#assistance"><span>06</span> Accessibility Assistance</a>
+            <a href="#feedback"><span>07</span> Feedback & Suggestions</a>
+            <a href="#contact"><span>08</span> Contact Us</a>
+        </nav>
+
+        <div class="access-sidebar-contact">
+            <strong>Need help accessing our site?</strong>
+            <p>Contact our team for accessibility assistance.</p>
+            <a href="mailto:desertwarriors023@gmail.com">
+                Email the club →
+            </a>
+        </div>
     </aside>
 
     <article class="access-content">
 
-      <section id="commitment">
-        <h2>1. Our Commitment</h2>
-        <p>
-          Desert Warriors Football Club believes that everyone
-          should have the opportunity to access information
-          about the club, its activities and its community.
-        </p>
-        <p>
-          We are committed to improving the accessibility
-          and usability of our website so that visitors,
-          including people with disabilities, can access
-          information as easily as possible.
-        </p>
-      </section>
+        <section id="commitment">
+            <div class="access-section-number">SECTION 01</div>
+            <h2>Our Commitment</h2>
+            <p>
+                Desert Warriors Football Club believes that everyone should
+                have the opportunity to access information about the club,
+                its activities and its community.
+            </p>
+            <p>
+                We are committed to improving the accessibility and usability
+                of our website so that visitors, including people with
+                disabilities, can access information as easily as possible.
+            </p>
+        </section>
 
-      <section id="accessibility">
-        <h2>2. Accessibility Approach</h2>
-        <p>
-          We aim to make our website clear, understandable
-          and convenient to use across different devices
-          and browsing environments.
-        </p>
-        <p>
-          Our accessibility approach is informed by recognised
-          web accessibility principles, including the Web
-          Content Accessibility Guidelines (WCAG).
-        </p>
-        <p>
-          Our aim is to work towards a website that is
-          perceivable, operable, understandable and robust.
-        </p>
-      </section>
+        <section id="accessibility">
+            <div class="access-section-number">SECTION 02</div>
+            <h2>Our Accessibility Approach</h2>
+            <p>
+                We aim to make our website clear, understandable and
+                convenient to use across different devices and browsing
+                environments.
+            </p>
+            <p>
+                Our accessibility approach is informed by recognised web
+                accessibility principles, including the Web Content
+                Accessibility Guidelines (WCAG).
+            </p>
+            <p>
+                Our aim is to work towards a website that is perceivable,
+                operable, understandable and robust.
+            </p>
+        </section>
 
-      <section id="features">
-        <h2>3. Website Accessibility Features</h2>
-        <p>
-          We aim to provide useful accessibility features
-          and design practices, including:
-        </p>
-        <ul>
-          <li>Clear headings and organised page content.</li>
-          <li>Readable text and consistent navigation.</li>
-          <li>Responsive layouts for computers, tablets
-              and mobile phones.</li>
-          <li>Descriptive alternative text for meaningful
-              images where provided.</li>
-          <li>Links with clear and understandable labels.</li>
-          <li>Appropriate colour contrast where practical.</li>
-        </ul>
-      </section>
+        <section id="features">
+            <div class="access-section-number">SECTION 03</div>
+            <h2>Website Accessibility Features</h2>
+            <p>
+                We aim to provide useful accessibility features and
+                design practices, including:
+            </p>
+            <ul>
+                <li>Clear headings and organised page content.</li>
+                <li>Readable text and consistent navigation.</li>
+                <li>Responsive layouts for computers, tablets and mobile phones.</li>
+                <li>Descriptive alternative text for meaningful images where provided.</li>
+                <li>Links with clear and understandable labels.</li>
+                <li>Appropriate colour contrast where practical.</li>
+            </ul>
+        </section>
 
-      <section id="improvements">
-        <h2>4. Ongoing Improvements</h2>
-        <p>
-          Website accessibility is an ongoing process.
-          Desert Warriors FC will continue reviewing
-          its website and considering improvements
-          as new content and features are introduced.
-        </p>
-        <p>
-          We aim to identify and address accessibility
-          barriers as they become known.
-        </p>
-      </section>
+        <section id="improvements">
+            <div class="access-section-number">SECTION 04</div>
+            <h2>Ongoing Improvements</h2>
+            <p>
+                Website accessibility is an ongoing process. Desert Warriors
+                FC will continue reviewing its website and considering
+                improvements as new content and features are introduced.
+            </p>
+            <p>
+                We aim to identify and address accessibility barriers
+                as they become known.
+            </p>
+        </section>
 
-      <section id="limitations">
-        <h2>5. Known Limitations</h2>
-        <p>
-          Some website content or features may not yet
-          provide the best possible experience for every
-          visitor or assistive technology.
-        </p>
-        <p>
-          Certain third-party services, embedded content
-          or external websites may also have accessibility
-          limitations outside our direct control.
-        </p>
-        <p>
-          We welcome feedback that helps us identify
-          and improve these areas.
-        </p>
-      </section>
+        <section id="limitations">
+            <div class="access-section-number">SECTION 05</div>
+            <h2>Known Limitations</h2>
+            <p>
+                Some website content or features may not yet provide
+                the best possible experience for every visitor or
+                assistive technology.
+            </p>
+            <p>
+                Certain third-party services, embedded content or
+                external websites may also have accessibility limitations
+                outside our direct control.
+            </p>
+            <p>
+                We welcome feedback that helps us identify and improve
+                these areas.
+            </p>
+        </section>
 
-      <section id="assistance">
-        <h2>6. Accessibility Assistance</h2>
-        <p>
-          If you experience difficulty accessing any
-          information on our website, you may contact
-          Desert Warriors FC for assistance.
-        </p>
-        <p>
-          Where reasonably possible, we will endeavour
-          to provide the requested information through
-          an alternative communication method.
-        </p>
-      </section>
+        <section id="assistance">
+            <div class="access-section-number">SECTION 06</div>
+            <h2>Accessibility Assistance</h2>
+            <p>
+                If you experience difficulty accessing any information
+                on our website, you may contact Desert Warriors FC
+                for assistance.
+            </p>
+            <p>
+                Where reasonably possible, we will endeavour to provide
+                the requested information through an alternative
+                communication method.
+            </p>
+        </section>
 
-      <section id="feedback">
-        <h2>7. Feedback and Suggestions</h2>
-        <p>
-          We value feedback from our website visitors.
-          If you notice an accessibility issue or have
-          suggestions for improving our website, please
-          let us know.
-        </p>
-        <p>
-          When reporting an issue, it is helpful to
-          mention the page you were visiting and the
-          difficulty you experienced.
-        </p>
-      </section>
+        <section id="feedback">
+            <div class="access-section-number">SECTION 07</div>
+            <h2>Feedback & Suggestions</h2>
+            <p>
+                We value feedback from our website visitors. If you
+                notice an accessibility issue or have suggestions for
+                improving our website, please let us know.
+            </p>
+            <p>
+                When reporting an issue, it is helpful to mention
+                the page you were visiting and the difficulty you
+                experienced.
+            </p>
+        </section>
 
-      <section id="contact">
-        <h2>8. Contact Us</h2>
-        <p>
-          For accessibility questions, assistance or
-          feedback, please contact:
-        </p>
-        <p>
-          <strong>Organisation:</strong>
-          Desert Warriors Football Club
-        </p>
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:desertwarriors023@gmail.com">
-            desertwarriors023@gmail.com
-          </a>
-        </p>
-        <p>
-          <strong>Telephone:</strong>
-          0741920064 / 0748769548
-        </p>
-      </section>
+        <section id="contact">
+            <div class="access-section-number">SECTION 08</div>
+            <h2>Contact Us</h2>
+            <p>
+                For accessibility questions, assistance or feedback,
+                please contact Desert Warriors Football Club.
+            </p>
 
-      <a href="index.html" class="access-back">
-        ← Back to Home
-      </a>
+            <div class="access-contact-box">
+                <h2>We're here to help.</h2>
+                <p>Reach out to the club using the contact details below.</p>
+
+                <div class="access-contact-details">
+                    <a href="mailto:desertwarriors023@gmail.com">
+                        ✉ desertwarriors023@gmail.com
+                    </a>
+                    <a href="tel:0741920064">
+                        ☎ 0741920064
+                    </a>
+                    <a href="tel:0748769548">
+                        ☎ 0748769548
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <a href="index.html" class="access-back">
+            ← &nbsp; BACK TO THE CLUB WEBSITE
+        </a>
 
     </article>
-  </main>
+</main>
 
-  <footer class="access-footer">
-    <p>© 2026 Desert Warriors FC. All Rights Reserved.</p>
-  </footer>
+<footer class="access-footer">
+    <p>© 2026 <strong>Desert Warriors FC</strong>. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
