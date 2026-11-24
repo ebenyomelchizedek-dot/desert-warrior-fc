@@ -1,0 +1,1715 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TurkCity Branding and Printing - professional printing, branding, promotional merchandise, signage, business stationery and custom design services.">
+<title>TurkCity Branding & Printing</title>
+
+<style>
+:root {
+    --tc-yellow: #f5c400;
+    --tc-yellow-dark: #d5a900;
+    --tc-black: #101010;
+    --tc-dark: #191919;
+    --tc-grey: #777;
+    --tc-light: #f5f5f5;
+    --tc-white: #fff;
+    --tc-border: #e7e7e7;
+    --tc-radius: 18px;
+    --tc-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: var(--tc-black);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+/* TOP BAR */
+.tc-topbar {
+    background: var(--tc-yellow);
+    padding: 9px 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tc-topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* NAVIGATION */
+.tc-header {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid #eee;
+}
+
+.tc-nav {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.tc-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tc-brand-icon {
+    width: 54px;
+    height: 54px;
+    background: var(--tc-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 23px;
+    font-weight: 900;
+    color: #111;
+    overflow: hidden;
+}
+
+.tc-brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tc-brand-text strong {
+    display: block;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: -.5px;
+}
+
+.tc-brand-text span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.tc-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.tc-nav-links a {
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.tc-nav-links a:hover {
+    color: var(--tc-yellow-dark);
+}
+
+.tc-nav-cta {
+    background: var(--tc-black);
+    color: white !important;
+    padding: 13px 19px;
+    border-radius: 8px;
+}
+
+.tc-nav-cta:hover {
+    background: var(--tc-yellow);
+    color: #111 !important;
+}
+
+.tc-menu-btn {
+    display: none;
+    border: 0;
+    background: var(--tc-yellow);
+    width: 43px;
+    height: 43px;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* HERO */
+.tc-hero {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(245,196,0,.22), transparent 32%),
+        linear-gradient(120deg, #111 0%, #1d1d1d 70%, #303030 100%);
+    color: white;
+    min-height: 590px;
+    padding: 85px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tc-hero::after {
+    content: "TC";
+    position: absolute;
+    right: -35px;
+    bottom: -130px;
+    font-size: 470px;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255,255,255,.025);
+    pointer-events: none;
+}
+
+.tc-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 55px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.tc-eyebrow {
+    color: var(--tc-yellow);
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 22px;
+}
+
+.tc-hero h1 {
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1.03;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+}
+
+.tc-hero h1 span {
+    color: var(--tc-yellow);
+}
+
+.tc-hero p {
+    color: #c6c6c6;
+    max-width: 530px;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.tc-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 23px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: .25s;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.tc-btn-yellow {
+    background: var(--tc-yellow);
+    color: #111;
+}
+
+.tc-btn-yellow:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+.tc-btn-outline {
+    border-color: #555;
+    color: white;
+}
+
+.tc-btn-outline:hover {
+    border-color: var(--tc-yellow);
+    color: var(--tc-yellow);
+}
+
+.tc-hero-visual {
+    position: relative;
+}
+
+.tc-hero-main-image {
+    min-height: 390px;
+    border-radius: 24px;
+    background:
+        linear-gradient(0deg, rgba(0,0,0,.1), rgba(0,0,0,.1)),
+        url("https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=1200&q=85")
+        center/cover no-repeat;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 25px 70px rgba(0,0,0,.35);
+}
+
+.tc-hero-badge {
+    position: absolute;
+    left: -20px;
+    bottom: 25px;
+    background: var(--tc-yellow);
+    color: #111;
+    border-radius: 15px;
+    padding: 20px 24px;
+    box-shadow: var(--tc-shadow);
+}
+
+.tc-hero-badge strong {
+    display: block;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.tc-hero-badge span {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* QUICK SERVICES STRIP */
+.tc-quick-strip {
+    background: var(--tc-yellow);
+    padding: 23px 0;
+}
+
+.tc-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.tc-quick-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tc-quick-icon {
+    font-size: 26px;
+}
+
+.tc-quick-item strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.tc-quick-item span {
+    font-size: 11px;
+    color: #353535;
+}
+
+/* SECTIONS */
+.tc-section {
+    padding: 90px 0;
+}
+
+.tc-section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+}
+
+.tc-section-heading small {
+    color: var(--tc-yellow-dark);
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.tc-section-heading h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.tc-section-heading h2 span {
+    color: var(--tc-yellow-dark);
+}
+
+.tc-section-heading p {
+    color: var(--tc-grey);
+    font-size: 15px;
+}
+
+/* SERVICES */
+.tc-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.tc-service-card {
+    background: white;
+    border: 1px solid var(--tc-border);
+    border-radius: var(--tc-radius);
+    padding: 29px;
+    transition: .3s;
+}
+
+.tc-service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--tc-shadow);
+    border-color: var(--tc-yellow);
+}
+
+.tc-service-icon {
+    width: 57px;
+    height: 57px;
+    background: #fff5c8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 26px;
+    margin-bottom: 22px;
+}
+
+.tc-service-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.tc-service-card p {
+    color: var(--tc-grey);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.tc-service-link {
+    color: #9c7b00;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* PRODUCT CATALOG */
+.tc-products {
+    background: var(--tc-light);
+}
+
+.tc-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 22px;
+}
+
+.tc-product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+    transition: .3s;
+}
+
+.tc-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--tc-shadow);
+}
+
+.tc-product-image {
+    height: 220px;
+    background: #e9e9e9;
+    overflow: hidden;
+}
+
+.tc-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.tc-product-card:hover img {
+    transform: scale(1.06);
+}
+
+.tc-product-info {
+    padding: 20px;
+}
+
+.tc-product-info small {
+    color: #a17f00;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.tc-product-info h3 {
+    font-size: 17px;
+    margin: 7px 0;
+}
+
+.tc-product-info p {
+    font-size: 12px;
+    color: var(--tc-grey);
+    min-height: 42px;
+    margin-bottom: 15px;
+}
+
+.tc-product-quote {
+    display: block;
+    text-align: center;
+    background: var(--tc-yellow);
+    color: #111;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.tc-product-quote:hover {
+    background: #111;
+    color: white;
+}
+
+/* FEATURE */
+.tc-feature {
+    background: #111;
+    color: white;
+}
+
+.tc-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tc-feature-image {
+    height: 430px;
+    border-radius: 22px;
+    background:
+        url("https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1200&q=85")
+        center/cover no-repeat;
+}
+
+.tc-feature-copy h2 {
+    font-size: clamp(32px,4vw,48px);
+    line-height: 1.1;
+    margin: 14px 0 20px;
+}
+
+.tc-feature-copy h2 span {
+    color: var(--tc-yellow);
+}
+
+.tc-feature-copy p {
+    color: #bcbcbc;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.tc-feature-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-bottom: 30px;
+}
+
+.tc-feature-list li {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tc-feature-list li span {
+    color: var(--tc-yellow);
+    margin-right: 8px;
+}
+
+/* PROCESS */
+.tc-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 22px;
+}
+
+.tc-process-step {
+    padding: 25px;
+    border: 1px solid var(--tc-border);
+    border-radius: 16px;
+}
+
+.tc-process-number {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tc-yellow);
+    border-radius: 50%;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.tc-process-step h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.tc-process-step p {
+    font-size: 12px;
+    color: var(--tc-grey);
+}
+
+/* ABOUT */
+.tc-about {
+    background: #fafafa;
+}
+
+.tc-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.tc-about-copy h2 {
+    font-size: clamp(33px,4vw,48px);
+    line-height: 1.12;
+    margin: 13px 0 22px;
+}
+
+.tc-about-copy h2 span {
+    color: var(--tc-yellow-dark);
+}
+
+.tc-about-copy p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.tc-about-visual {
+    background: var(--tc-yellow);
+    border-radius: 24px;
+    padding: 45px;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tc-about-visual::before {
+    content: "T";
+    position: absolute;
+    font-size: 350px;
+    font-weight: 900;
+    opacity: .06;
+    line-height: 1;
+}
+
+.tc-about-visual div {
+    position: relative;
+}
+
+.tc-about-visual strong {
+    font-size: 45px;
+    display: block;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.tc-about-visual span {
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+/* CONTACT / QUOTE */
+.tc-contact {
+    background: white;
+}
+
+.tc-contact-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 35px;
+}
+
+.tc-contact-panel {
+    background: #111;
+    color: white;
+    padding: 36px;
+    border-radius: 20px;
+}
+
+.tc-contact-panel h2 {
+    font-size: 32px;
+    line-height: 1.15;
+    margin: 12px 0 20px;
+}
+
+.tc-contact-panel p {
+    color: #bbb;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.tc-contact-item {
+    border-top: 1px solid #333;
+    padding: 18px 0;
+}
+
+.tc-contact-item small {
+    color: var(--tc-yellow);
+    display: block;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.tc-contact-item strong {
+    font-size: 14px;
+}
+
+.tc-quote-form {
+    border: 1px solid var(--tc-border);
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.tc-quote-form h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.tc-quote-form > p {
+    font-size: 12px;
+    color: var(--tc-grey);
+    margin-bottom: 25px;
+}
+
+.tc-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.tc-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.tc-form-group.full {
+    grid-column: 1 / -1;
+}
+
+.tc-form-group label {
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.tc-form-group input,
+.tc-form-group select,
+.tc-form-group textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 13px;
+    background: #fafafa;
+    outline: none;
+    font-size: 13px;
+}
+
+.tc-form-group input:focus,
+.tc-form-group select:focus,
+.tc-form-group textarea:focus {
+    border-color: var(--tc-yellow-dark);
+    background: white;
+}
+
+.tc-form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.tc-form-submit {
+    grid-column: 1 / -1;
+    border: none;
+    background: var(--tc-yellow);
+    padding: 15px;
+    font-weight: 900;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.tc-form-submit:hover {
+    background: #111;
+    color: white;
+}
+
+/* FOOTER */
+.tc-footer {
+    background: #111;
+    color: white;
+    padding: 55px 0 20px;
+}
+
+.tc-footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 35px;
+}
+
+.tc-footer-about p {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 15px;
+    max-width: 350px;
+}
+
+.tc-footer h3 {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.tc-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tc-footer-links a {
+    color: #aaa;
+    font-size: 12px;
+    transition: .25s;
+}
+
+.tc-footer-links a:hover {
+    color: var(--tc-yellow);
+}
+
+.tc-footer-bottom {
+    border-top: 1px solid #303030;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tc-footer-bottom p {
+    color: #999;
+    font-size: 11px;
+}
+
+/* WHATSAPP FLOAT */
+.tc-whatsapp {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1000;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0 7px 22px rgba(0,0,0,.25);
+    transition: .25s;
+}
+
+.tc-whatsapp:hover {
+    transform: scale(1.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .tc-nav-links {
+        gap: 14px;
+    }
+
+    .tc-nav-links a {
+        font-size: 12px;
+    }
+
+    .tc-product-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .tc-services-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .tc-process-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .tc-hero-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 760px) {
+    .tc-nav {
+        min-height: 72px;
+    }
+
+    .tc-menu-btn {
+        display: block;
+    }
+
+    .tc-nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 72px;
+        width: 100%;
+        background: white;
+        padding: 22px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 12px 25px rgba(0,0,0,.07);
+    }
+
+    .tc-nav-links.show {
+        display: flex;
+    }
+
+    .tc-nav-links a {
+        padding: 13px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 14px;
+    }
+
+    .tc-nav-links .tc-nav-cta {
+        margin-top: 12px;
+        padding: 13px 18px;
+        text-align: center;
+        border: 0;
+    }
+
+    .tc-brand-text strong {
+        font-size: 16px;
+    }
+
+    .tc-brand-text span {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .tc-hero {
+        padding: 65px 0;
+        min-height: auto;
+    }
+
+    .tc-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tc-hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .tc-hero-main-image {
+        min-height: 290px;
+    }
+
+    .tc-hero-badge {
+        left: 10px;
+        bottom: -15px;
+    }
+
+    .tc-quick-grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 18px;
+    }
+
+    .tc-section {
+        padding: 65px 0;
+    }
+
+    .tc-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tc-feature-grid,
+    .tc-about-grid,
+    .tc-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .tc-feature-image {
+        height: 300px;
+    }
+
+    .tc-about-visual {
+        min-height: 270px;
+        padding: 25px;
+    }
+
+    .tc-about-visual strong {
+        font-size: 35px;
+    }
+
+    .tc-contact-panel,
+    .tc-quote-form {
+        padding: 25px;
+    }
+
+    .tc-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tc-topbar-inner {
+        justify-content: center;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .tc-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tc-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tc-hero h1 {
+        font-size: 43px;
+    }
+
+    .tc-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tc-form-group.full {
+        grid-column: auto;
+    }
+
+    .tc-feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .tc-quick-item strong {
+        font-size: 11px;
+    }
+
+    .tc-quick-item span {
+        font-size: 10px;
+    }
+
+    .tc-hero-badge strong {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="tc-topbar">
+    <div class="container tc-topbar-inner">
+        <span>BRANDING • PRINTING • DESIGN • PROMOTIONAL PRODUCTS</span>
+        <span>CREATIVITY THAT MAKES YOU STAND OUT</span>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="tc-header">
+    <div class="container tc-nav">
+
+        <a href="turkcity.html" class="tc-brand">
+            <div class="tc-brand-icon">TC</div>
+            <div class="tc-brand-text">
+                <strong>TURKCITY</strong>
+                <span>BRANDING & PRINTING</span>
+            </div>
+        </a>
+
+        <button class="tc-menu-btn" id="tcMenuBtn" aria-label="Open navigation">
+            ☰
+        </button>
+
+        <nav class="tc-nav-links" id="tcNavLinks">
+            <a href="#tc-home">Home</a>
+            <a href="#tc-services">Services</a>
+            <a href="#tc-products">Products</a>
+            <a href="#tc-about">About</a>
+            <a href="#tc-contact" class="tc-nav-cta">GET A QUOTE ↗</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="tc-hero" id="tc-home">
+    <div class="container tc-hero-grid">
+
+        <div class="tc-hero-copy">
+            <span class="tc-eyebrow">YOUR BRAND. OUR CANVAS.</span>
+
+            <h1>
+                WE PRINT.<br>
+                WE BRAND.<br>
+                <span>YOU STAND OUT.</span>
+            </h1>
+
+            <p>
+                From business identity and custom apparel to large-format
+                printing and promotional merchandise, TurkCity transforms
+                your ideas into powerful visual impressions.
+            </p>
+
+            <div class="tc-hero-buttons">
+                <a href="#tc-products" class="tc-btn tc-btn-yellow">
+                    EXPLORE OUR PRODUCTS ↗
+                </a>
+
+                <a href="#tc-contact" class="tc-btn tc-btn-outline">
+                    REQUEST A QUOTE
+                </a>
+            </div>
+        </div>
+
+        <div class="tc-hero-visual">
+            <div class="tc-hero-main-image"></div>
+
+            <div class="tc-hero-badge">
+                <strong>YOUR IDEA.</strong>
+                <span>BRANDED TO PERFECTION.</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- QUICK SERVICE STRIP -->
+<section class="tc-quick-strip">
+    <div class="container tc-quick-grid">
+
+        <div class="tc-quick-item">
+            <div class="tc-quick-icon">👕</div>
+            <div>
+                <strong>Custom Apparel</strong>
+                <span>Wear your brand</span>
+            </div>
+        </div>
+
+        <div class="tc-quick-item">
+            <div class="tc-quick-icon">🖨️</div>
+            <div>
+                <strong>Print Solutions</strong>
+                <span>Quality printing</span>
+            </div>
+        </div>
+
+        <div class="tc-quick-item">
+            <div class="tc-quick-icon">🎁</div>
+            <div>
+                <strong>Promotional Items</strong>
+                <span>Make an impression</span>
+            </div>
+        </div>
+
+        <div class="tc-quick-item">
+            <div class="tc-quick-icon">🎨</div>
+            <div>
+                <strong>Creative Design</strong>
+                <span>Ideas made visual</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="tc-section" id="tc-services">
+    <div class="container">
+
+        <div class="tc-section-heading">
+            <small>WHAT WE DO</small>
+            <h2>Our Branding & <span>Printing Services</span></h2>
+            <p>Complete branding solutions for businesses, organisations, schools, events and individuals.</p>
+        </div>
+
+        <div class="tc-services-grid">
+
+            <article class="tc-service-card">
+                <div class="tc-service-icon">👕</div>
+                <h3>Apparel Branding</h3>
+                <p>T-shirts, polo shirts, hoodies, uniforms, caps, jerseys and other customised clothing.</p>
+                <a href="#tc-contact" class="tc-service-link">REQUEST APPAREL →</a>
+            </article>
+
+            <article class="tc-service-card">
+                <div class="tc-service-icon">🪧</div>
+                <h3>Signage & Large Format</h3>
+                <p>Banners, posters, roll-up banners, outdoor signage, event backdrops and display graphics.</p>
+                <a href="#tc-contact" class="tc-service-link">REQUEST SIGNAGE →</a>
+            </article>
+
+            <article class="tc-service-card">
+                <div class="tc-service-icon">📇</div>
+                <h3>Business Printing</h3>
+                <p>Business cards, letterheads, brochures, flyers, certificates, envelopes and office stationery.</p>
+                <a href="#tc-contact" class="tc-service-link">PRINT FOR BUSINESS →</a>
+            </article>
+
+            <article class="tc-service-card">
+                <div class="tc-service-icon">☕</div>
+                <h3>Custom Merchandise</h3>
+                <p>Branded mugs, water bottles, key holders, bags, notebooks, gifts and merchandise.</p>
+                <a href="#tc-contact" class="tc-service-link">CUSTOMISE ITEMS →</a>
+            </article>
+
+            <article class="tc-service-card">
+                <div class="tc-service-icon">🏷️</div>
+                <h3>Labels & Stickers</h3>
+                <p>Product labels, packaging stickers, vinyl decals, logo stickers and custom cut-outs.</p>
+                <a href="#tc-contact" class="tc-service-link">ORDER LABELS →</a>
+            </article>
+
+            <article class="tc-service-card">
+                <div class="tc-service-icon">🖌️</div>
+                <h3>Graphic Design</h3>
+                <p>Logo design, brand identity, promotional artwork, posters, social media designs and layouts.</p>
+                <a href="#tc-contact" class="tc-service-link">START A DESIGN →</a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="tc-section tc-products" id="tc-products">
+    <div class="container">
+
+        <div class="tc-section-heading">
+            <small>MADE FOR YOUR BRAND</small>
+            <h2>Explore Our <span>Products</span></h2>
+            <p>Customisable items for businesses, teams, events, campaigns and personal use.</p>
+        </div>
+
+        <div class="tc-product-grid">
+
+            <article class="tc-product-card">
+                <div class="tc-product-image">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85" alt="Custom printed branded t-shirts">
+                </div>
+                <div class="tc-product-info">
+                    <small>APPAREL</small>
+                    <h3>Custom T-Shirts</h3>
+                    <p>Branded shirts for teams, businesses, events and campaigns.</p>
+                    <a href="#tc-contact" class="tc-product-quote" data-product="Custom T-Shirts">GET A QUOTE</a>
+                </div>
+            </article>
+
+            <article class="tc-product-card">
+                <div class="tc-product-image">
+                    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=85" alt="Branded promotional water bottles">
+                </div>
+                <div class="tc-product-info">
+                    <small>PROMOTIONAL</small>
+                    <h3>Branded Bottles</h3>
+                    <p>Custom bottles for promotions, staff and gifts.</p>
+                    <a href="#tc-contact" class="tc-product-quote" data-product="Branded Bottles">GET A QUOTE</a>
+                </div>
+            </article>
+
+            <article class="tc-product-card">
+                <div class="tc-product-image">
+                    <img src="https://images.unsplash.com/photo-1589838311800-3a8f3e0e6a5c?auto=format&fit=crop&w=800&q=85" alt="Custom branded mugs">
+                </div>
+                <div class="tc-product-info">
+                    <small>MERCHANDISE</small>
+                    <h3>Printed Mugs</h3>
+                    <p>Personalised mugs for gifts, offices and branded merchandise.</p>
+                    <a href="#tc-contact" class="tc-product-quote" data-product="Printed Mugs">GET A QUOTE</a>
+                </div>
+            </article>
+
+            <article class="tc-product-card">
+                <div class="tc-product-image">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=85" alt="Custom branded bags">
+                </div>
+                <div class="tc-product-info">
+                    <small>BAGS</small>
+                    <h3>Branded Bags</h3>
+                    <p>Promotional bags, shopping bags and custom carry bags.</p>
+                    <a href="#tc-contact" class="tc-product-quote" data-product="Branded Bags">GET A QUOTE</a>
+                </div>
+            </article>
+
+            <article class="tc-product-card">
+                <div class="tc-product-image">
+                    <img src="https://images.unsplash.com/photo-1509223197845-458d873c8f85?auto=format&fit=crop&w=800&q=85" alt="Business cards and printed stationery">
+                </div>
+                <div class="tc-product-info">
+                    <small>BUSINESS</small>
+                    <h3>Business Cards</h3>
+                    <p>Professional cards that make your first impression memorable.</p>
+                    <a href="#tc-contact" class="tc-product-quote" data-product="Business Cards">GET A QUOTE</a>
+                </div>
+            </article>
+
+            <article class="tc-product-card">
+                <div class="tc-product-image">
+                    <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=800&q=85" alt="Printed promotional poster">
+                </div>
+                <div class="tc-product-info">
+                    <small>MARKETING</small>
+                    <h3>Posters & Flyers</h3>
+                    <p>Promote your business, event, launch or campaign.</p>
+                    <a href="#tc-contact" class="tc-product-quote" data-product="Posters and Flyers">GET A QUOTE</a>
+                </div>
+            </article>
+
+            <article class="tc-product-card">
+                <div class="tc-product-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=85" alt="Printed branded cap">
+                </div>
+                <div class="tc-product-info">
+                    <small>APPAREL</small>
+                    <h3>Custom Caps</h3>
+                    <p>Caps branded with logos, names and custom designs.</p>
+                    <a href="#tc-contact" class="tc-product-quote" data-product="Custom Caps">GET A QUOTE</a>
+                </div>
+            </article>
+
+            <article class="tc-product-card">
+                <div class="tc-product-image">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=800&q=85" alt="Creative graphic design work">
+                </div>
+                <div class="tc-product-info">
+                    <small>CREATIVE</small>
+                    <h3>Graphic Design</h3>
+                    <p>Creative designs for logos, adverts and visual identity.</p>
+                    <a href="#tc-contact" class="tc-product-quote" data-product="Graphic Design">GET A QUOTE</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE / BRANDING -->
+<section class="tc-section tc-feature">
+    <div class="container tc-feature-grid">
+
+        <div class="tc-feature-image"></div>
+
+        <div class="tc-feature-copy">
+            <span class="tc-eyebrow">MAKE YOUR BRAND VISIBLE</span>
+            <h2>Every Detail.<br><span>Every Impression.</span></h2>
+
+            <p>
+                A strong brand deserves to be seen. Whether you are launching a
+                business, organising an event, building a team identity or
+                promoting a campaign, TurkCity helps turn your message into
+                something people can see, remember and recognise.
+            </p>
+
+            <ul class="tc-feature-list">
+                <li><span>✓</span> Business branding</li>
+                <li><span>✓</span> Event branding</li>
+                <li><span>✓</span> Team merchandise</li>
+                <li><span>✓</span> Promotional printing</li>
+                <li><span>✓</span> Custom products</li>
+                <li><span>✓</span> Design assistance</li>
+            </ul>
+
+            <a href="#tc-contact" class="tc-btn tc-btn-yellow">LET'S BRAND SOMETHING ↗</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="tc-section" id="tc-process">
+    <div class="container">
+
+        <div class="tc-section-heading">
+            <small>SIMPLE & STRAIGHTFORWARD</small>
+            <h2>How To <span>Order</span></h2>
+            <p>From your idea to your finished product, we make the process simple.</p>
+        </div>
+
+        <div class="tc-process-grid">
+
+            <div class="tc-process-step">
+                <div class="tc-process-number">01</div>
+                <h3>Tell Us Your Idea</h3>
+                <p>Share what you need, the quantity, your preferred design and deadline.</p>
+            </div>
+
+            <div class="tc-process-step">
+                <div class="tc-process-number">02</div>
+                <h3>Get Your Quote</h3>
+                <p>We review your request and provide pricing and available options.</p>
+            </div>
+
+            <div class="tc-process-step">
+                <div class="tc-process-number">03</div>
+                <h3>Approve The Design</h3>
+                <p>Confirm the artwork, product details and order specifications.</p>
+            </div>
+
+            <div class="tc-process-step">
+                <div class="tc-process-number">04</div>
+                <h3>We Make It</h3>
+                <p>Your order moves to production and is prepared for collection or delivery arrangements.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="tc-section tc-about" id="tc-about">
+    <div class="container tc-about-grid">
+
+        <div class="tc-about-copy">
+            <span class="tc-eyebrow">ABOUT TURKCITY</span>
+
+            <h2>Ideas Into Prints.<br><span>Brands Into Identity.</span></h2>
+
+            <p>
+                TurkCity Branding & Printing is presented as a creative destination
+                for branding, custom printing, business promotion and personalised
+                merchandise. We help businesses, organisations, teams and
+                individuals communicate through visual products.
+            </p>
+
+            <p>
+                From a simple print job to a complete branding project, our goal
+                is to help your ideas stand out and leave a lasting impression.
+            </p>
+
+            <a href="#tc-contact" class="tc-btn tc-btn-yellow">WORK WITH TURKCITY ↗</a>
+        </div>
+
+        <div class="tc-about-visual">
+            <div>
+                <strong>TURKCITY</strong>
+                <span>BRANDING • PRINTING • CREATIVITY</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="tc-section tc-contact" id="tc-contact">
+    <div class="container">
+
+        <div class="tc-section-heading">
+            <small>LET'S CREATE SOMETHING</small>
+            <h2>Request A <span>Quotation</span></h2>
+            <p>Tell us what you want branded or printed. Send your enquiry and start your order.</p>
+        </div>
+
+        <div class="tc-contact-grid">
+
+            <div class="tc-contact-panel">
+                <span class="tc-eyebrow">LET'S TALK</span>
+                <h2>Bring Your Ideas To Life.</h2>
+                <p>
+                    Have a project, a business to brand, an event to promote or
+                    products to customise? Send us your request.
+                </p>
+
+                <div class="tc-contact-item">
+                    <small>BUSINESS</small>
+                    <strong>TurkCity Branding & Printing</strong>
+                </div>
+
+                <div class="tc-contact-item">
+                    <small>SERVICES</small>
+                    <strong>Branding • Printing • Custom Merchandise</strong>
+                </div>
+
+                <div class="tc-contact-item">
+                    <small>ENQUIRIES</small>
+                    <strong>Request pricing, designs and order details</strong>
+                </div>
+
+                <div class="tc-contact-item">
+                    <small>QUICK CONTACT</small>
+                    <strong>Use the quotation form to send your request</strong>
+                </div>
+            </div>
+
+            <form class="tc-quote-form" id="tcQuoteForm">
+                <h3>Tell Us What You Need</h3>
+                <p>Complete the details below to prepare your quotation request.</p>
+
+                <div class="tc-form-grid">
+
+                    <div class="tc-form-group">
+                        <label for="tcName">Your Name *</label>
+                        <input type="text" id="tcName" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="tc-form-group">
+                        <label for="tcPhone">Phone Number *</label>
+                        <input type="tel" id="tcPhone" placeholder="Your phone number" required>
+                    </div>
+
+                    <div class="tc-form-group">
+                        <label for="tcProduct">Product / Service *</label>
+                        <select id="tcProduct" required>
+                            <option value="">Choose a service</option>
+                            <option>Custom T-Shirts & Apparel</option>
+                            <option>Jerseys & Sportswear</option>
+                            <option>Caps & Hats</option>
+                            <option>Business Cards & Stationery</option>
+                            <option>Banners & Posters</option>
+                            <option>Flyers & Brochures</option>
+                            <option>Branded Mugs & Bottles</option>
+                            <option>Branded Bags</option>
+                            <option>Labels & Stickers</option>
+                            <option>Signage & Large Format Printing</option>
+                            <option>Graphic Design & Logo Design</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="tc-form-group">
+                        <label for="tcQuantity">Quantity</label>
+                        <input type="number" id="tcQuantity" min="1" placeholder="How many items?">
+                    </div>
+
+                    <div class="tc-form-group full">
+                        <label for="tcDetails">Project Details *</label>
+                        <textarea id="tcDetails" placeholder="Describe your design, colours, sizes, deadline or other details..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="tc-form-submit">
+                        SEND QUOTATION REQUEST VIA WHATSAPP ↗
+                    </button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="tc-footer">
+    <div class="container">
+
+        <div class="tc-footer-grid">
+
+            <div class="tc-footer-about">
+                <a href="#tc-home" class="tc-brand">
+                    <div class="tc-brand-icon">TC</div>
+                    <div class="tc-brand-text">
+                        <strong style="color:white">TURKCITY</strong>
+                        <span style="color:#aaa">BRANDING & PRINTING</span>
+                    </div>
+                </a>
+
+                <p>
+                    Creative branding, printing and promotional solutions
+                    designed to help your business, team, organisation or
+                    idea stand out.
+                </p>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+                <div class="tc-footer-links">
+                    <a href="#tc-home">Home</a>
+                    <a href="#tc-services">Our Services</a>
+                    <a href="#tc-products">Products</a>
+                    <a href="#tc-about">About TurkCity</a>
+                    <a href="#tc-process">How To Order</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Get Started</h3>
+                <div class="tc-footer-links">
+                    <a href="#tc-contact">Request A Quote</a>
+                    <a href="#tc-products">Browse Products</a>
+                    <a href="index.html">Desert Warriors FC Website</a>
+                    <a href="#tc-contact">Contact TurkCity</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tc-footer-bottom">
+            <p>© <span id="tcYear"></span> TurkCity Branding & Printing. All rights reserved.</p>
+            <p>CREATIVITY • QUALITY • IDENTITY</p>
+        </div>
+
+    </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="tc-whatsapp" id="tcWhatsAppFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp TurkCity">
+    <span>✆</span>
+</a>
+
+<script>
+/* =====================================================
+   TURKCITY SETTINGS
+   IMPORTANT:
+   1. Replace the placeholder WhatsApp number below.
+   2. Use country code and number only.
+   3. Kenya example format: 2547XXXXXXXX (no +, no spaces)
+===================================================== */
+
+const TURKCITY_WHATSAPP = "2547XXXXXXXX"; // REPLACE WITH REAL TURKCITY NUMBER
+
+/* MOBILE MENU */
+const tcMenuBtn = document.getElementById("tcMenuBtn");
+const tcNavLinks = document.getElementById("tcNavLinks");
+
+if (tcMenuBtn && tcNavLinks) {
+    tcMenuBtn.addEventListener("click", () => {
+        tcNavLinks.classList.toggle("show");
+    });
+
+    tcNavLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            tcNavLinks.classList.remove("show");
+        });
+    });
+}
+
+/* YEAR */
+document.getElementById("tcYear").textContent = new Date().getFullYear();
+
+/* FLOATING WHATSAPP */
+const tcWhatsAppFloat = document.getElementById("tcWhatsAppFloat");
+
+if (tcWhatsAppFloat) {
+    tcWhatsAppFloat.href =
+        "https://wa.me/" + TURKCITY_WHATSAPP +
+        "?text=" + encodeURIComponent("Hello TurkCity, I would like to enquire about your branding and printing services.");
+}
+
+/* PRODUCT QUOTE BUTTONS */
+document.querySelectorAll(".tc-product-quote").forEach(button => {
+    button.addEventListener("click", () => {
+        const product = button.dataset.product || "your products";
+        const productSelect = document.getElementById("tcProduct");
+        const details = document.getElementById("tcDetails");
+
+        if (productSelect) {
+            const matchingOption = Array.from(productSelect.options)
+                .find(option => option.text.toLowerCase().includes(product.toLowerCase()));
+
+            if (matchingOption) {
+                productSelect.value = matchingOption.value;
+            } else if (product.includes("T-Shirts")) {
+                productSelect.value = "Custom T-Shirts & Apparel";
+            } else if (product.includes("Mugs")) {
+                productSelect.value = "Branded Mugs & Bottles";
+            } else if (product.includes("Bags")) {
+                productSelect.value = "Branded Bags";
+            } else if (product.includes("Business Cards")) {
+                productSelect.value = "Business Cards & Stationery";
+            } else if (product.includes("Posters")) {
+                productSelect.value = "Banners & Posters";
+            } else if (product.includes("Caps")) {
+                productSelect.value = "Caps & Hats";
+            } else if (product.includes("Design")) {
+                productSelect.value = "Graphic Design & Logo Design";
+            }
+        }
+
+        if (details) {
+            details.value = "I am interested in " + product + ". Please share your pricing and available options.";
+        }
+    });
+});
+
+/* QUOTATION FORM */
+const tcQuoteForm = document.getElementById("tcQuoteForm");
+
+if (tcQuoteForm) {
+    tcQuoteForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("tcName").value.trim();
+        const phone = document.getElementById("tcPhone").value.trim();
+        const product = document.getElementById("tcProduct").value;
+        const quantity = document.getElementById("tcQuantity").value.trim() || "Not specified";
+        const details = document.getElementById("tcDetails").value.trim();
+
+        if (TURKCITY_WHATSAPP.includes("X")) {
+            alert("Please set the TurkCity WhatsApp number in the page's JavaScript settings first.");
+            return;
+        }
+
+        const message =
+            "TURKCITY BRANDING & PRINTING - QUOTATION REQUEST\n\n" +
+            "Name: " + name + "\n" +
+            "Phone: " + phone + "\n" +
+            "Product/Service: " + product + "\n" +
+            "Quantity: " + quantity + "\n" +
+            "Details: " + details;
+
+        const whatsappURL =
+            "https://wa.me/" + TURKCITY_WHATSAPP +
+            "?text=" + encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+    });
+}
+</script>
+
+</body>
+</html>
